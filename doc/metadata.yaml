@@ -1,0 +1,30 @@
+---
+title:  Future Kids 
+subtitle: Semesterarbeit - Werkzeug zur Unterstützung der Stundenplanerstellung
+author: Marco Wettstein
+geometry: margin=3cm
+date: 2015-03-06
+language: de-CH
+references:
+- 	id: aozstartseite
+	title: AOZ Startseite
+	URL: https://www.stadt-zuerich.ch/content/aoz/de/index.html
+	date: 2015-03-06
+-	id: aboutaoz
+	title: Über die AOZ
+	URL: https://www.stadt-zuerich.ch/aoz/de/index/aoz.html
+	date: 2015-03-06
+-	id: aboutfuturekids
+	title: Stadt-Zürich - Future Kids
+	URL: https://www.stadt-zuerich.ch/aoz/de/index/integration/future_kids/unterstuetzung.html
+	date: 2015-03-06
+-	id: ectsWiki
+	title: ECTS - Wikipedia
+	URL: http://de.wikipedia.org/wiki/European_Credit_Transfer_System
+	date: 2015-03-06
+
+
+
+
+
+
