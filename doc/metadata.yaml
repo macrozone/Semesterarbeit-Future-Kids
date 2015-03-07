@@ -6,6 +6,14 @@ geometry: margin=3cm
 date: 2015-03-06
 language: de-CH
 references:
+- 	id: essentialScrumStories
+	title: ESSENTIAL SCRUM - A practical Guide to the most popular agile process
+	author: Kenneth S. Rubin
+	page: 83-85
+- 	id: essentialScrumNonFunctional
+	title: ESSENTIAL SCRUM - A practical Guide to the most popular agile process
+	author: Kenneth S. Rubin
+	page: 93
 - 	id: aozstartseite
 	title: AOZ Startseite
 	URL: https://www.stadt-zuerich.ch/content/aoz/de/index.html

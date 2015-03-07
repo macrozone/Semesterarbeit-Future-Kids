@@ -3,15 +3,9 @@
 
 # Anforderungsanalyse
 
-## Ausgangslage
 
-Future Kids ist ein gemeinnütziges Projekt, welches Primarschüler und -schülerinnen fördert, die bei der Bearbeitung ihrer schulischen Aufgaben zu Hause nur wenig Unterstützung erhalten. Future Kids stellt dabei jedem Kind einen Mentor oder eine Mentorin zur Seite, welches einmal pro Woche das Kind zu Hause unterstützt. In Freiwilligenarbeit wird eine Plattform für die Administrative Unterstützung von Future Kids entwickelt.
 
-Die Plattform zum Projekt, welches Administratoren und Mentoren bei der Planung und Durchführung ihrer Aufgaben unterstützt wird unter anderem für das Planen und Zuweisen der Einsatzzeiten eingesetzt. Dies erfordert aber viel manuelle, aufwendige Arbeitsschritte.
-
-In Zusammenarbeit mit der Administration, welche die Plattform nutzt, soll die Zuweisung der Mentoren zu den Schülern vereinfacht werden um den Administrativen Aufwand zu reduzieren. Dazu soll das bestehende Modul, welches für diese Planung zuständig ist, neu konzipiert werden.
-
-## Stakeholder-Analyse
+## Stakeholder-Analyse \label{secStakeholder}
 
 ### AOZ
 
@@ -62,9 +56,9 @@ Schüler im "Future-Kids"-Projekt erhalten einmal pro Woche Unterstützung durch
 Die Lehrpersonen der zu unterstützenden Schüler benutzen aktuell die Plattform nicht, in Zukunft sollen sie aber den Fortschritt der Schüler direkt auf der Plattform überprüfen können.
 
 
-## User Stories \label{userstories}
+## Funktionale Anforderungen: User Stories \label{userstories}
 
-Die Anforderungen werden ...
+Wie 
 
 
 <% include 'story.macro.ect',
@@ -223,13 +217,40 @@ Die Anforderungen werden ...
 
 % include 'story.macro.ect',
 	number: "014"
-	title: " Als Administrator möchte ich Mentoren nach Name suchen können."
-	description: "Manche Mentoren möchten nur im Vertretungsfall aktiv werden und sind daher explizit als Ersatzmentoren markiert. Nach diesen Mentoren soll gesucht werden können."
+	title: "Als Administrator möchte ich Mentoren nach Name suchen können."
+	description: "Die Administration möchte auch Mentoren nach ihrem Vor- und Nachnamen suchen können."
 	priority: "normal"
 	accCriteria: [
- 		"Es können Mentoren gefunden werden, welche als Ersatzmentoren markiert sind."
- 		"Es können Mentoren gefunden werden, die nicht als Ersatzmentoren markiert sind"
+ 		"Bei Eingabe eines Namens sollen Mentoren mit passendem Vor- oder Nachnamen gefunden werden"
+ 		"Es sollen auch Mentoren gefunden werden, welche das Suchwort im Namen enthalten"
  	]
 %>
+
+
+% include 'story.macro.ect',
+	number: "015"
+	title: "Als Administrator möchte ich Mentoren nach Name suchen können."
+	description: "Die Administration möchte auch Mentoren nach ihrem Vor- und Nachnamen suchen können."
+	priority: "normal"
+	accCriteria: [
+ 		"Bei Eingabe eines Namens sollen Mentoren mit passendem Vor- oder Nachnamen gefunden werden"
+ 		"Es sollen auch Mentoren gefunden werden, welche das Suchwort im Namen enthalten"
+ 	]
+%>
+
+% include 'story.macro.ect',
+	number: "016"
+	title: "Als Administrator möchte ich sehen, zu welchem Zeitpunkt ein Mentor einen Schüler betreut"
+	description: "(TODO)"
+	priority: "normal"
+	accCriteria: [
+ 		"(TODO)"
+ 	]
+%>
+
+
+## Nicht-Funktionale Anforderungen
+
+
 
 
