@@ -151,7 +151,7 @@ $endfor$
 $if(title)$
 \maketitle
 \begin{center}
-   \includegraphics[width=8cm]{../img/title.png}
+  % \includegraphics[width=8cm]{../img/title.png}
  \end{center}
 
 \pagebreak

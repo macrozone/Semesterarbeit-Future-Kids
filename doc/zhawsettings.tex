@@ -87,6 +87,8 @@
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0.3pt}
 
+\renewcommand{\arraystretch}{1.5}
+
 \fancyhead[LO,RE]{} %clear headings for contents 
 \fancyhead[RO,LE]{\nouppercase{\rightmark}} %right odd pages and left even pages
 \fancyhead[LO,RE]{\MakeUppercase{\leftmark}} %left odd pages and right even pages
@@ -133,6 +135,13 @@
 
 \lstloadlanguages{C++}
 
+
+\makeatletter
+\newcommand{\customlabel}[2]{%
+   \protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }%
+   \hypertarget{#1}{#2}
+}
+\makeatother
 %\lstdefinelanguage{xc}{
 %     keywords={printstr, printhexln, attributes, class, classend, do, empty, endif, endwhile, fail, function, functionend, if, implements, in, inherit, inout, not, of, operations, out, return, set, then, types, while, use},
 %     keywordstyle=\color{lred}\bfseries,

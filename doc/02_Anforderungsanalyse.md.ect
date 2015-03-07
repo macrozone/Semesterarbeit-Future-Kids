@@ -1,0 +1,235 @@
+
+\pagebreak
+
+# Anforderungsanalyse
+
+## Ausgangslage
+
+Future Kids ist ein gemeinnütziges Projekt, welches Primarschüler und -schülerinnen fördert, die bei der Bearbeitung ihrer schulischen Aufgaben zu Hause nur wenig Unterstützung erhalten. Future Kids stellt dabei jedem Kind einen Mentor oder eine Mentorin zur Seite, welches einmal pro Woche das Kind zu Hause unterstützt. In Freiwilligenarbeit wird eine Plattform für die Administrative Unterstützung von Future Kids entwickelt.
+
+Die Plattform zum Projekt, welches Administratoren und Mentoren bei der Planung und Durchführung ihrer Aufgaben unterstützt wird unter anderem für das Planen und Zuweisen der Einsatzzeiten eingesetzt. Dies erfordert aber viel manuelle, aufwendige Arbeitsschritte.
+
+In Zusammenarbeit mit der Administration, welche die Plattform nutzt, soll die Zuweisung der Mentoren zu den Schülern vereinfacht werden um den Administrativen Aufwand zu reduzieren. Dazu soll das bestehende Modul, welches für diese Planung zuständig ist, neu konzipiert werden.
+
+## Stakeholder-Analyse
+
+### AOZ
+
+Die AOZ ist eine Non-Profit-Organisation, "welche Asylsuchende und Flüchtlinge im Rahmen der Sozialhilfe und Unterbringung" unterstütz. Sie bietet Deutschkurse und weitere Hilfsmittel an um Personen in den Arbeitsmarkt und in die Gesellschaft zu integrieren. Sie ist eine selbständige Anstalt der Stadt Zürich.[^fnAOZ]
+
+Die AOZ hat im Jahr 2010 das Projekt Future Kids ins Leben gerufen und ist Auftraggeberin der Arbeit.
+
+[^fnAOZ]:	Siehe Quellen [@aozstartseite;@aboutaoz]
+
+### Pädagogischen Hochschule Thurgau (PHTG)
+
+Die Pädagogischen Hochschule Thurgau hat die Plattform lizenziert und wird sie Mitte des Jahres 2015 einführen. Die PHTG kann die geplanten Erweiterungen ebenfalls übernehmen, sie wird aber in der Anforderungsanalyse dieser Arbeit aus organisatorischen Gründen nicht berücksichtigt.
+
+### Administration der AOZ
+
+Mitarbeiter der Administration der AOZ benutzen die Plattform für folgende Aktivitäten
+
+- Erfassen und bearbeiten von Schülerprofilen
+- Erfassen und bearbeiten von Mentoren
+- Planung der Einsatzzeiten von Mentoren
+- Zuweisung von Ersatzmentoren im Verhinderungsfall
+- Kontrolle des Fortschrittes der Schüler (?)
+
+Frau Beren Tuna ist Mitarbeiterin von AOZ und administriert die Future Kids Plattform. Sie ist die primäre Ansprechsperson, nimmt die User-Stories ab (siehe Kapitel \ref{userstories}) und vertritt die Administration der Future Kids Plattform.
+
+
+
+
+
+### Mentoren\label{secMentoren}
+
+Mentoren sind Studierende verschiedener Fachrichtungen und unterstützen die Schulkinder im "Future Kids"-Proramm zu Hause bei ihren schulischen Aufgaben.
+
+Sie werden für ihren Einsatz finanziell oder insbesondere durch Erhalten von ECTS-Punkten [^fnECTS] vergütet.
+
+
+[^fnECTS]: 	European Credit Transfer System, siehe [@ectsWiki]
+
+
+Mentoren nutzen die Plattform zum Erfassung von Protokollen, die sie nach jedem Hausbesuch erstellen.
+
+### Schüler
+
+Schüler im "Future-Kids"-Projekt erhalten einmal pro Woche Unterstützung durch die Mentoren. Sie benutzen die Plattform nicht selbst, haben aber ein Profil auf der "Future Kids"-Plattform.
+
+### Lehrpersonen
+
+Die Lehrpersonen der zu unterstützenden Schüler benutzen aktuell die Plattform nicht, in Zukunft sollen sie aber den Fortschritt der Schüler direkt auf der Plattform überprüfen können.
+
+
+## User Stories \label{userstories}
+
+Die Anforderungen werden ...
+
+
+<% include 'story.macro.ect',
+	number: "001"
+	title: "Als Administrator möchte ich die verfügbaren Zeitfenster eines Mentors erfassen"
+	description: "Jeder Mentor gibt die Zeitfenster an, an welchen er Schüler betreuen kann.  \linebreak Ein Zeitfenster hat einen Wochentag, sowie eine Start- und Endzeit.  \linebreak Diese Zeitfenster sollen auf dem System erfasst werden können."
+	priority: "normal"
+	accCriteria: [
+ 		"Erfassbare Zeitfenster: von 13:00 bis 19:30"
+ 		"Es können beliebig viele Zeitfenster erfasst werden"
+ 		"Erfassbare Tage: Montag - Freitag"
+ 		"Erfasste Zeitfenster können nicht kürzer als 2h sein."
+ 		"Erfasste Zeitfenster können sich nicht überlappen."
+ 		"Auswahl kann persistiert werden."
+ 	]
+%>
+
+<% include 'story.macro.ect',
+	number: "002"
+	title: "Als Administrator möchte ich die Zeitfenster eines Mentors sehen"
+	description: "Es kann eingesehen werden, wann ein Mentor verfügbar ist."
+	priority: "normal"
+	accCriteria: [
+ 		"Es werden alle erfassten Zeitfenster angezeigt"
+ 		
+ 	]
+%>
+
+<% include 'story.macro.ect',
+	number: "003"
+	title: "Als Administrator möchte ich die Zeitfenster eines Schülers erfassen"
+	description: "Jeder Schüler gibt an, an innerhalb welcher Zeitfenster er oder sie verfügbar ist. Ein Zeitfenster ist analog zur Story \\ref{sc-001} definiert. Ein Administrator soll diese Zeitfenster für einen Schüler speichern können."
+	priority: "normal"
+	accCriteria: [
+ 		"Analog Story \\ref{sc-001}"
+ 	]
+%>
+
+<% include 'story.macro.ect',
+	number: "004"
+	title: "Als Administrator möchte ich die Zeitfenster eines Schülers sehen"
+	description: "Analog zu \\ref{sc-002} sollen die Zeitfenster eines Schülers eingesehen weren."
+	priority: "normal"
+	accCriteria: [
+ 		"Analog Story \\ref{sc-002}"
+ 	]
+%>
+
+
+<% include 'story.macro.ect',
+	number: "005"
+	title: "Als Administrator möchte ich einem Schüler einen primären Mentor zuweisen können"
+	description: "Ein Administrator soll einen Mentor aus der Liste der verfügbaren Mentoren auswählen können und einem Schüler zuweisen können"
+	priority: "normal"
+	accCriteria: [
+ 		"User kann aus verschiedenen Mentoren auswählen"
+ 		"User kann einen davon selektieren"
+ 		"Der selektierte Mentor kann persistiert werden"
+ 		"Der selektierte Mentor erscheint auf dem Schüler Profil als zugewiesener Mentor"
+ 	]
+%>
+
+<% include 'story.macro.ect',
+	number: "006"
+	title: "Als Administrator möchte ich einem Schüler einen Ersatzmentor zuweisen können, welcher im Ersatzfall den Schüler betreut"
+	description: "Im Ersatzfall wird der Mentor von einem anderen vertreten. Dieser Ersatzmentor kann einem Schüler zugewiesen werden"
+	priority: "normal"
+	accCriteria: [
+ 		"User kann aus verschiedenen Mentoren auswählen"
+ 		"User kann einen davon selektieren"
+ 		"Der selektierte Mentor kann persistiert werden"
+ 		"Der selektierte Mentor erscheint auf dem Schüler Profil als zugewiesener Ersatzmentor"
+ 	]
+%>
+
+<% include 'story.macro.ect',
+	number: "007"
+	title: "Als Administrator möchte ich bei einem Schüler vermerken, dass der Ersatzmentor aktiv ist"
+	description: "Tritt der Ersatzfall ein, so soll bei dem Schüler vermerkt werden können, dass der Ersatzmentor aktiv ist."
+	priority: "normal"
+	accCriteria: [
+ 		"User kann den zugewiesen Ersatzmentor als aktiv markieren"
+ 		"Auswahl wird persistiert"
+ 	]
+%>
+
+<% include 'story.macro.ect',
+	number: "008"
+	title: "Als Administrator möchte ich für einen Schüler nach Mentoren mit überschneidenden Zeitfenstern suchen können"
+	description: "Für die Wahl eines Mentors kommen primär nur die in Frage, welche mit dem Schüler ein genügend grosses, sich überschneidendes Zeitfenster haben."
+	priority: "normal"
+	accCriteria: [
+ 		"Es werden Mentoren gefunden, welche min 2h Überschneidung mit dem Schüler haben"
+ 	]
+%>
+
+<% include 'story.macro.ect',
+	number: "009"
+	title: "Als Administrator möchte ich für einen Schüler nach Mentoren mit nicht ganz überschneidenden Zeitfenstern suchen können"
+	description: "Manchmal ist es sinnvoll, auch Mentoren zu finden, welche nur 1.5h Überschneidung mit dem Schüler haben, aber beispielsweise wegen anderen Kriterien für den Schüler passend wären. In diesem Falle würde der Administrator bei dem Mentor rückfragen."
+	priority: "normal"
+	accCriteria: [
+ 		"Es werden Mentoren gefunden, welche min 1.5h Überschneidung mit dem Schüler haben"
+ 	]
+%>
+
+
+<% include 'story.macro.ect',
+	number: "010"
+	title: "Als Administrator möchte ich für einen Schüler nach Mentoren mit passendem Geschlecht suchen können."
+	description: "Für manche Schüler wird ein Mentor eines bestimmten Geschlechts bevorzugt. Es soll daher möglich sein, nach diesem Kriterium Mentoren zu finden."
+	priority: "normal"
+	accCriteria: [
+ 		"Es können nach weiblichen oder männlichen Mentoren gesucht werden"
+ 		"Wenn kein Geschlecht ausgewählt ist, werden alle Mentoren gefunden."
+ 	]
+%>
+
+
+<% include 'story.macro.ect',
+	number: "011"
+	title: "Als Administrator möchte ich für einen Schüler nach Mentoren suchen können, welche mittels ECTS-Punkten vergütet werden."
+	description: "Wie in \\ref{secMentoren} beschrieben, werden Mentoren durch Erhalt von ECTS-Punkten für ihren Einsatz vergütet. Dies ist ein Kriterium, dass bei der Auswahl eines Mentor eine Rolle spielen kann."
+	priority: "normal"
+	accCriteria: [
+ 		"Wenn ECTS ausgewählt ist, werden nur Mentoren mit ECTS-Vergütung gefunden"
+ 		"Wenn Finanziell ausgewählt ist, werden nur Mentoren gefunden, die finanziell vergütet werden."
+ 		"Wenn nichts davon ausgewählt ist, werden alle Mentoren gefunden."
+ 	]
+%>
+
+
+<% include 'story.macro.ect',
+	number: "012"
+	title: "Als Administrator möchte ich für einen Schüler nach Mentoren suchen können, welche an einer bestimmten Schule eingesetzt werden."
+	description: "Der Einsatzort eines Mentors ist für die Wahl eines Mentoren ebenfalls von Bedeutung."
+	priority: "normal"
+	accCriteria: [
+ 		"Ich kann nach Mentoren suchen, die an einer bestimmten Schule eingesetzt werden"
+ 		"Werden mehrere Einsatzorte angewählt, werden Mentoren aller Einsatzorte angezeigt"
+ 		"Wenn kein Einsatzort ausgewählt wird, werden alle Mentoren gefunden."
+ 	]
+%>
+
+% include 'story.macro.ect',
+	number: "013"
+	title: "Als Administrator möchte ich für einen Schüler nach Mentoren suchen können, welche als Ersatzmentoren markiert sind."
+	description: "Manche Mentoren möchten nur im Vertretungsfall aktiv werden und sind daher explizit als Ersatzmentoren markiert. Nach diesen Mentoren soll gesucht werden können."
+	priority: "normal"
+	accCriteria: [
+ 		"Es können Mentoren gefunden werden, welche als Ersatzmentoren markiert sind."
+ 		"Es können Mentoren gefunden werden, die nicht als Ersatzmentoren markiert sind"
+ 	]
+%>
+
+
+% include 'story.macro.ect',
+	number: "014"
+	title: " Als Administrator möchte ich Mentoren nach Name suchen können."
+	description: "Manche Mentoren möchten nur im Vertretungsfall aktiv werden und sind daher explizit als Ersatzmentoren markiert. Nach diesen Mentoren soll gesucht werden können."
+	priority: "normal"
+	accCriteria: [
+ 		"Es können Mentoren gefunden werden, welche als Ersatzmentoren markiert sind."
+ 		"Es können Mentoren gefunden werden, die nicht als Ersatzmentoren markiert sind"
+ 	]
+%>
+
+
