@@ -1,0 +1,66 @@
+\pagebreak
+
+# Recherche ?
+
+\pagebreak
+
+# Konzept
+
+## Probleme der bestehenden Lösung
+
+### Doppelbelegung des Stundenplans
+
+Der Bildschirm "Stundenplan" eines Schülers erfüllt zwei Zwecke: Er dient einerseits
+dazu, die Zeitfenster eines Schülers zu bearbeiten, anderseits dazu, die Zeitfenster von Schüler und Mentoren zu vergleichen um einen passenden Mentoren zu finden. Diese Doppelnutzung irritiert und kann zu Fehlmanipulation führen.
+
+** Lösung **: 
+
+Bearbeitung der Zeitfenster eines Schülers soll von der Einsatzplanung des Mentors getrennt werden (visuell und funktional). Eine Möglichkeit wäre, das Bearbeiten der Zeitfenster des Schülers erst nach Aktivieren einer Schaltfläche ("Schüler-Zeitfenster bearbeiten") zu ermöglichen. Damit ist klarer, welche Aktion gerade ausgeführt wird.
+
+### Irritierende Bedienelemente
+
+Wie auf Abbildung \ref{screenshot_kid_timetable} zu sehen, befinden sich links vom Stundenplan die Schaltflächen. "Auswahl bestätigen" und "Stundenplandaten speichern", letztere wird unterhalb des Stundenplan nochmals wiederholt und speichert die angewählten Zeitfenster (Checkbox). "Auswahl bestätigen" hat hier noch keine Funktion, die Bedeutung von "Auswahl bestätigen" zeigt sich erst, wenn man auf "Mentorauswahl" klickt (Abbildung \ref{screenshot_kid_timetable_mentors}) und dient dazu, hier die gewählten Mentoren für den Vergleich zu speichern; sie erscheinen danach im Stundenplan des Schülers.
+
+** Lösung **: 
+
+- Doppelte und inaktive Schaltflächen entfernen
+- Bedienelemente klar beschriften.
+
+
+### Unübersichtlich bei vielen Mentoren
+
+Werden viele Mentoren für den Vergleich angewählt, erscheinen alle innerhalb des Stundenplans des Schülers, wie auf Abbildung \ref{screenshot_kid_compare_mentors} zu sehen. Der Stundenplan wird dadurch verzogen, was durch lange Namen noch verstärkt wird. Weiterhin ist nicht auf den ersten Blick zu sehen, welche der ausgewählten Mentoren überhaupt in Frage kommen, da nicht berücksichtigt wird, ob und wie lange die Zeitfenster überlappen.
+
+** Lösung **:
+
+- Mentorennamen kürzen und kleiner darstellen
+- Mit Farben oder Symbolen arbeiten pro Mentor
+- Mentoren, welche nicht in Frage kommen, ausblenden oder anders darstellen.
+
+
+![Werden viele Mentoren für den Vergleich ausgewählt, leidet die Übersicht (Bestehende Lösung)\label{screenshot_kid_compare_mentors}](img/screenshot_kid_compare_mentors.png)
+
+
+### Zu viele Klicks
+
+Hat ein Administrator einen passenden Mentoren und einen passenden Termin gefunden, so können diese nicht direkt dem Schüler zugewiesen werden. Es muss zuerst auf das Schülerprofil gewechselt werden und wie in Abbildung \ref{screenshot_kid_bottom} zu sehen zugewiesen werden. Dies erfordert zu viele Klicks (TODO: anzahl) und es ist nötig, sich den Mentoren und den Termin zu merken
+
+** Lösung **:
+
+Es soll direkt aus der Stundenplanung heraus ein Mentor ausgewählt und dem Schüler zugewiesen werden können.
+
+
+
+### Fehlende Filtermöglichkeiten
+
+Die Liste der zur Auswahl stehenden Mentoren kann nicht nach bestimmten Kriterien wie Geschlecht oder Einsatzort gefiltert werden. Die Mentoren werden lediglich danach gruppiert, ob sie bereits einem oder zwei Schüler zugewiesen sind und ob sie als Ersatzmentor eingetragen sind. Dadurch ist es für einen Administrator nötig, zusätzliche Informationen zu einem Mentoren zu kennen oder auf der Profilseite des Mentors nachzuschlagen.
+
+** Lösung **:
+
+Gemäss Anforderung im Abschnitt \ref{userstories} sollen Mentoren nach bestimmten Kriterien, wie Geschlecht, Name und Einsatzort ausgewählt werden können. Diese Kriterien können als Filter implementiert werden, welche passende Mentoren einblendet oder unpassende ausblendet.
+
+
+
+
+
+

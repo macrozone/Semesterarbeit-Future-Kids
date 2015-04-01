@@ -1,7 +1,0 @@
-\pagebreak
-
-# Recherche
-
-\pagebreak
-
-# Konzept
