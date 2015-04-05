@@ -60,24 +60,16 @@ Die Lehrpersonen der zu unterstützenden Schüler benutzen aktuell die Plattform
 
 Um die funktionalen Anforderungen einzuholen wurde zusammen mit der Auftraggeberin User-Stories erarbeitet und priorisiert.
 
-Diese Stories werden in der Umsetzungsphase anhand ihrer Prioritäten umgesetzt.
+Diese Stories werden in der Umsetzungsphase anhand ihrer Prioritäten umgesetzt. Stories und Prioritäten wurden mit dem Kunden in einem Workshop ausgearbeitet. Die Werte für die Prioritäten sind *MUST*, *SHOULD* und *MAY* gemäss rfc2119 [^fnrfc2119].
 
-Legende der Prioritäten:
+[^fnrfc2119]: http://tools.ietf.org/search/rfc2119
 
-normal
-:	Normale Priorität
-
-hoch
-:	Diese User-Story muss erfüllt werden und sollte wegen ihrer Wichtigkeit frühzeitig bearbeitet werden
-
-niedrig
-:	Diese Stories sind für die Abnahme sekundär
 
 <% include 'story.macro.ect',
 	number: "001"
 	title: "Als Administrator möchte ich die verfügbaren Zeitfenster eines Mentors erfassen"
-	description: "Jeder Mentor gibt die Zeitfenster an, an welchen er Schüler betreuen kann.  \linebreak Ein Zeitfenster hat einen Wochentag, sowie eine Start- und Endzeit.  \linebreak Diese Zeitfenster sollen auf dem System erfasst werden können."
-	priority: "hoch"
+	description: "Jeder Mentor gibt die Zeitfenster an, an welchen er Schüler betreuen kann. \linebreak Ein Zeitfenster hat einen Wochentag, sowie eine Start- und Endzeit. \linebreak Diese Zeitfenster sollen auf dem System erfasst werden können."
+	priority: "MUST"
 	accCriteria: [
  		"Erfassbare Zeitfenster: von 13:00 bis 19:30"
  		"Es können beliebig viele Zeitfenster erfasst werden"
@@ -92,7 +84,7 @@ niedrig
 	number: "002"
 	title: "Als Administrator möchte ich die Zeitfenster eines Mentors sehen"
 	description: "Es kann eingesehen werden, wann ein Mentor verfügbar ist."
-	priority: "hoch"
+	priority: "MUST"
 	accCriteria: [
  		"Es werden alle erfassten Zeitfenster angezeigt"
  		
@@ -103,7 +95,7 @@ niedrig
 	number: "003"
 	title: "Als Administrator möchte ich die Zeitfenster eines Schülers erfassen"
 	description: "Jeder Schüler gibt an, an innerhalb welcher Zeitfenster er oder sie verfügbar ist. Ein Zeitfenster ist analog zur Story \\ref{sc-001} definiert. Ein Administrator soll diese Zeitfenster für einen Schüler speichern können."
-	priority: "hoch"
+	priority: "MUST"
 	accCriteria: [
  		"Analog Story \\ref{sc-001}"
  	]
@@ -113,7 +105,7 @@ niedrig
 	number: "004"
 	title: "Als Administrator möchte ich die Zeitfenster eines Schülers sehen"
 	description: "Analog zu \\ref{sc-002} sollen die Zeitfenster eines Schülers eingesehen weren."
-	priority: "normal"
+	priority: "SHOULD"
 	accCriteria: [
  		"Analog Story \\ref{sc-002}"
  	]
@@ -124,7 +116,7 @@ niedrig
 	number: "005"
 	title: "Als Administrator möchte ich einem Schüler einen primären Mentor zuweisen können"
 	description: "Ein Administrator soll einen Mentor aus der Liste der verfügbaren Mentoren auswählen können und einem Schüler zuweisen können"
-	priority: "hoch"
+	priority: "MUST"
 	accCriteria: [
  		"User kann aus verschiedenen Mentoren auswählen"
  		"User kann einen davon selektieren"
@@ -137,7 +129,7 @@ niedrig
 	number: "006"
 	title: "Als Administrator möchte ich einem Schüler einen Ersatzmentor zuweisen können, welcher im Ersatzfall den Schüler betreut"
 	description: "Im Ersatzfall wird der Mentor von einem anderen vertreten. Dieser Ersatzmentor kann einem Schüler zugewiesen werden"
-	priority: "normal"
+	priority: "SHOULD"
 	accCriteria: [
  		"User kann aus verschiedenen Mentoren auswählen"
  		"User kann einen davon selektieren"
@@ -150,7 +142,7 @@ niedrig
 	number: "007"
 	title: "Als Administrator möchte ich bei einem Schüler vermerken, dass der Ersatzmentor aktiv ist"
 	description: "Tritt der Ersatzfall ein, so soll bei dem Schüler vermerkt werden können, dass der Ersatzmentor aktiv ist."
-	priority: "niedrig"
+	priority: "MAY"
 	accCriteria: [
  		"User kann den zugewiesen Ersatzmentor als aktiv markieren"
  		"Auswahl wird persistiert"
@@ -161,7 +153,7 @@ niedrig
 	number: "008"
 	title: "Als Administrator möchte ich für einen Schüler nach Mentoren mit überschneidenden Zeitfenstern suchen können"
 	description: "Für die Wahl eines Mentors kommen primär nur die in Frage, welche mit dem Schüler ein genügend grosses, sich überschneidendes Zeitfenster haben."
-	priority: "birnak"
+	priority: "SHOULD"
 	accCriteria: [
  		"Es werden Mentoren gefunden, welche min 2h Überschneidung mit dem Schüler haben"
  	]
@@ -171,7 +163,7 @@ niedrig
 	number: "009"
 	title: "Als Administrator möchte ich für einen Schüler nach Mentoren mit nicht ganz überschneidenden Zeitfenstern suchen können"
 	description: "Manchmal ist es sinnvoll, auch Mentoren zu finden, welche nur 1.5h Überschneidung mit dem Schüler haben, aber beispielsweise wegen anderen Kriterien für den Schüler passend wären. In diesem Falle würde der Administrator bei dem Mentor rückfragen."
-	priority: "niedrig"
+	priority: "MAY"
 	accCriteria: [
  		"Es werden Mentoren gefunden, welche min 1.5h Überschneidung mit dem Schüler haben"
  	]
@@ -182,7 +174,7 @@ niedrig
 	number: "010"
 	title: "Als Administrator möchte ich für einen Schüler nach Mentoren mit passendem Geschlecht suchen können."
 	description: "Für manche Schüler wird ein Mentor eines bestimmten Geschlechts bevorzugt. Es soll daher möglich sein, nach diesem Kriterium Mentoren zu finden."
-	priority: "niedrig"
+	priority: "MAY"
 	accCriteria: [
  		"Es können nach weiblichen oder männlichen Mentoren gesucht werden"
  		"Wenn kein Geschlecht ausgewählt ist, werden alle Mentoren gefunden."
@@ -194,7 +186,7 @@ niedrig
 	number: "011"
 	title: "Als Administrator möchte ich für einen Schüler nach Mentoren suchen können, welche mittels ECTS-Punkten vergütet werden."
 	description: "Wie in \\ref{secMentoren} beschrieben, werden Mentoren durch Erhalt von ECTS-Punkten für ihren Einsatz vergütet. Dies ist ein Kriterium, dass bei der Auswahl eines Mentor eine Rolle spielen kann."
-	priority: "niedrig"
+	priority: "MAY"
 	accCriteria: [
  		"Wenn ECTS ausgewählt ist, werden nur Mentoren mit ECTS-Vergütung gefunden"
  		"Wenn Finanziell ausgewählt ist, werden nur Mentoren gefunden, die finanziell vergütet werden."
@@ -207,7 +199,7 @@ niedrig
 	number: "012"
 	title: "Als Administrator möchte ich für einen Schüler nach Mentoren suchen können, welche an einer bestimmten Schule eingesetzt werden."
 	description: "Der Einsatzort eines Mentors ist für die Wahl eines Mentoren ebenfalls von Bedeutung."
-	priority: "normal"
+	priority: "SHOULD"
 	accCriteria: [
  		"Ich kann nach Mentoren suchen, die an einer bestimmten Schule eingesetzt werden"
  		"Werden mehrere Einsatzorte angewählt, werden Mentoren aller Einsatzorte angezeigt"
@@ -219,7 +211,7 @@ niedrig
 	number: "013"
 	title: "Als Administrator möchte ich für einen Schüler nach Mentoren suchen können, welche als Ersatzmentoren markiert sind."
 	description: "Manche Mentoren möchten nur im Vertretungsfall aktiv werden und sind daher explizit als Ersatzmentoren markiert. Nach diesen Mentoren soll gesucht werden können."
-	priority: "niedrig"
+	priority: "MAY"
 	accCriteria: [
  		"Es können Mentoren gefunden werden, welche als Ersatzmentoren markiert sind."
  		"Es können Mentoren gefunden werden, die nicht als Ersatzmentoren markiert sind"
@@ -231,7 +223,7 @@ niedrig
 	number: "014"
 	title: "Als Administrator möchte ich Mentoren nach Name suchen können."
 	description: "Die Administration möchte auch Mentoren nach ihrem Vor- und Nachnamen suchen können."
-	priority: "normal"
+	priority: "SHOULD"
 	accCriteria: [
  		"Bei Eingabe eines Namens sollen Mentoren mit passendem Vor- oder Nachnamen gefunden werden"
  		"Es sollen auch Mentoren gefunden werden, welche das Suchwort im Namen enthalten"
@@ -245,7 +237,7 @@ niedrig
 	number: "015"
 	title: "Als Administrator möchte ich den Zeitpunkt und den Wochentag des Treffens eines Mentors mit dem Schüler erfassen."
 	description: "Neben der Wahl eines Mentors (\ref{sc-005}) soll auch angegeben werden können, wann ein Mentor einen Schüler betreut."
-	priority: "normal"
+	priority: "SHOULD"
 	accCriteria: [
  		"Bei der Wahl eines Mentors kann ein Wochentag und ein Zeitpunkt ausgewählt werden"
  		"Wochentag und Zeitpunkt werden persistiert"
@@ -256,7 +248,7 @@ niedrig
 	number: "020"
 	title: "Als Administrator möchte ich sehen, zu welchem Zeitpunkt ein Mentor einen Schüler betreut"
 	description: "(TODO)"
-	priority: "normal"
+	priority: "SHOULD"
 	accCriteria: [
  		"(TODO)"
  	]
@@ -267,19 +259,32 @@ niedrig
 
 Wie in Abschnitt \ref{secphaseanalyse} erläutert  werden die Nicht-Funktionalen Anforderungen als "Definition of Done" erfasst.
 
-Zu jeder Story müssen folgende Anforderungen erfüllt sein (Definition of done):
+Zu jeder Story müssen folgende Anforderungen erfüllt sein (Definition of done): TODO: Tabelle
 
-- Funktionalität wurde implementiert
-- Funktionalität wurde getested (Akzeptanztests)
-- Funktionalität wurde auf eine Testumgebung geladen und die Integration überprüft
-- Umsetzung der Funktionalität ist eine Verbesserung gegenüber der bestehende Lösung und benötigt eine geringere Anzahl Klicks für die Benutzung
-- Funktionalität und Projekt kann unter einer Open Source Lizenz veröffentlicht werden und Umsetzung beachtet Lizenzen verwendeter Dritt-Software
-- Funktionalität wurde auf unterstützten Browsern überprüft (Firefox aktuell, Chrome aktuell, IE ab 9)
-- Gestaltung der Funktionalität entspricht der Corporate-ID von AOZ
-- Funktionalität und Deployment ist dokumentiert
+----
+Definition of Done
+----
+
+Funktionalität wurde implementiert
+----
+Funktionalität wurde getested (Akzeptanztests)
+----
+Funktionalität wurde auf eine Testumgebung geladen und die Integration überprüft
+----
+Umsetzung der Funktionalität ist eine Verbesserung gegenüber der bestehende Lösung und benötigt eine geringere Anzahl Klicks für die Benutzung
+
+Funktionalität und Projekt kann unter einer Open Source Lizenz veröffentlicht werden und Umsetzung beachtet Lizenzen verwendeter Dritt-Software
+
+Funktionalität wurde auf unterstützten Browsern überprüft (Firefox aktuell, Chrome aktuell, IE ab 9)
+----
+Gestaltung der Funktionalität entspricht der Corporate-ID von AOZ
+----
+Funktionalität und Deployment ist dokumentiert
+----
 
 ### Weitere Nicht-funktionale Anforderungen
 
+- Fertig bis Juni
 
 
 

@@ -17,14 +17,17 @@ pandoc = Pandoc.spawn ["-o", "out.pdf"]
 
 files = [
 	"metadata.yaml"
-	"00_Vorwort.md"
-	"01_Einleitung.md"
-	"02_Anforderungsanalyse.md.ect"
-	"03_Konzept.md"
-	"04_Umsetzung.md"
-	"05_Testing.md"
-	"06_Ausblick.md"
-	"10_Anhang.md"
+	"010_Vorwort.md"
+	"020_Einleitung.md"
+	"030_Anforderungsanalyse.ect"
+	"040_Ist_Analyse.md"
+	"042_Ist_Probleme.ect"
+	"045_Konzept.md"
+
+	"050_Umsetzung.md"
+	"060_Testing.md"
+	"070_Ausblick.md"
+	"100_Anhang.md"
 ]
 pandoc.stderr.on "data", (data) ->
 	console.error data.toString "utf-8"

@@ -8,11 +8,9 @@
 
 Administratoren können neue Mentoren erfassen und bestehende bearbeiten. Abbildung \ref{screenshot_mentor_current} zeigt die Profilseite eines Mentors. Es ist anzumerken, dass das Geschlecht eines Mentors nicht zugewiesen werden kann. Diese Funktion muss ergänzt werden um \ref{sc-010} zu erfüllen. Auch die Model-Klasse des Mentors oder der abgeleiteten `User`-Klasse enthält kein passendes Feld.
 
+Unter "Stundenplan bearbeiten" können die Zeitfenster bearbeitet werden, an denen ein Mentor verfügbar ist. Abbildung \ref{screenshot_mentor_time_current} zeigt, wie die Zeitfenster eingestellt werden können. Die Zeitfenster können in 30min Intervallen erfasst werden, von 13:00 bis 19:30, jeweils Montags bis Freitags. Es können beliebige Zeitfenster und -Kombinationen angeklickt werden. Dies erfüllt bereits \ref{sc-001} und \ref{sc-002} teilweise.
 
-
-Unter "Stundenplan bearbeiten" können die Zeitfenster bearbeitet werden, an denen ein Mentor verfügbar ist. Abbildung \ref{screenshot_mentor_time_current} zeigt, wie die Zeitfenster eingestellt werden können. Die Zeitfenster können in 30min Intervallen erfasst werden, von 13:00 bis 19:30, jeweils Montags bis Freitags. Es können beliebige Zeitfenster und -Kombinationen angeklickt werden.
-
-Listing \ref{lstMentorRb} zeigt die Beziehungen einer Mentor-Entität. Zu sehen ist, dass einem Mentor vom Datenmodel mehrere Schüler zugewiesen werden können.
+Listing \ref{lstMentorRb} zeigt die Beziehungen einer Mentor-Entität. Zu sehen ist, dass im Datenmodell einem Mentor mehrere Schüler zugewiesen werden können.
 
 ![Bearbeitung eines Mentors (Bestehende Lösung)\label{screenshot_mentor_current}](img/screenshot_mentor_current.png)
 
@@ -42,7 +40,7 @@ class Mentor < User
 
 ### Schüler
 
-Schüler können ähnlich wie Mentoren bearbeitet werden. Abbildungungen \ref{screenshot_kid_top} und \ref{screenshot_kid_bottom} zeigt die Profilseite eines Schülers. Im Gegensatz zu einem Mentoren kann ein Geschlecht zugewiesen werden.
+Schüler können ähnlich wie Mentoren bearbeitet werden. Abbildungungen \ref{screenshot_kid_top} und \ref{screenshot_kid_bottom} zeigt die Profilseite eines Schülers. Im Gegensatz zu einem Mentoren kann ein Geschlecht zugewiesen werden. 
 
 
 ![Schüler Profil-Seite (Bestehende Lösung)\label{screenshot_kid_top}](img/screenshot_mentor_time_current.png)
@@ -51,15 +49,47 @@ Im unterem Teil des Bildschirms können die zugewiesenen Lehrer und Mentoren ang
 
 ![Schüler Profil-Seite - Beziehungen (Bestehende Lösung)\label{screenshot_kid_bottom}](img/screenshot_mentor_time_current.png)
 
-Editiert man einen Schüler unter "Bearbeiten" können unter anderem Mentoren zugewiesen werden, sowie Wochentag und Zeitpunkt des Treffens des Mentoren mit dem Schüler. (Abbildung \ref{screenshot_kid_assign_mentor}).
+Editiert man einen Schüler unter "Bearbeiten" können unter anderem Mentoren zugewiesen werden, sowie Wochentag und Zeitpunkt des Treffens des Mentoren mit dem Schüler. (Abbildung \ref{screenshot_kid_assign_mentor}, Story \ref{sc-005}). 
 
-![Zuweisen eines Mentoren zu einem Schüler (Bestehende Lösung)\label{screenshot_kid_bottom}](img/screenshot_kid_assign_mentor.png)
+![Zuweisen eines Mentoren zu einem Schüler (Bestehende Lösung)\label{screenshot_kid_assign_mentor}](img/screenshot_kid_assign_mentor.png)
 
-Unter "Stundenplan bearbeiten" lassen sich analog zum Mentor die Zeitfenster eines Schülers einstellen (Abbildung \ref{screenshot_kid_timetable}). Dieser Bildschirm hat zudem eine weitere Funktion: Es können Mentoren ausgewählt werden, deren Zeitfenster mit denen des Schülers verglichen werden können. Eine direkte Wahl und Zuweisung eines Mentors aus diesem Bildschirm heraus ist nicht möglich.
+Unter "Stundenplan bearbeiten" lassen sich analog zum Mentor die Zeitfenster eines Schülers einstellen (Abbildung \ref{screenshot_kid_timetable}). Dies erfüllt \ref{sc-003} und \ref{sc-004} teilweise. Dieser Bildschirm hat zudem eine weitere Funktion: Es können Mentoren ausgewählt werden, deren Zeitfenster mit denen des Schülers verglichen werden können. Eine direkte Wahl und Zuweisung eines Mentors aus diesem Bildschirm heraus ist nicht möglich.
 
 
 ![Bearbeitung des Stundenplans eines Schülers (Bestehende Lösung)\label{screenshot_kid_timetable}](img/screenshot_kid_timetable.png)
 
 ![Hier können Mentoren ausgewählt werden, deren Zeitfenster mit einem Schüler verglichen werden (Bestehende Lösung)\label{screenshot_kid_timetable_mentors}](img/screenshot_kid_timetable_mentors.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
