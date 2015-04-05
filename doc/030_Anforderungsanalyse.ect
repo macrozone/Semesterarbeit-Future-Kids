@@ -44,7 +44,6 @@ Sie werden für ihren Einsatz finanziell oder insbesondere durch Erhalten von EC
 
 [^fnECTS]: 	European Credit Transfer System, siehe [@ectsWiki]
 
-
 Mentoren nutzen die Plattform zum Erfassung von Protokollen, die sie nach jedem Hausbesuch erstellen.
 
 ### Schüler
@@ -259,27 +258,37 @@ Diese Stories werden in der Umsetzungsphase anhand ihrer Prioritäten umgesetzt.
 
 Wie in Abschnitt \ref{secphaseanalyse} erläutert  werden die Nicht-Funktionalen Anforderungen als "Definition of Done" erfasst.
 
-Zu jeder Story müssen folgende Anforderungen erfüllt sein (Definition of done): TODO: Tabelle
+Zu jeder Story müssen folgende Anforderungen erfüllt sein (Definition of done): 
 
----------------------------------------------------------
-Definition of Done
+\begin{center}
+\begin{tabular}{|lp{12cm}|}
+\hline
 
-Funktionalität wurde implementiert
+\textbf{Definition of Done} \\
+\hline
 
-Funktionalität wurde getested (Akzeptanztests)
+<% dones = [
+	"Funktionalität wurde implementiert"
+	"Funktionalität wurde getested (Akzeptanztests)"
+	"Funktionalität wurde auf eine Testumgebung geladen und die Integration überprüft"
+	"Umsetzung der Funktionalität ist eine Verbesserung gegenüber der bestehende Lösung und benötigt eine geringere Anzahl Klicks für die Benutzung"
+	"Funktionalität und Projekt kann unter einer Open Source Lizenz veröffentlicht werden und Umsetzung beachtet Lizenzen verwendeter Dritt-Software"
+	"Funktionalität wurde auf unterstützten Browsern überprüft (Firefox aktuell, Chrome aktuell, IE ab 9)"
+	"Gestaltung der Funktionalität entspricht der Corporate-ID von AOZ"
+	"Funktionalität und Deployment ist dokumentiert"
+]
 
-Funktionalität wurde auf eine Testumgebung geladen und die Integration überprüft
+for done,i in dones :%>
+$\Box$ \textbf{\customlabel{dd-<%- i %>}{DD-<%- i %>}} & <%- done %> \\
+\hline
+<% end %>
 
-Umsetzung der Funktionalität ist eine Verbesserung gegenüber der bestehende Lösung und benötigt eine geringere Anzahl Klicks für die Benutzung
+\hline
+\end{tabular}
+\end{center}
 
-Funktionalität und Projekt kann unter einer Open Source Lizenz veröffentlicht werden und Umsetzung beachtet Lizenzen verwendeter Dritt-Software
 
-Funktionalität wurde auf unterstützten Browsern überprüft (Firefox aktuell, Chrome aktuell, IE ab 9)
 
-Gestaltung der Funktionalität entspricht der Corporate-ID von AOZ
-
-Funktionalität und Deployment ist dokumentiert
----------------------------------------------------------
 
 ### Weitere Nicht-funktionale Anforderungen
 
