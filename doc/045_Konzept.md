@@ -16,14 +16,16 @@ Um die Anforderungen zu erfüllen kommen zwei prinzipielle Varianten in Frage:
 
 ## Variante 2: Bestehende Lösung (manuelle Zuweisung) optimieren
 
-
+Die \ref{problemswithcurrentsolution}
 
 
 
 ## Entscheidung
 
+Beide Varianten erfüllen alle Stories und können alle Probleme von Abschnitt \ref{problemswithcurrentsolution} erfüllen. Nach Rücksprache mit dem Auftraggeber wurde Variante 2 gewählt.
+
 Häufig spielen bei der Wahl eines Mentors für einen bestimmen Schüler weitere Umstände 
-eine Rolle, die die Administratoren von AOZ berücksichtigen müssen. Diese Kriterien können persönliche Einschätzungen sein oder andere Kriterien, welche nicht auf der Plattform abgebildet werden. Manchmal werden auch Rückfragen mit Mentoren getätigt, wenn beispielsweise Zeitfenster nicht genau passen oder ein Ersatz gesucht werden muss. Daher wird vom Auftraggeber nach Rücksprache eine manuelle Zuweisung bevorzugt. 
+eine Rolle, die die Administratoren von AOZ berücksichtigen müssen. Diese Kriterien können persönliche Einschätzungen sein oder andere Kriterien, welche nicht auf der Plattform abgebildet werden. Manchmal werden auch Rückfragen mit Mentoren getätigt, wenn beispielsweise Zeitfenster nicht genau passen oder ein Ersatz gesucht werden muss. Daher wird vom Auftraggeber eine manuelle Zuweisung bevorzugt. 
 
 Die bestehende Lösung erfüllt teilweise bereits manche Anforderungen und soll daher gemäss Variante 2 optimiert werden. Die bestehende Lösung kann weiterhin immer noch um einen (teil-)automatiersten Prozess ergänzt werden.
 
