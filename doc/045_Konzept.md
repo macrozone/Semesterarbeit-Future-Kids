@@ -7,8 +7,30 @@
 # Konzept
 
 
+Um die Anforderungen zu erfüllen kommen zwei prinzipielle Varianten in Frage:
 
-## Grobkonzept
+## Variante 1: Automatisierte Zuweisung
+
+
+
+
+## Variante 2: Bestehende Lösung (manuelle Zuweisung) optimieren
+
+
+
+
+
+## Entscheidung
+
+Häufig spielen bei der Wahl eines Mentors für einen bestimmen Schüler weitere Umstände 
+eine Rolle, die die Administratoren von AOZ berücksichtigen müssen. Diese Kriterien können persönliche Einschätzungen sein oder andere Kriterien, welche nicht auf der Plattform abgebildet werden. Manchmal werden auch Rückfragen mit Mentoren getätigt, wenn beispielsweise Zeitfenster nicht genau passen oder ein Ersatz gesucht werden muss. Daher wird vom Auftraggeber nach Rücksprache eine manuelle Zuweisung bevorzugt. 
+
+Die bestehende Lösung erfüllt teilweise bereits manche Anforderungen und soll daher gemäss Variante 2 optimiert werden. Die bestehende Lösung kann weiterhin immer noch um einen (teil-)automatiersten Prozess ergänzt werden.
+
+
+## Feinkonzept: Bestehende Lösung (manuelle Zuweisung) optimieren
+
+
 
 ### Zeitfenster managment:
 
