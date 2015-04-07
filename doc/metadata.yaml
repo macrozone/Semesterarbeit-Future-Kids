@@ -30,6 +30,32 @@ references:
 	title: ECTS - Wikipedia
 	URL: http://de.wikipedia.org/wiki/European_Credit_Transfer_System
 	date: 2015-03-06
+
+- 	id: timetablegenetics
+	title: Masterthesis - Die Anwendung eines genetischen Algorithmus auf das Timetabling Problem einer Grundschule
+	author: Julia Lange
+	date: 2012-08-13
+	URL: http://www.math.uni-magdeburg.de/~lange/papers/masterthesis.pdf
+- 	id: timetablenpsidney
+	title: The Complexity of Timetable Construction Problems 
+	URL: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.84.222&rep=rep1&type=pdf
+	date: 2015-04-07
+-	id: timetablestackoverflowitc2007
+	date: 2015-04-07
+	title: International Timetabling Competition 2007
+	URL: http://stackoverflow.com/a/8578980/1463534
+-	id: optoplanner
+	title: JBoss Optoplanner
+	date: 2015-04-07
+	URL: http://www.optaplanner.org/
+-	id: unitimeconstraintsolver
+	date: 2015-04-07
+	title: unitime.org Constraint Solver Library (CPSolver 1.3)
+	URL: http://www.unitime.org/index.php?tab=1
+-	id: fet
+	date: 2015-04-07
+	title: FET - Free Timetabling Software
+	URL: http://lalescu.ro/liviu/fet/
 ---
 
 

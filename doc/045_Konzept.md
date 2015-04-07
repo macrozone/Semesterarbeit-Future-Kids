@@ -11,12 +11,40 @@ Um die Anforderungen zu erfüllen kommen zwei prinzipielle Varianten in Frage:
 
 ## Variante 1: Automatisierte Zuweisung
 
+Ausgehend von den verfügbaren Zeitfenster von Mentoren und Schüler liesse sich die Zuweisung von Mentoren zu Schülern automatisieren. 
 
+### Das Stundenplanproblem
+
+Prinzipiell handelt es sich beim Problem der Stundenplanerstellumg um ein NP-Vollständiges Problem [^fnTimetableNPComplete], lässt sich also bei grossen Eingabegrössen (z.b. viele Schüler und Lehrer) nicht effizient lösen. Da alle NP-Vollständigen Probleme "gleich schwer" im Sinne der Komplexitätstheorie sind, ist es also gleich schwer wie das "Problem des Handlungsreisenden" oder das "Rucksackproblem". Entsprechend kommen zur Lösung (oder vielfach auch nur Optimierung) des Problems ähnliche Verfahren zur Anwendung. 
+
+Unter anderem können genetische Algorithmen für die Stundenplanerstellung verwendet werden [^fnGeneticAlgorithm]. Bei der im Jahre 2007 durchgeführten "International Timetabling Competition 2007" gewannen jedoch Verfahren in der Art der "Lokalen Suche" [^timetablestackoverflowitc2007].
+
+In der Praxis müssen bei der Stundenplanerstellung viele Parameter und Randbedingungen beachtet werden, welche das Problem sehr komplex machen können. Im vorliegenden Fall sind beispielsweise neben den Zeitfenstern von Schüler und Mentor auch die Einsatzorte der Mentoren zu berücksichtigen.
+
+
+[^timetablestackoverflowitc2007]: Vgl. [@timetablestackoverflowitc2007]
+[^fnTimetableNPComplete]: Vgl. [@timetablegenetics, Abschnitt 3.2.2]. Je nach Rahmenbedingungen können Stundenplanprobleme auch in P liegen,  vgl. [@timetablenpsidney, Abschnitt 3]
+
+[^fnGeneticAlgorithm]: Siehe [@timetablegenetics, Abschnitt 4] 
+
+### Verfügbare Lösungen zur Stundenplanerfestellung
+
+**OptoPlanner** ist ein Werkzeug für Constraint-Satisfaction-Probleme (CSP, Bedingungserfüllungsproblememe) (Siehe [@optoplanner]) und kann prinzipiell auch für die Erstellung von Stundenplänen genutzt werden.
+
+**UniTime** ist ein Quelloffenes System für die Erstellung von Stundenplänen insbesondere für Universitäten und war unter den Finalisten des "International Timetabling Competition 2007" [^fnunitime].
+
+**FET - Free Timetabling Software** ist ein weiterer Quelloffenes Programm zur Stundenplanerstellung von Schulen und Universitäten [^fnFet]
+
+[^fnFet]: Vgl. [@fet].
+
+[^fnunitime]: Vgl. [@unitimeconstraintsolver] und [@timetablestackoverflowitc2007]
+
+Es existieren zahlreiche weitere Verfahren und Lösungen (sowohl komerziell als auch nicht-komerziell). 
 
 
 ## Variante 2: Bestehende Lösung (manuelle Zuweisung) optimieren
 
-Die \ref{problemswithcurrentsolution}
+Die Probleme in Kapitel \ref{problemswithcurrentsolution} können....
 
 
 
