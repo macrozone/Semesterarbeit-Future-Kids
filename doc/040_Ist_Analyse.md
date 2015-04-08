@@ -4,7 +4,20 @@
 
 ## Bestehende Lösung
 
+Die bestehende Lösung ist eine Webapplikation welche mittels dem Framework *Ruby on Rails* [^fnRubyOnRails] entwickelt wurde. Sie wurde von der Firma Panter AG und Freiwilligen entwickelt, der Quellcode ist auf Github verfügbar [^fnFuturekidsGithub] und unter der "GNU Affero General Public License"[^fnGnuAffero] lizenziert.
+
+Die Lösung kann angepasst und erweitert werden und es besteht die Möglichkeit, Änderungen auf einen Staging-Server zu stellen, welcher die AOZ zur Verifizierung nutzen kann.
+
+[^fnRubyOnRails]: http://rubyonrails.org/
+
+[^fnFuturekidsGithub]: https://github.com/panterch/future_kids
+
+[^fnGnuAffero]: http://de.wikipedia.org/wiki/GNU_Affero_General_Public_License
+
 ### Mentoren
+
+![Bearbeitung eines Mentors (Bestehende Lösung)\label{screenshot_mentor_current}](img/screenshot_mentor_current.png)
+
 
 Administratoren können neue Mentoren erfassen und bestehende bearbeiten. Abbildung \ref{screenshot_mentor_current} zeigt die Profilseite eines Mentors. Es ist anzumerken, dass das Geschlecht eines Mentors nicht zugewiesen werden kann. Diese Funktion muss ergänzt werden um \ref{sc-010} zu erfüllen. Auch die Model-Klasse des Mentors oder der abgeleiteten `User`-Klasse enthält kein passendes Feld.
 
@@ -12,7 +25,6 @@ Unter "Stundenplan bearbeiten" können die Zeitfenster bearbeitet werden, an den
 
 Listing \ref{lstMentorRb} zeigt die Beziehungen einer Mentor-Entität. Zu sehen ist, dass im Datenmodell einem Mentor mehrere Schüler zugewiesen werden können.
 
-![Bearbeitung eines Mentors (Bestehende Lösung)\label{screenshot_mentor_current}](img/screenshot_mentor_current.png)
 
 
 ![Editieren der Zeitfenster eines Mentors (Bestehende Lösung)\label{screenshot_mentor_time_current}](img/screenshot_mentor_time_current.png)
