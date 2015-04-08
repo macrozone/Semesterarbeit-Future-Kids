@@ -38,11 +38,12 @@ Zu jeder Story gehören:
 
 Die bestehende Anwendung, deren Schnittstellen und deren Daten werden in dieser Phase analysiert um zu überprüfen, wie sich das geplante Modul in die bestehende Lösung integrieren lässt.
 
-### Recherche
+(### Recherche)
 
-In der Recherchephase wird nach bereits existierenden, passenden Software-Lösungen, Algorithmen oder Darstellungen gesucht, um die die Anforderungen aus der Phase \ref{secphaseanalyse} zu erfüllen.
+(In der Recherchephase wird nach bereits existierenden, passenden Software-Lösungen, Algorithmen oder Darstellungen gesucht, um die die Anforderungen aus der Phase \ref{secphaseanalyse} zu erfüllen.)) TODO entfernen?
 
-### Konzept und Lösungsvorschlag
+
+### Konzept, Lösungsvarianten und Entscheid
 
 In dieser Phase sollen mögliche Lösungsvarianten erarbeitet werden. Sofern es bereits passenden Lösungen auf dem Markt gibt, sollen diese gegebenfalls gegen selbst zu erstellenden Varianten verglichen werden. Die optimale Lösungsvariante für die Umsetzung soll mittels eines geeigneten Verfahrens ermittelt werden.
 

@@ -6,17 +6,13 @@ welche zusätzliche, nicht-funktionale Anforderungen definieren.
 
 <% include 'problem.macro.ect',
 	number: "01"
-	title: "Doppelbelegung des Stundenplans"
+	title: "Doppelnutzung von Bedienelementen"
 	description: "Der Bildschirm \\emph{Stundenplan} eines Schülers erfüllt zwei Zwecke: Er dient einerseits dazu, die Zeitfenster eines Schülers zu bearbeiten, anderseits dazu, die Zeitfenster von Schüler und Mentoren zu vergleichen um einen passenden Mentoren zu finden. Diese Doppelnutzung irritiert und kann zu Fehlmanipulation führen."
 	priority: "normal"
 %>
 
 
 
-
-**Lösung**: 
-
-Bearbeitung der Zeitfenster eines Schülers soll von der Einsatzplanung des Mentors getrennt werden (visuell und funktional). Eine Möglichkeit wäre, das Bearbeiten der Zeitfenster des Schülers erst nach Aktivieren einer Schaltfläche (\\emph{Schüler-Zeitfenster bearbeiten}) zu ermöglichen. Damit ist klarer, welche Aktion gerade ausgeführt wird.
 
 
 
@@ -32,12 +28,6 @@ Bearbeitung der Zeitfenster eines Schülers soll von der Einsatzplanung des Ment
 
 
 
-**Lösung**: 
-
-- Doppelte und inaktive Schaltflächen entfernen
-- Bedienelemente klar beschriften.
-
-
 
 
 
@@ -47,13 +37,6 @@ Bearbeitung der Zeitfenster eines Schülers soll von der Einsatzplanung des Ment
 	description: "Werden viele Mentoren für den Vergleich angewählt, erscheinen alle innerhalb des Stundenplans des Schülers, wie auf Abbildung \\ref{screenshot_kid_compare_mentors} zu sehen. Der Stundenplan wird dadurch verzogen, was durch lange Namen noch verstärkt wird. Weiterhin ist nicht auf den ersten Blick zu sehen, welche der ausgewählten Mentoren überhaupt in Frage kommen, da nicht berücksichtigt wird, ob und wie lange die Zeitfenster überlappen."
 	priority: "normal"
 %>
-
-
-**Lösung**:
-
-- Mentorennamen kürzen und kleiner darstellen
-- Mit Farben oder Symbolen arbeiten pro Mentor
-- Mentoren, welche nicht in Frage kommen, ausblenden oder anders darstellen.
 
 
 ![Werden viele Mentoren für den Vergleich ausgewählt, leidet die Übersicht (Bestehende Lösung)\label{screenshot_kid_compare_mentors}](img/screenshot_kid_compare_mentors.png)
@@ -74,23 +57,14 @@ Bearbeitung der Zeitfenster eines Schülers soll von der Einsatzplanung des Ment
 
 
 
-**Lösung**:
-
-Es soll direkt aus der Stundenplanung heraus ein Mentor ausgewählt und dem Schüler zugewiesen werden können.
-
 
 
 <% include 'problem.macro.ect',
 	number: "05"
-	title: "Fehlende Filtermöglichkeiten"
+	title: "Mentorenauswahl benötigt zusätzliches Wissen"
 	description: "Die Liste der zur Auswahl stehenden Mentoren kann nicht nach bestimmten Kriterien wie Geschlecht oder Einsatzort gefiltert werden. Die Mentoren werden lediglich danach gruppiert, ob sie bereits einem oder zwei Schüler zugewiesen sind und ob sie als Ersatzmentor eingetragen sind. Dadurch ist es für einen Administrator nötig, zusätzliche Informationen zu einem Mentoren zu kennen oder auf der Profilseite des Mentors nachzuschlagen."
 	priority: "normal"
 %>
 
 
 
-
-
-**Lösung**:
-
-Gemäss Anforderung im Abschnitt \ref{userstories} sollen Mentoren nach bestimmten Kriterien, wie Geschlecht, Name und Einsatzort ausgewählt werden können. Diese Kriterien können als Filter implementiert werden, welche passende Mentoren einblendet oder unpassende ausblendet.

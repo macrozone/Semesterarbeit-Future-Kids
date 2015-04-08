@@ -1,6 +1,3 @@
-\pagebreak
-
-# Recherche ?
 
 \pagebreak
 
@@ -69,7 +66,7 @@ In dieser Variante soll erarbeitet werden, mit welchen Konzepten die bestehende 
 
 ### Mögliche Problemlösungen
 
-\ref{prob-01}: *Doppelbelegung des Stundenplans*
+\ref{prob-01}: *Doppelnutzung von Bedienelementen*
 
 **Lösung**:
 
@@ -136,17 +133,24 @@ Die bestehende Lösung erfüllt teilweise bereits manche Anforderungen und soll 
 
 ### Zeitfenster-Management von Schülern und Mentoren
 
-Die bestehende Lösung verfügt bereits über ein Bedienelech
+Die bestehende Lösung verfügt bereits über Bedienelemente zum Erfassen von Zeitfenster von Schülern und Mentoren. Diese kann weiterhin genutzt werden. Um Problem \ref{prob-01} zu lösen, muss die Funktion bei den Schülern aber getrennt werden von der Zuweisung eines Mentores
 
-- evtl. gleich lassen wie bisher
-- allenfalls balken ziehen per "drag"
-- optisch anpassen, schüler und mentoren gleich
-- Erst per klick bearbeitbar machen bei schüler
+- Bedienelement mit Checkboxen beibehalten
+- Optional Zeitfenster auswählbar mit "Drag" analog Kalender-Applikationen
+- Optisch anpassen, sodass das Bedienelement bei Schüler und Mentoren gleich funktioniert
+- Bei Schülern erst durch Klick auf eine Schaltfläche bearbeitbar machen (löst Problem \ref{prob-01})
+- Schaltfläche *Stundenplandaten speichern* entfernen, sofern nicht gebraucht. *Auswahl bestätigen* ebenfalls entfernen 
 
-### Initiale Filter:
+### Mentoren Auswahl
 
-- [x] Verfügbare Mentoren (kein oder nur ein kind)
-- [x] beide Geschlechter
+TODO: layout mock
+
+
+
+### Filter:
+
+- [x] Verfügbare Mentoren (kein oder nur ein Schüler zugeweisen)
+- [x] Männlich / Weiblich
 - [x] alle Einsatzorte (oder nur einsatzort des schülers?)
 - [x] alle Namen
 - [x] ECTS und nicht ECTS

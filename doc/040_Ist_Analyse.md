@@ -4,7 +4,7 @@
 
 ## Bestehende Lösung
 
-Die bestehende Lösung ist eine Webapplikation welche mittels dem Framework *Ruby on Rails* [^fnRubyOnRails] entwickelt wurde. Sie wurde von der Firma Panter AG und Freiwilligen entwickelt, der Quellcode ist auf Github verfügbar [^fnFuturekidsGithub] und unter der "GNU Affero General Public License"[^fnGnuAffero] lizenziert.
+Die bestehende Lösung ist eine Webapplikation welche mittels dem Framework *Ruby on Rails* [^fnRubyOnRails] entwickelt wurde. Sie wurde von der Firma Panter AG und Freiwilligen entwickelt, der Quellcode ist auf Github verfügbar [^fnFuturekidsGithub] und unter der *GNU Affero General Public License*[^fnGnuAffero] lizenziert.
 
 Die Lösung kann angepasst und erweitert werden und es besteht die Möglichkeit, Änderungen auf einen Staging-Server zu stellen, welcher die AOZ zur Verifizierung nutzen kann.
 
