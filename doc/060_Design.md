@@ -1,19 +1,19 @@
-# Design
 
-## Mocks
+\pagebreak
 
+# Design & Architektur
 
-### Erfassen der Zeitfenster eines Schülers / Mentors
+## Erfassen der Zeitfenster eines Schülers / Mentors
 
 Die bisherige Lösung verfügt bereits über eine Möglichkeit, die Zeitfenster eines Schülers und Mentors einzugeben, welche die Anforderungen des Kunden erfüllen. Allerdings wird beim Schüler dieser Bildschirm noch für die Auswahl der Mentoren zusätzlich genutzt (siehe Problem \ref{prob-01}). Wie in Abbildung \ref{mock_timetable_select_schedule} gezeigt, werden daher die Funktionalitäten zur Mentorenauswahl von diesem Bildschirm entfernt. Ebenso werden unnütze Bedienelemente wie in \ref{prob-02} beanstandet entfernt.
 
 ![Erfassen der Zeitfenster - bei der bisherigen Lösung können die markierten Bedienelemente entfernt werden \label{mock_timetable_select_schedule}](img/mock_timetable_select_schedule.png)
 
-### Auswahl der Mentoren
+## Mentoren-Auswahl
 
 Für die Auswahl der Mentoren wird ein neuer Bildschirm erstellt. Er dient dazu, aus allen im System erfassten Mentoren zu filtern und die Zeitfenster der ausgewählten Mentoren mit denen des Schülers zu vergleichen. Dazu stehen diverse Filtermöglichkeiten zur Verfügung. Weiterhin soll es möglich sein, ein Treffen zwischen Mentor und Schüler zu persistieren (Wochentag und Zeitpunkt), gemäss \ref{sc-015}. Diese direkte Zuweisung reduziert die in \ref{prob-04} beanstandeten Anzahl Klicks.
 
-#### Filter und Auswahl für den Vergleich
+### Filter und Auswahl für den Vergleich \label{mentor_selection_and_filters}
 
 Die Auswahl der Mentoren geschieht in zwei Schritten:
 
@@ -24,7 +24,7 @@ Durch dieses Zwei-Schritte Verfahren soll sichergestellt werden, dass die Übers
 
 (TODO: mock)
 
-### Vergleich der Zeitfenster als Kalenderansicht
+### Vergleich der Zeitfenster als Kalenderansicht \label{timetable_calendar}
 
 Damit die Darstellung auch bei mehreren Mentoren übersichtlich bleibt, bietet sich eine Kalenderartige Darstellung der Zeitfenster an.
 
@@ -39,10 +39,29 @@ In der Abbildung sind Zeitfenster von Mentoren, die sich nur knapp oder gar nich
 
 ### Auswahl des Zeitpunkt des Treffens
 
-Möchte ein Administrator den Zeitpunkt des Treffens auswählen, so kann auf eine Zelle des Stundenplans gelickt werden, wie in Abbildung \ref{\ref{mock_timetable_mentors_select} gezeigt.
+Möchte ein Administrator den Zeitpunkt des Treffens auswählen, so kann auf eine Zelle des Stundenplans gelickt werden, wie in Abbildung \ref{mock_timetable_mentors_select} gezeigt.
 
 
 ![Auswahl eines Zeitpunkt des Treffens von Schüler und Mentor (Mock)\label{mock_timetable_mentors_select}](img/mock_timetable_mentors_select.png)
+
+
+### Komponenten-Diagram
+
+Aus den Mocks für die Mentoren-Auswahl lassen sich folgende GUI-Komponenten ableiten, wie in Abbildung \ref{uml_components_mentor_search} gezeigt.
+
+Mentoren-Suche
+: 	Diese Komponente ist die übergeordnete Komponente, mit der der Benutzer interagiert. Sie erhält von einem Server-Controller die nötigen Daten und sendet ggf. Daten, wie der gewählte Mentor und der Zeitpunkt des Treffens zurück an den Server.
+
+Stundenplan
+:	Zeigt den Stundenplan/Zeitfenster des Schülers und der gewählten Mentoren und ermöglicht Auswahl eines Zeitfensters (vgl. \ref{timetable_calendar}).
+
+Mentoren-Auswahl
+:	Wählt die Mentoren für die Anzeige auf dem Stundenplan aus
+
+Mentoren-Filter
+:	Ermöglicht Filtern der Mentoren nach Kriterien (vgl. \ref{mentor_selection_and_filters}).
+
+![Komponenten-Diagram der Mentoren-Suche\label{uml_components_mentor_search}](img/uml_components_mentor_search.png)
 
 
 
