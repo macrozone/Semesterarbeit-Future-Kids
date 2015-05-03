@@ -25,32 +25,41 @@ mentors =
       Mon: ["16:00", "16:30","17:00", "17:30", "18:00", "18:30"]
       Thu: ["16:00", "16:30","17:00", "17:30", "18:00", "18:30"]
       Fri: ["16:00", "16:30","17:00", "17:30", "18:00", "18:30", "19:00"]
-  
+
+studentTimetable =  
+  Mon: ["15:00", "15:30", "16:00", "16:30","17:00", "17:30", "18:00", "18:30"]
+  Tue: ["16:00", "16:30","17:00", "17:30", "18:00", "18:30"]
+  Wed: ["16:00", "16:30","17:00", "17:30", "18:00", "18:30", "19:00"]
+  Fri: ["13:00", "13:30","14:00", "14:30", "15:00", "15:30", "16:00"]
+
+
 onChange = ->
   console.log arguments
 
 
-App = React.createClass
+StudentTimeTable = React.createClass
   getInitialState: ->
-    activeMentors: (mentor for id, mentor of mentors)
+    activeMentors: {}
 
   onChange: (activeMentors) ->
-    if activeMentors.length > 0
-      @setState {activeMentors}
-    else
-      @setState activeMentors: (mentor for id, mentor of mentors)
+   
+    @setState {activeMentors}
+    #else
+    #  @setState activeMentors: (mentor for id, mentor of mentors)
 
   render: ->
-    <div className="app">
+    <div className="studentTimeTable">
       <Mentors mentors=mentors onChange=@onChange />
       <TimeTable 
         days=DAYS
         interval=INTERVAL 
         start=START end=END
+        studentTimetable=@props.studentTimetable
         activeMentors=@state.activeMentors
         />
     </div>
 
-app = <App />
+
+studentTimeTable = <StudentTimeTable studentTimetable=studentTimetable />
   
-React.render app, document.getElementById "app"
+React.render studentTimeTable, document.getElementById "app"

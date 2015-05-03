@@ -23,10 +23,10 @@ files = [
 	"040_Ist_Analyse.md"
 	"042_Ist_Probleme.ect"
 	"045_Konzept.md"
-
-	"050_Umsetzung.md"
-	"060_Testing.md"
-	"070_Ausblick.md"
+	"060_Design.md"
+	"070_Umsetzung.md"
+	"080_Testing.md"
+	"090_Ausblick.md"
 	"100_Anhang.md"
 ]
 pandoc.stderr.on "data", (data) ->

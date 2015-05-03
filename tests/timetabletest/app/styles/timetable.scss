@@ -1,11 +1,18 @@
 .timetable
 {
+	margin-top: 20px;
+	border-top: 1px solid #DDDDDD;
 	th, td
 	{
-		text-align: center;
+		text-align: left;
+		width: 1%;
 	}
-	td.active
+	td.inStudentTimetable
 	{
-		background-color: "red";
+		background-color: #DFF0D8;
+	}
+	td, th
+	{
+		border: 1px solid #DDDDDD;
 	}
 }

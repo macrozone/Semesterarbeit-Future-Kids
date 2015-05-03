@@ -14,14 +14,11 @@ Thead = React.createClass
 		</thead>
 
 Block =  React.createClass 
-	getInitialState: ->
-		active: no
-	toggleState: -> 
-		@setState active: !@state.active
-		event.stopPropagation()
+	
+	
 	render: ->
-		stateClass = if @state.active then "active" else ""
-		<td onClick=@toggleState className=stateClass>
+		stateClass = if @props.inStudentTimetable then "inStudentTimetable" else ""
+		<td className=stateClass>
 		{
 			for mentor in @props.activeMentors
 				<p>{mentor.name} </p>
@@ -37,7 +34,9 @@ Tbody = React.createClass
 				mentors.push mentor
 		mentors
 
-
+	isInStudentTimetable: (day, time)->
+		@props.studentTimetable[day]? and time in @props.studentTimetable[day]
+		
 
 
 	render: ->
@@ -48,7 +47,12 @@ Tbody = React.createClass
 					<th>{time}</th>
 					{
 						for day in @props.days
-							<Block key=day day=day time=time activeMentors={@getMentorsFor(day, time)} />
+							<Block key=day 
+								day=day 
+								time=time 
+								activeMentors={@getMentorsFor(day, time)} 
+								inStudentTimetable={@isInStudentTimetable(day, time)}
+								/>
 					}
 				</tr>
 		}	
@@ -74,5 +78,5 @@ module.exports = React.createClass
 	render: ->
 		<table className="table timetable">
 			<Thead days=@props.days />
-			<Tbody days=@props.days times=@times() activeMentors={@props.activeMentors} />
+			<Tbody days=@props.days times=@times() activeMentors={@props.activeMentors} studentTimetable={@props.studentTimetable}/>
 		</table>

@@ -44,7 +44,7 @@ Es existieren zahlreiche weitere Verfahren und Lösungen (sowohl komerziell als 
 
 Diese Variante löst die Bedienprobleme aus \ref{problemswithcurrentsolution}, indem keine oder nur wenige Bedienelemente notwendig gemacht werden, um Mentoren den Schülern zuzuweisen.
 
-Ebenfalls erfüllt sie wichtige Stories aus \ref{userstories}, macht Stories 9-14 allerdings überflüssig, da diese der Auswahl eines mentors helfen.
+Ebenfalls erfüllt sie wichtige Stories aus \ref{userstories}, macht Stories 9-14 allerdings überflüssig, da diese der Auswahl eines Mentors helfen.
 
 **Vorteile**:
 
