@@ -26,6 +26,12 @@ mentors =
       Thu: ["16:00", "16:30","17:00", "17:30", "18:00", "18:30"]
       Fri: ["16:00", "16:30","17:00", "17:30", "18:00", "18:30", "19:00"]
 
+schools = 
+  1: 
+    _id: "1", name: "ZHAW"
+  2: 
+    _id: "2", name: "Kantonsschule Wattwil"
+
 studentTimetable =  
   Mon: ["15:00", "15:30", "16:00", "16:30","17:00", "17:30", "18:00", "18:30"]
   Tue: ["16:00", "16:30","17:00", "17:30", "18:00", "18:30"]
@@ -49,7 +55,7 @@ StudentTimeTable = React.createClass
 
   render: ->
     <div className="studentTimeTable">
-      <Mentors mentors=mentors onChange=@onChange />
+      <Mentors mentors=mentors schools=schools onChange=@onChange />
       <TimeTable 
         days=DAYS
         interval=INTERVAL 
