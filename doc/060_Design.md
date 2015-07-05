@@ -39,7 +39,7 @@ In der Abbildung sind Zeitfenster von Mentoren, die sich nur knapp oder gar nich
 
 ### Auswahl des Zeitpunkt des Treffens
 
-Möchte ein Administrator den Zeitpunkt des Treffens auswählen, so kann auf eine Zelle des Stundenplans gelickt werden, wie in Abbildung \ref{mock_timetable_mentors_select} gezeigt.
+Möchte ein Administrator den Zeitpunkt des Treffens auswählen, so kann auf eine Zelle des Stundenplans gelickt werden, wie in Abbildung \ref{mock_timetable_mentors_select} gezeigt. Dies ermöglicht es dem Benutzer, mit nur einem Klick einen Mentor inklusive Zeitpunkt des Treffens und Wochentag zuzuweisen und erfüllt somit \ref{sc-005} und \ref{sc-015}, und reduziert stark die Anzahl Klicks wie in \ref{nfr-04} gefordert.
 
 
 ![Auswahl eines Zeitpunkt des Treffens von Schüler und Mentor (Mock)\label{mock_timetable_mentors_select}](img/mock_timetable_mentors_select.png)
@@ -64,4 +64,101 @@ Mentoren-Filter
 ![Komponenten-Diagram der Mentoren-Suche\label{uml_components_mentor_search}](img/uml_components_mentor_search.png)
 
 
+## Daten-Schemas
+
+TODO: uml
+
+~~~~~~~
+
+TODO: schöner
+
+mentors =
+	type: [Mentor]
+
+schools = 
+	type: [School]
+
+School =
+	id:
+		type: String
+	name:
+		type: String
+
+Mentor = 
+	id:
+		type: String
+	firstname: 
+		type: String
+	lastname: 
+		type: String
+	gender:
+		type: ["m", "f"]
+	school: 
+		type: String # school-fk
+	kids:
+		type: [String] #Array of Kid-Ids
+	ects:
+		type: Boolean
+	timetable:
+		type: Array
+		0:	# monday
+			type: [String] # hh:mm
+		1: 	# tuesday
+			type: [String]
+		# usw.
+
+
+Kid =
+	id:
+		type: String
+	firstname:
+		type: String
+	lastname:
+		type: String
+	timetable:
+		type: Array
+		0:	# monday
+			type: [String] # Array of hh:mm
+		1: 	# tuesday
+			type: [String]
+		# usw.
+
+
+## Technologie-Wahl
+
+Einige der Probleme in \ref{problemswithcurrentsolution} sind der Tatsache geschuldet, 
+dass Ruby on Rails historisch bedingt einen starken Fokus auf klassische, Resourcen-getriebene *Request-Response*-Anwendungen
+hat. Diese Klasse von Webanwendungen betrachten jeden ihrer Seiten oder Bildschirme als adressierbare Resource
+und modellieren Änderungen an ihren Resourcen mittels HTTP-Verben, wie GET, POST, PUT, DELETE. Dieses als
+*Representational State Transfer* oder kurz *REST* bezeichnete Paradigma 
+wird in *Ruby on Rails* und damit auch in *Future Kids* konsequent eingesetzt.
+
+Eine Schwierigkeit bei diesem Paradigma ist es, den Status oder englisch *State* einer Anwendung zu modellieren. 
+REST sagt uns, dass jede Adresse genau einen Seiteninhalt repräsentiert [^fn_wiki_rest]. Im Sinne eines *States* einer Webanwendung muss somit jedem *State* und somit jedem möglichen Bildschirminhalt eine Adresse zugewiesen werden können. 
+Dieses Problem ist der *State*-losen Natur des HTTP-Protokolles geschuldet.
+
+Als Alternative kann mittels *Session* der Status einer Anwendung an einen Besucher zugewiesen werden. Dieses Vorgehen verletzt das REST-Prinzip, bietet aber klare Vorteile in Fällen, bei denen der Status eines Besuchers geheim sein soll oder wo die Anzahl
+für die Abbildung des Status benötigten Parameter zu gross wird.
+
+Trotz dieser Möglichkeiten bleibt das Problem des langen Weges zwischen einer Statusänderung durch einen Anwender, der Übertragung dieser Information an den Server, der Verarbeitung der Information durch den Server, das erzeugen der Datenrepräsentation auf dem Server und letzendlich dem Herunterladen und Anzeigen dieser Daten. Dieser lange *Round-Trip* zwischen Client-Server-Client verstösst gegen ein Lokalitätsprinzip, bei welchem auf Daten, die häufig zusammen genutzt werden auch mit gleicher Zugriffszeit aufgerufen werdne können. Sie müssen somit in der Speicherhierarchie auf der gleichen Schicht liegen und bei Client-Server-Anwendungen insbesondere auf dem gleichen Gerät.
+
+Bei Webanwendungen ist beispielsweise der durch HTML beschriebene DOM-Baum im Client im Arbeitsspeicher gespeichert. Da eine *State*-Änderung häufig sichtbare Änderungen nach sich zieht, wird bei einer Änderung am *State* bei einer klassichen Webanwendungen nun ein neuer Seiten-Request an den Server gesendet, welcher eine neue HTML-Seite mit der Veränderten Ansicht zurückliefert. Der Client verwirft seinen alten DOM-Baum im Arbeitsspeicher und zeichnet die geänderte Seite neu. Dies bringt Wartezeiten mit sich und erhöht die Komplexität der Webanwendung: *State*-Änderungen müssen mehrere Schichten der Architektur durchdringen.
+
+Bei der bisherigen Anwendung *Future Kids* zeigt sich dies damit, dass die bisherige Lösung für die Mentorensuche einerseits rudimentär (durch die verhältnismässig hohe Komplexität des Problems) ausgefallen ist, anderseits viele Seiten-Reloads und Klicks benötigt - die Architektur bildet diesen Fall schlicht nicht gut genug ab.
+
+### Client-Side-Komponenten
+
+Durch die Verwendung von Javascript können Client-Seitige Anwendung gebaut werden. Die Verwendung von Javascript aber lange Zeit eingeschränkt durch langsame Ausführung, beschränkter Browser-Support oder fehlende Frameworks, welche der sehr unterschiedlich nutzbaren Sprache Struktur gaben. Javascript-Frameworks erfreuen sich zur Zeit des Schreibens dieser Arbeit grosser Beliebtheit. Erst Backbone, dann Ember und Angular modellieren alle Teile einer Client-seitigen Anwendung (häufig als Model-View-Controller-Architektur), neuere Frameworks wie Meteor, Derby oder Volt decken gar Client- *und* Server-Schickten einer Anwendung ab.
+
+Facebooks *React* im Gegenzug beschränkt sich auf das Modellieren von Client-seitigen, in sich abgeschlossenen Komponenten und verzichtet bewusst auf weitere Schichten. Es lässt sich somit sehr gut in bestehende Frameworks, wie Ruby on Rails integrieren und bietet sich daher für die Erweiterungen an *Future Kids* an. React ersetzt dabei die *View*-Schicht von Ruby on Rails, ist dabei selbst aber kein reine View-Schicht. Vielmehr werden einzelne Komponenten als *Mini-Anwendungen* realisiert, welche jeweils ihre eigene Daten (*Properties*), Status (*State*) und Darstellung (in Form von HTML), sowie Kontrollfluss (als Javascript-Code) haben und lose miteinander Interagieren. 
+
+Die geforderte Lokalität von Status und Repräsentation wird hierbei folgendermassen umgesetzt: Die Darstellung ist an den Status und an die Daten gekoppelt, Ereignisse wie Klicks führen zu Änderungen am Status und somit zu einer Änderung der Darstellung - diesmal aber gänzlich innerhalb dieser Client-seitigen Komponente. Sie kann nach Aussen ebenfalls über Ereignisse kommunizieren und kann - in ein Webframework wie Rails eingebettet - auch REST-Schnittstellen aufrufen. In einem bestehenden Projekt müssen dabei nicht alle Views mit React ersetzt werden, vielmehr können einzelne Views punktuell ersetzt werden.
+
+React bietet sich daher für den gegebenen Anwendungsfall sehr gut an; die geplanten GUI-Komponenten können somit als React-Komponenten umgesetzt werden.
+
+
+
+
+[^fn_wiki_rest] Siehe Einleitung Wikipedia-Artikel [@wiki_rest].
+~~~~~~~
 

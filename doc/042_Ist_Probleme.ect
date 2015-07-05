@@ -3,12 +3,17 @@
 Bei der Analyse der bestehenden Lösung und im Workshop mit dem Auftraggeber sind weitere Probleme aufgetreten, 
 welche zusätzliche, nicht-funktionale Anforderungen definieren.
 
+TODO: NFQ
 
 <% include 'problem.macro.ect',
 	number: "01"
-	title: "Doppelnutzung von Bedienelementen"
-	description: "Der Bildschirm \\emph{Stundenplan} eines Schülers erfüllt zwei Zwecke: Er dient einerseits dazu, die Zeitfenster eines Schülers zu bearbeiten, anderseits dazu, die Zeitfenster von Schüler und Mentoren zu vergleichen um einen passenden Mentoren zu finden. Diese Doppelnutzung irritiert und kann zu Fehlmanipulation führen."
+	title: "keine Doppelnutzung von Bedienelementen"
+	description: "Die Komponente \\emph{Stundenplan} eines Schülers erfüllt zwei Zwecke: Sie dient einerseits dazu, die Zeitfenster eines Schülers zu bearbeiten, anderseits dazu, die Zeitfenster von Schüler und Mentoren zu vergleichen um einen passenden Mentoren zu finden. Diese Doppelnutzung irritiert und kann zu Fehlmanipulation führen."
 	priority: "normal"
+	accCriteria: [
+		"Jede Komponente hat genau eine primäre Aufgabe"
+		"Die Aufgabe einer Komponente ist klar ersichtlich"
+	]
 %>
 
 
@@ -20,9 +25,12 @@ welche zusätzliche, nicht-funktionale Anforderungen definieren.
 
 <% include 'problem.macro.ect',
 	number: "02"
-	title: "Irritierende Bedienelemente"
+	title: "Keine unnötigen Bedienelemente"
 	description: "Wie auf Abbildung \\ref{screenshot_kid_timetable} zu sehen, befinden sich links vom Stundenplan die Schaltflächen. \\emph{Auswahl bestätigen} und \\emph{Stundenplandaten speichern}, letztere wird unterhalb des Stundenplan nochmals wiederholt und speichert die angewählten Zeitfenster (Checkbox). \\emph{Auswahl bestätigen} hat hier noch keine Funktion, die Bedeutung von \\emph{Auswahl bestätigen} zeigt sich erst, wenn man auf \\emph{Mentorauswahl} klickt (Abbildung \\ref{screenshot_kid_timetable_mentors}) und dient dazu, hier die gewählten Mentoren für den Vergleich zu speichern; sie erscheinen danach im Stundenplan des Schülers."
 	priority: "normal"
+	accCriteria: [
+		"Jedes Bedienelement auf jeder Komponente hat zu jeder Zeit eine Funktion"
+	]
 %>
 
 
@@ -33,9 +41,15 @@ welche zusätzliche, nicht-funktionale Anforderungen definieren.
 
 <% include 'problem.macro.ect',
 	number: "03"
-	title: "Unübersichtlich bei vielen Mentoren"
+	title: "Übersichtlich leidet nicht mit zunehmender Mentorenzahl"
 	description: "Werden viele Mentoren für den Vergleich angewählt, erscheinen alle innerhalb des Stundenplans des Schülers, wie auf Abbildung \\ref{screenshot_kid_compare_mentors} zu sehen. Der Stundenplan wird dadurch verzogen, was durch lange Namen noch verstärkt wird. Weiterhin ist nicht auf den ersten Blick zu sehen, welche der ausgewählten Mentoren überhaupt in Frage kommen, da nicht berücksichtigt wird, ob und wie lange die Zeitfenster überlappen."
 	priority: "normal"
+	accCriteria: [
+		"Es soll möglich sein, die Mentorensuche mit beliebiger Anzahl Mentoren zu verwenden"
+		"Überlappungen sollen visuell gekenntzeichnet sein"
+		"Es existieren Massnahmen zur Vorselektion von Mentoren zur Anzeige"
+		"Die Anzahl gleichzeitig dargestellter Mentoren soll sinnvoll limitiert werden"
+	]
 %>
 
 
@@ -47,9 +61,12 @@ welche zusätzliche, nicht-funktionale Anforderungen definieren.
 
 <% include 'problem.macro.ect',
 	number: "04"
-	title: "Zu viele Klicks"
+	title: "Finden und Auswahl eines passenden Mentors soll wenige Klicks benötigen"
 	description: "Hat ein Administrator einen passenden Mentoren und einen passenden Termin gefunden, so können diese nicht direkt dem Schüler zugewiesen werden. Es muss zuerst auf das Schülerprofil gewechselt werden und wie in Abbildung \\ref{screenshot_kid_bottom} zu sehen zugewiesen werden. Dies erfordert zu viele Klicks (TODO: anzahl) und es ist nötig, sich den Mentoren und den Termin zu merken."
 	priority: "normal"
+	accCriteria: [
+		"Das finden und Auswählen eines Mentors soll weniger Klicks benötigen als die aktuelle Version"
+	]
 %>
 
 
@@ -61,10 +78,15 @@ welche zusätzliche, nicht-funktionale Anforderungen definieren.
 
 <% include 'problem.macro.ect',
 	number: "05"
-	title: "Mentorenauswahl benötigt zusätzliches Wissen"
+	title: "Für die Mentorenauswahl stehen alle nötigen Informationen zur Verfügung"
 	description: "Die Liste der zur Auswahl stehenden Mentoren kann nicht nach bestimmten Kriterien wie Geschlecht oder Einsatzort gefiltert werden. Die Mentoren werden lediglich danach gruppiert, ob sie bereits einem oder zwei Schüler zugewiesen sind und ob sie als Ersatzmentor eingetragen sind. Dadurch ist es für einen Administrator nötig, zusätzliche Informationen zu einem Mentoren zu kennen oder auf der Profilseite des Mentors nachzuschlagen."
 	priority: "normal"
+	accCriteria: [
+		"Für das Finden eines Mentors muss ein Benutzer nicht zwischen verschiedenen Bildschirmen wechseln müssen, um alle Informationen zu finden"
+	]
 %>
+
+Hinweis: Diese Anforderung deckt sich weitgehend mit vom Kunden geforderten Stories 10-14.
 
 
 

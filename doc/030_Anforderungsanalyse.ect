@@ -27,7 +27,7 @@ Mitarbeiter der Administration der AOZ benutzen die Plattform für folgende Akti
 - Erfassen und bearbeiten von Mentoren
 - Planung der Einsatzzeiten von Mentoren
 - Zuweisung von Ersatzmentoren im Verhinderungsfall
-- Kontrolle des Fortschrittes der Schüler (?)
+- Kontrolle des Fortschrittes der Schüler (?) TODO
 
 Frau Beren Tuna ist Mitarbeiterin von AOZ und administriert die Future Kids Plattform. Sie ist die primäre Ansprechsperson, nimmt die User-Stories ab (siehe Kapitel \ref{userstories}) und vertritt die Administration der Future Kids Plattform.
 
@@ -63,6 +63,7 @@ Diese Stories werden in der Umsetzungsphase anhand ihrer Prioritäten umgesetzt.
 
 [^fnrfc2119]: http://tools.ietf.org/search/rfc2119
 
+TODO: title descirption anders?
 
 <% include 'story.macro.ect',
 	number: "001"
@@ -73,7 +74,6 @@ Diese Stories werden in der Umsetzungsphase anhand ihrer Prioritäten umgesetzt.
  		"Erfassbare Zeitfenster: von 13:00 bis 19:30"
  		"Es können beliebig viele Zeitfenster erfasst werden"
  		"Erfassbare Tage: Montag - Freitag"
- 		"Erfasste Zeitfenster können nicht kürzer als 2h sein."
  		"Erfasste Zeitfenster können sich nicht überlappen."
  		"Auswahl kann persistiert werden."
  	]
@@ -208,12 +208,14 @@ Diese Stories werden in der Umsetzungsphase anhand ihrer Prioritäten umgesetzt.
 
 <% include 'story.macro.ect',
 	number: "013"
-	title: "Als Administrator möchte ich für einen Schüler nach Mentoren suchen können, welche als Ersatzmentoren markiert sind."
-	description: "Manche Mentoren möchten nur im Vertretungsfall aktiv werden und sind daher explizit als Ersatzmentoren markiert. Nach diesen Mentoren soll gesucht werden können."
+	title: "Als Administrator möchte ich für einen Schüler nach Mentoren suchen können, welche eine bestimmte Anzahl Schüler betreuen"
+	description: "Mentoren können kein, ein oder zwei Kinder betreuen (einmal als primärer Mentor, einmal als Ersatzmentor)"
 	priority: "MAY"
 	accCriteria: [
- 		"Es können Mentoren gefunden werden, welche als Ersatzmentoren markiert sind."
- 		"Es können Mentoren gefunden werden, die nicht als Ersatzmentoren markiert sind"
+ 		"Es können Mentoren gefunden werden, welche noch kein Kind betreuen"
+ 		"Es können Mentoren gefunden werden, welche nur ein Kind betreuen"
+ 		"Es können Mentoren gefunden werden, welche ein oder kein Kind betreuen"
+ 		"Es können Mentoren gefunden werden, welche bereits zwei Kinder betreuen"
  	]
 %>
 
