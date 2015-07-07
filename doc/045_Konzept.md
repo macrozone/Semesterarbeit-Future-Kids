@@ -4,7 +4,7 @@
 # Konzept
 
 
-Um die Anforderungen zu erfüllen kommen zwei prinzipielle Varianten in Frage:
+Um die grundlegenden Anforderungen zu erfüllen kommen zwei prinzipielle Varianten in Frage:
 
 ## Variante 1: Automatisierte Zuweisung
 
@@ -64,22 +64,74 @@ Die bestehende Lösung erfüllt bereits die Stories 1-8 aus Abschnitt \ref{users
 
 In dieser Variante soll erarbeitet werden, mit welchen Konzepten die bestehende Lösung um sämtliche Stories aus \ref{userstories} ergänzt werden kann und welche Massnahmen notwendig sind um die Probleme in \ref{problemswithcurrentsolution} zu lösen.
 
-### Mögliche Problemlösungen
+### Erfüllung der Anforderungen
 
-\ref{prob-01}: *Doppelnutzung von Bedienelementen*
+\ref{sc-001} - \ref{sc-004} 
 
-**Lösung**:
+Diese Stories umfassen das Erfassen und Anzeigen der Zeitfenster von Mentoren und Schüler. 
+Sie werden bereits in der aktuellen Lösung erfüllt, allerdings existiert die erwähnte Doppel-Nutzung des Stundenplans wie in \ref{nfr-01}: *Doppelnutzung von Bedienelementen* geschildert:
+
+
+
+**Massnahmen**:
+
+\ref{nfr-01}: *Doppelnutzung von Bedienelementen*,
 
 Bearbeitung der Zeitfenster eines Schülers soll von der Einsatzplanung des Mentors getrennt werden (visuell und funktional). Eine Möglichkeit wäre, das Bearbeiten der Zeitfenster des Schülers erst nach Aktivieren einer Schaltfläche (*Schüler-Zeitfenster bearbeiten*) zu ermöglichen. Damit ist klarer, welche Aktion gerade ausgeführt wird.
 
-\ref{prob-02}: *Irritierende Bedienelemente*
-
-**Lösung**: 
+\ref{nfr-02}: *Irritierende Bedienelemente*
 
 - Doppelte und inaktive Schaltflächen entfernen
 - Bedienelemente klar beschriften.
 
-\ref{prob-03}: *Unübersichtlich bei vielen Mentoren*
+\ref{sc-005}, \ref{sc-006}, \ref{sc-007}, \ref{sc-015}
+
+Die bisherige Lösung sieht für die Zuweisung eines Mentors ein Feld in der Editier-Maske eines Schülers vor, ebenso kann dort vermerkt werden, ob wer als Ersatzmentor vermerkt ist und ob dieser aktiv ist. Weiterhin kann ein Wochentag und Zeitpunkt des Treffens erfasst werden gemäss Anforderung \ref{sc-015}.
+
+**Massnahmen**:
+
+Diese Bedienelemente können weitgehend beibehalten werden.
+
+Bei der Zusweisung von Mentor und Termin muss dieser aber bereits bekannt sein, d.h. ein Administrator 
+muss bereits einen passenden Mentor und Termin gefunden haben, doch der Prozes des Findens eines Mentores
+ist in der bisherigen Lösung noch getrennt von der Zuweisung des Mentors; der Bildschirm, welcher
+die Mentorensuche ermöglicht, erlaubt es nicht, einen Mentor auch zuzuweisen. 
+Dies widerspiegelt sich in den folgenden Anforderungen:
+
+\ref{nfr-04}: *Ausführen einer Aktion soll wenige Klicks benötigen*, sowie
+\ref{nfr-05}: *Ein Benutzer hat in einer Komponente alle Informationen für eine Entscheidung oder Aktion zur Verfügung*
+
+Es soll direkt aus der Komponente, welche das Finden eines Mentors erlaubt, heraus ein Mentor, sowie Termin ausgewählt und dem Schüler zugewiesen werden können. Dadurch muss sich ein Administrator nicht Mentor und Treffpunkt merken.
+
+\ref{sc-008}, \ref{sc-009}
+
+Diese Stories sollen einem Administrator ermöglichen, Mentoren zu finden, welche mit dem Schüler überschneidende Zeitfenster haben. Gemäss Gespräch mit dem dem Auftraggeber kann es aber auch sein, dass bei knappen Überschneidungen Rücksprache mit dem Mentor genommen werden kann. 
+
+**Massnahmen**
+
+Es kann Sinn machen, Mentoren mit nicht passenden Zeitfenstern nicht gänzlich herauszufiltern, sondern auf grafische Weise zu visualisieren, ob und wie lange sich die Zeitfenster überschneiden. Es kann auch möglichsein, dass bei einem Mentoren noch keine Zeitfenster erfasst wurden. Eine Grafische Lösung macht hier daher Sinn und erfüllt weitgehend \ref{nfr-05}, dass ein Administrator jederzeit alle nötigen Informationen zur Hand hat.
+
+
+
+
+\ref{sc-010}
+
+Das Geschlecht eines Mentors kann in der aktuellen Lösung nicht erfasst werden, das Geschlecht eines Schülers hingegen schon. D.h. die grundsätzlichen Mechanismen dazu existieren bereits.
+
+**Massnahmen**:
+
+- Es soll eine Datenmigration durchgeführt werdne, welche allen Mentoren ein Feld "Geschlecht" hinzufügen.
+- Es sollen Eingabemasken von Mentoren ergänzt werden, damit diese Information abgelegt werden kann
+- Die Profilseite eines Mentors soll diese Information anzeigen
+- Bei der Mentorensuche für einen Schüler sollen Mentoren nach dem Geschlecht gesucht oder gefiltert werden können
+- Das Verhalten bei nicht zugewiesenem Geschlecht muss definiert werden.
+
+
+
+
+
+
+\ref{nfr-03}: *Unübersichtlich bei vielen Mentoren*
 
 **Lösung**:
 
@@ -88,18 +140,14 @@ Bearbeitung der Zeitfenster eines Schülers soll von der Einsatzplanung des Ment
 - Mentoren, welche nicht in Frage kommen, ausblenden oder anders darstellen.
 
 
-\ref{prob-04}: *Zu viele Klicks*
 
 
-**Lösung**:
-
-Es soll direkt aus der Stundenplanung heraus ein Mentor ausgewählt und dem Schüler zugewiesen werden können.
-
-\ref{prob-05}: *Mentorenauswahl benötigt zusätzliches Wissen*
+\ref{nfr-05}: *Ein Benutzer hat in einer Komponente alle Informationen für eine Entscheidung oder Aktion zur Verfügung*
 
 **Lösung**:
-
 Gemäss Anforderung im Abschnitt \ref{userstories} sollen Mentoren nach bestimmten Kriterien, wie Geschlecht, Name und Einsatzort ausgewählt werden können. Diese Kriterien können als Filter implementiert werden, welche passende Mentoren einblendet oder unpassende ausblendet.
+
+
 
 
 ### Diskussion
@@ -133,12 +181,12 @@ Die bestehende Lösung erfüllt teilweise bereits manche Anforderungen und soll 
 
 ### Zeitfenster-Management von Schülern und Mentoren
 
-Die bestehende Lösung verfügt bereits über Bedienelemente zum Erfassen von Zeitfenster von Schülern und Mentoren. Diese kann weiterhin genutzt werden. Um Problem \ref{prob-01} zu lösen, muss die Funktion bei den Schülern aber getrennt werden von der Zuweisung eines Mentores
+Die bestehende Lösung verfügt bereits über Bedienelemente zum Erfassen von Zeitfenster von Schülern und Mentoren. Diese kann weiterhin genutzt werden. Um Problem \ref{nfr-01} zu lösen, muss die Funktion bei den Schülern aber getrennt werden von der Zuweisung eines Mentores
 
 - Bedienelement mit Checkboxen beibehalten
 - Optional Zeitfenster auswählbar mit "Drag" analog Kalender-Applikationen
 - Optisch anpassen, sodass das Bedienelement bei Schüler und Mentoren gleich funktioniert
-- Bei Schülern erst durch Klick auf eine Schaltfläche bearbeitbar machen (löst Problem \ref{prob-01})
+- Bei Schülern erst durch Klick auf eine Schaltfläche bearbeitbar machen (löst Problem \ref{nfr-01})
 - Schaltfläche *Stundenplandaten speichern* entfernen, sofern nicht gebraucht. *Auswahl bestätigen* ebenfalls entfernen 
 
 ### Mentoren Auswahl

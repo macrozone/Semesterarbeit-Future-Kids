@@ -1,0 +1,94 @@
+## Probleme der bestehenden Lösung \label{problemswithcurrentsolution}
+
+Bei der Analyse der bestehenden Lösung und im Workshop mit dem Auftraggeber sind weitere Probleme aufgetreten, 
+welche zusätzliche, nicht-funktionale Anforderungen definieren.
+
+### Nicht-Funktionale Anforderungen (NFR)
+
+**Problemstellung**
+
+Die Komponente \\emph{Stundenplan} eines Schülers erfüllt zwei Zwecke: Sie dient einerseits dazu, die Zeitfenster eines Schülers zu bearbeiten, anderseits dazu, die Zeitfenster von Schüler und Mentoren zu vergleichen um einen passenden Mentoren zu finden. Diese Doppelnutzung irritiert und kann zu Fehlmanipulation führen.
+
+<% include 'nfr.macro.ect',
+	number: "01"
+	title: "keine Doppelnutzung von Bedienelementen"
+	priority: "normal"
+	accCriteria: [
+		"Jede Komponente hat genau eine primäre Aufgabe"
+		"Die Aufgabe einer Komponente ist klar ersichtlich"
+	]
+%>
+
+
+
+
+
+**Problemstellung**
+
+Wie auf Abbildung \ref{screenshot_kid_timetable} zu sehen, befinden sich links vom Stundenplan die Schaltflächen. \emph{Auswahl bestätigen} und \emph{Stundenplandaten speichern}, letztere wird unterhalb des Stundenplan nochmals wiederholt und speichert die angewählten Zeitfenster (Checkbox). \emph{Auswahl bestätigen} hat hier noch keine Funktion, die Bedeutung von \emph{Auswahl bestätigen} zeigt sich erst, wenn man auf \emph{Mentorauswahl} klickt (Abbildung \ref{screenshot_kid_timetable_mentors}) und dient dazu, hier die gewählten Mentoren für den Vergleich zu speichern; sie erscheinen danach im Stundenplan des Schülers.
+
+<% include 'nfr.macro.ect',
+	number: "02"
+	title: "Keine unnötigen oder nichtf-funktionale Bedienelemente"
+	priority: "normal"
+	accCriteria: [
+		"Jedes Bedienelement auf jeder Komponente hat zu jeder Zeit eine Funktion"
+	]
+%>
+
+
+
+**Problemstellung**
+
+Werden viele Mentoren für den Vergleich angewählt, erscheinen alle innerhalb des Stundenplans des Schülers, wie auf Abbildung \ref{screenshot_kid_compare_mentors} zu sehen. Der Stundenplan wird dadurch verzogen, was durch lange Namen noch verstärkt wird. Weiterhin ist nicht auf den ersten Blick zu sehen, welche der ausgewählten Mentoren überhaupt in Frage kommen, da nicht berücksichtigt wird, ob und wie lange die Zeitfenster überlappen.
+
+<% include 'nfr.macro.ect',
+	number: "03"
+	title: "Übersichtlich leidet nicht mit zunehmender Mentorenzahl"
+	priority: "normal"
+	accCriteria: [
+		"Es soll möglich sein, die Mentorensuche mit beliebiger Anzahl Mentoren zu verwenden"
+		"Überlappungen sollen visuell gekenntzeichnet sein"
+		"Es existieren Massnahmen zur Vorselektion von Mentoren zur Anzeige"
+		"Die Anzahl gleichzeitig dargestellter Mentoren soll sinnvoll limitiert werden"
+	]
+%>
+
+
+![Werden viele Mentoren für den Vergleich ausgewählt, leidet die Übersicht (Bestehende Lösung)\label{screenshot_kid_compare_mentors}](img/screenshot_kid_compare_mentors.png)
+
+**Problemstellung**
+
+Hat ein Administrator einen passenden Mentoren und einen passenden Termin gefunden, so können diese nicht direkt dem Schüler zugewiesen werden. Es muss zuerst auf das Schülerprofil gewechselt werden und wie in Abbildung \\ref{screenshot_kid_bottom} zu sehen zugewiesen werden. Dies erfordert zu viele Klicks (TODO: anzahl) und es ist nötig, sich den Mentoren und den Termin zu merken.
+
+<% include 'nfr.macro.ect',
+	number: "04"
+	title: "Ausführen einer Aktion soll wenige Klicks benötigen"
+	priority: "normal"
+	accCriteria: [
+		"Eine bestimmte Aktion soll weniger Klicks benötigen als die aktuelle Version"
+	]
+%>
+
+**Problemstellung**
+
+Bei der Suche eines Mentors stehen dem Administrator nicht alle benötigten Informationen zur Verfügung.
+Die Liste der zur Auswahl stehenden Mentoren kann nicht nach bestimmten Kriterien wie Geschlecht oder Einsatzort gefiltert werden. Die Mentoren werden lediglich danach gruppiert, ob sie bereits einem oder zwei Schüler zugewiesen sind und ob sie als Ersatzmentor eingetragen sind. Dadurch ist es für einen Administrator nötig, zusätzliche Informationen zu einem Mentoren zu kennen oder auf der Profilseite des Mentors nachzuschlagen.
+
+Hat ein Administrator einen passenden Mentor und Termin gefunden, so muss er diese Informationen sich merken, auf die Profilseite des Schülers zurückkehren und dort eintragen.
+
+
+<% include 'nfr.macro.ect',
+	number: "05"
+	title: "Ein Benutzer hat in einer Komponente alle Informationen für eine Entscheidung oder Aktion zur Verfügung"
+
+	priority: "normal"
+	accCriteria: [
+		"Für eine Entscheidung oder Aktion in einer Komponente oder eines Bildschirms muss der Benutzer nicht zwischen Bildschirmen wechseln"
+		"Die dargestellten Informationen haben eine genügende Relevanz"
+		"Es werden keine unrelevanten Informationen dargestellt."
+	]
+%>
+
+
+

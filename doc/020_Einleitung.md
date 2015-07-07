@@ -32,7 +32,9 @@ Zu jeder Story gehören:
 
 [^fnScrum]: User Stories formulieren eine (in der Regel) funktionale Anforderung an ein Projekt aus der Sicht einer bestimmten Rolle und sind in einer Sprache erfasst, die sowohl der Auftraggeber als auch das Umsetzungsteam versteht. [@essentialScrumStories]
 
-**Nicht-Funktionale Anforderungen** werden "Definition of Done" erfasst, ebenfalls ein Mechanismus aus SCRUM. Hierbei werden vom Entwicklungsteam Kriterien erfasst, welche jede Story erfüllen muss.
+**Nicht-Funktionale Anforderungen** werden soweit wie möglich als "Definition of Done" erfasst, ebenfalls ein Mechanismus aus SCRUM. Hierbei werden vom Entwicklungsteam Kriterien erfasst, welche jede Story erfüllen müssen.
+
+Ein Vorteil von *Definition of Done* ist, dass es eine Möglichkeit bietet, nicht-funktionale Rahmenbedingungen zu codieren, welche keinen direkten Business-Wert für das Produkt haben. Somit bleiben alle Stories immer "funktional".
 
 ### Ist-Analyse
 
