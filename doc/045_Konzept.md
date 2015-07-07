@@ -66,6 +66,8 @@ In dieser Variante soll erarbeitet werden, mit welchen Konzepten die bestehende 
 
 ### Erfüllung der Anforderungen
 
+TODO: nach detail-konzept verschieben? Im moment herrscht ungleichgewicht zwischen Variante 1 und Variante 2.
+
 \ref{sc-001} - \ref{sc-004} 
 
 Diese Stories umfassen das Erfassen und Anzeigen der Zeitfenster von Mentoren und Schüler. 
@@ -107,11 +109,28 @@ Es soll direkt aus der Komponente, welche das Finden eines Mentors erlaubt, hera
 
 Diese Stories sollen einem Administrator ermöglichen, Mentoren zu finden, welche mit dem Schüler überschneidende Zeitfenster haben. Gemäss Gespräch mit dem dem Auftraggeber kann es aber auch sein, dass bei knappen Überschneidungen Rücksprache mit dem Mentor genommen werden kann. 
 
+
+
 **Massnahmen**
 
-Es kann Sinn machen, Mentoren mit nicht passenden Zeitfenstern nicht gänzlich herauszufiltern, sondern auf grafische Weise zu visualisieren, ob und wie lange sich die Zeitfenster überschneiden. Es kann auch möglichsein, dass bei einem Mentoren noch keine Zeitfenster erfasst wurden. Eine Grafische Lösung macht hier daher Sinn und erfüllt weitgehend \ref{nfr-05}, dass ein Administrator jederzeit alle nötigen Informationen zur Hand hat.
+Diese Funktion ist in der aktuellen Lösung implementiert, allerdings leidet die Übersicht wenn viele Mentoren für den Vergleich ausgewählt werden, wie in Abbildung \ref{screenshot_kid_compare_mentors} zu sehen. Dazu wurde die folgende Anforderung erstellt: 
 
+\ref{nfr-03}: *Bedienung bleibt übersichtlich unabhängig von der Anzahl Mentoren*
 
+- Mentorennamen kürzen und kleiner darstellen
+- Mit Farben oder Symbolen arbeiten pro Mentor
+- Mentoren oder Zeitfenster, welche nicht in Frage kommen, ausblenden oder anders darstellen.
+
+Weiterhin stehen neben den Zeitfenstern des Kindes und des Mentors keine weiteren Informationen zur Verfügung, 
+es können lediglich Mentoren danach vorselektiert werden, ob sie bereits ein Kind betreuen oder nicht. Dazu ist aber ein Wechsel des Bildschirms nötig.
+
+\ref{nfr-05}: *Ein Benutzer hat in einer Komponente alle Informationen für eine Entscheidung oder Aktion zur Verfügung*
+
+Gemäss den Stories \ref{sc-010}, \ref{sc-011}, \ref{sc-012}, \ref{sc-013} sollen Mentoren nach bestimmten Kriterien, wie Geschlecht, Name und Einsatzort ausgewählt werden können. Diese Kriterien können als Filter implementiert werden, welche passende Mentoren einblendet oder unpassende ausblendet.
+
+Diese Filter sollen ohne Wechsel des Bildschirms benutzbar sein und jederzeit klar ersichtlich machen, welche Mentoren sichtbar sind.
+
+Weiterhin kann es Sinn machen, Mentoren mit nicht passenden Zeitfenstern nicht gänzlich herauszufiltern, sondern auf grafische Weise zu visualisieren, ob und wie lange sich die Zeitfenster überschneiden. Es kann auch möglichsein, dass bei einem Mentoren noch keine Zeitfenster erfasst wurden. Eine Grafische Lösung macht hier daher Sinn und erfüllt weitgehend \ref{nfr-05}, dass ein Administrator jederzeit alle nötigen Informationen zur Hand hat.
 
 
 \ref{sc-010}
@@ -127,31 +146,42 @@ Das Geschlecht eines Mentors kann in der aktuellen Lösung nicht erfasst werden,
 - Das Verhalten bei nicht zugewiesenem Geschlecht muss definiert werden.
 
 
+\ref{sc-011}
+
+Das Feld, ob ein Mentor mit ECTS-Punkten vergütet wird oder nicht, ist bereits vorhanden
+
+**Massnahmen**:
+
+- Bei der Mentorensuche für einen Schüler sollen Mentoren nach diesem Kriterium gesucht oder gefiltert werden können.
+
+\ref{sc-012}
+
+Der Einsatzort (d.h. eine Schule) eines Mentors nach Betrachtung des Datenmodells nicht direkt einem Mentor zugeweisen, sondern entspricht der Schule des Kindes, dem der Mentor zugewiesen ist. 
+
+Dadurch ist diese Information nur für Mentoren verfügbar, die aktuell ein Kind betreuen.
+
+**Massnahmen**:
+
+- Bei der Mentorensuche für einen Schüler sollen Mentoren nach diesem Einsatzort gesucht oder gefiltert werden können.
 
 
+\ref{sc-013}
 
+Diese Funktion ist, wie oben erwähnt in der aktuellen Version bereits implementiert. (Siehe Abbildung \ref{screenshot_kid_timetable_mentors}). Allerdings muss dazu die Ansicht gewechselt werden.
 
-\ref{nfr-03}: *Unübersichtlich bei vielen Mentoren*
+**Massnahmen**:
 
-**Lösung**:
+Diese Funktionalität soll gleichartig wie die Suche nach passendem Geschlecht, Einsatzort oder anderen Kriterien umgesetzt werden.
 
-- Mentorennamen kürzen und kleiner darstellen
-- Mit Farben oder Symbolen arbeiten pro Mentor
-- Mentoren, welche nicht in Frage kommen, ausblenden oder anders darstellen.
+\ref{sc-014}
 
-
-
-
-\ref{nfr-05}: *Ein Benutzer hat in einer Komponente alle Informationen für eine Entscheidung oder Aktion zur Verfügung*
-
-**Lösung**:
-Gemäss Anforderung im Abschnitt \ref{userstories} sollen Mentoren nach bestimmten Kriterien, wie Geschlecht, Name und Einsatzort ausgewählt werden können. Diese Kriterien können als Filter implementiert werden, welche passende Mentoren einblendet oder unpassende ausblendet.
-
+TODO
 
 
 
 ### Diskussion
 
+TODO: entfernen? umschreiben?
 
 **Vorteile**:
 
@@ -248,7 +278,7 @@ Kalender-Style mit jedem Mentor mit Namen (wie bisher)
 
 *Problem*: bläht ansicht auf bei vielen mentoren
 
-*Lösung*: ebenfalls limitieren?
+*Lösung*: ebenfalls limitieren? TODO
 
 
 ### Layout
