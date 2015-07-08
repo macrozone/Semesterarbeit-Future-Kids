@@ -64,9 +64,39 @@ Die bestehende Lösung erfüllt bereits die Stories 1-8 aus Abschnitt \ref{users
 
 In dieser Variante soll erarbeitet werden, mit welchen Konzepten die bestehende Lösung um sämtliche Stories aus \ref{userstories} ergänzt werden kann und welche Massnahmen notwendig sind um die Probleme in \ref{problemswithcurrentsolution} zu lösen.
 
+### Diskussion
+
+Die bestehende Lösung erfüllt teilweise bereits die Anforderungen, Probleme liegen bei der Bedienbarkeit, der Übersicht und 
+der Informationsdarstellung. Werden diese Probleme gezielt angegangen, kann die bestehende Lösung schrittweise verbessert werden.
+
+**Vorteile**:
+
+- Konzept der bestehenden Lösung wird beibehalten
+- Genaue Anpassung an Kundenwunsch möglich
+- Kein Fremdsystem notwenig
+- Automatisierung zusätzlich immer noch möglich
+
+**Nachteile**:
+
+- Aufwendige Anpassungen der Bedienelemente notwendig
+
+
+
+## Entscheidung
+
+Beide Varianten erfüllen alle Stories und können alle Probleme von Abschnitt \ref{problemswithcurrentsolution} erfüllen. Nach Rücksprache mit dem Auftraggeber wurde Variante 2 gewählt.
+
+Häufig spielen bei der Wahl eines Mentors für einen bestimmen Schüler weitere Umstände 
+eine Rolle, die die Administratoren von AOZ berücksichtigen müssen. Diese Kriterien können persönliche Einschätzungen sein oder andere Kriterien, welche nicht auf der Plattform abgebildet werden. Manchmal werden auch Rückfragen mit Mentoren getätigt, wenn beispielsweise Zeitfenster nicht genau passen oder ein Ersatz gesucht werden muss. Daher wird vom Auftraggeber eine manuelle Zuweisung bevorzugt. 
+
+Die bestehende Lösung erfüllt teilweise bereits manche Anforderungen und soll daher gemäss Variante 2 optimiert werden. Die bestehende Lösung kann zukünftig immer noch um einen (teil-)automatiersten Prozess ergänzt werden.
+
+
+## Feinkonzept: Bestehende Lösung (manuelle Zuweisung) optimieren
+
 ### Erfüllung der Anforderungen
 
-TODO: nach detail-konzept verschieben? Im moment herrscht ungleichgewicht zwischen Variante 1 und Variante 2.
+
 
 \ref{sc-001} - \ref{sc-004} 
 
@@ -175,37 +205,8 @@ Diese Funktionalität soll gleichartig wie die Suche nach passendem Geschlecht, 
 
 \ref{sc-014}
 
-TODO
+Die Suche nach Mentoren per Name für die Auswahl kann ebenfalls als Filter implementiert werden.
 
-
-
-### Diskussion
-
-TODO: entfernen? umschreiben?
-
-**Vorteile**:
-
-- Konzept der bestehenden Lösung wird beibehalten
-- Genaue Anpassung an Kundenwunsch möglich
-- Kein Fremdsystem notwenig
-
-**Nachteile**:
-
-- Aufwendige Anpassungen der Bedienelemente notwendig
-
-
-
-## Entscheidung
-
-Beide Varianten erfüllen alle Stories und können alle Probleme von Abschnitt \ref{problemswithcurrentsolution} erfüllen. Nach Rücksprache mit dem Auftraggeber wurde Variante 2 gewählt.
-
-Häufig spielen bei der Wahl eines Mentors für einen bestimmen Schüler weitere Umstände 
-eine Rolle, die die Administratoren von AOZ berücksichtigen müssen. Diese Kriterien können persönliche Einschätzungen sein oder andere Kriterien, welche nicht auf der Plattform abgebildet werden. Manchmal werden auch Rückfragen mit Mentoren getätigt, wenn beispielsweise Zeitfenster nicht genau passen oder ein Ersatz gesucht werden muss. Daher wird vom Auftraggeber eine manuelle Zuweisung bevorzugt. 
-
-Die bestehende Lösung erfüllt teilweise bereits manche Anforderungen und soll daher gemäss Variante 2 optimiert werden. Die bestehende Lösung kann zukünftig immer noch um einen (teil-)automatiersten Prozess ergänzt werden.
-
-
-## Feinkonzept: Bestehende Lösung (manuelle Zuweisung) optimieren
 
 
 
@@ -225,23 +226,41 @@ TODO: layout mock
 
 
 
-### Filter:
+### Filter
 
-- [x] Verfügbare Mentoren (kein oder nur ein Schüler zugeweisen)
-- [x] Männlich / Weiblich
-- [x] alle Einsatzorte (oder nur einsatzort des schülers?)
-- [x] alle Namen
-- [x] ECTS und nicht ECTS
-- [x] nur genaue überschneidung
+Die Filter reduzieren die Mentoren für die Suche nach Kriterien, die jeweils mit UND verknüpft werden,
+d.h. Geschlecht=m und ECTS=true wird alle männlichen Mentoren anzeigen, welche ECTS Punkte bekommen.
 
-### Optionen
+#### Geschlecht
 
-- [ ] Nur m / w
-- [ ] nur schule xy (a la select2)
-- [ ] nur Mentor xy (a la select2)
-- [ ] nur etcs ja / nein
-- [ ] nur knappe / oder keine Überschneidung
-- [ ] Mentoren mit bereits zwei kinder (evtl.)
+Hat drei Zustände: nichts ausgewählt, m oder f.
+
+Ist nichts ausgewählt, so wird nicht nach Geschlecht gefiltert
+
+#### ECTS
+
+Hat drei Zustände: nichts ausgewählt, true oder false:
+
+- ECTS=true: alle Mentoren, die ECTS-Punkte bkeommen
+- ECTS=false: alle Mentoren, die nicht ECTS-Punkte bekommen
+- nichts ausgewählt: es wird nicht nach dem Kriterium gefiltert.
+
+#### Einsatzort
+
+Zeigt alle Schulen an. Wird eine Schule ausgewählt, werden nur Mentoren angezeigt, die an dieser Schule aktiv sind.
+
+#### Anzahl betreute Kinde
+
+Hat folgende Werte:
+
+- 0-1: Zeigt alle Mentoren, die kein oder ein Kind betreuen
+- 0: Zeigt alle Mentoren, die kein Kind betreuen.
+- 1: Zeigt Mentoren, die genau ein Kind betreuen
+- 2: Zeigt Mentoren, die bereits zwei Kinder betreuen
+- unselektiert: Das Kriterium ist nicht aktiv.
+
+
+
 
 ### Namensfilter:
 
