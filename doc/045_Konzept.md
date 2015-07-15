@@ -92,17 +92,15 @@ eine Rolle, die die Administratoren von AOZ berücksichtigen müssen. Diese Krit
 Die bestehende Lösung erfüllt teilweise bereits manche Anforderungen und soll daher gemäss Variante 2 optimiert werden. Die bestehende Lösung kann zukünftig immer noch um einen (teil-)automatiersten Prozess ergänzt werden.
 
 
-## Feinkonzept: Bestehende Lösung (manuelle Zuweisung) optimieren
-
-### Erfüllung der Anforderungen
+## Feinkonzept: Bestehende Lösung (manuelle Zuweisung) optimieren \label{feinkonzept}
 
 
 
-\ref{sc-001} - \ref{sc-004} 
+
+### Anforderungen \ref{sc-001} \ref{sc-002}, \ref{sc-003}, \ref{sc-004} 
 
 Diese Stories umfassen das Erfassen und Anzeigen der Zeitfenster von Mentoren und Schüler. 
-Sie werden bereits in der aktuellen Lösung erfüllt, allerdings existiert die erwähnte Doppel-Nutzung des Stundenplans wie in \ref{nfr-01}: *Doppelnutzung von Bedienelementen* geschildert:
-
+Sie werden bereits in der aktuellen Lösung erfüllt, allerdings existiert die erwähnte Doppel-Nutzung des Stundenplans wie in \ref{nfr-01}: *Doppelnutzung von Bedienelementen* geschildert.
 
 
 **Massnahmen**:
@@ -111,12 +109,14 @@ Sie werden bereits in der aktuellen Lösung erfüllt, allerdings existiert die e
 
 Bearbeitung der Zeitfenster eines Schülers soll von der Einsatzplanung des Mentors getrennt werden (visuell und funktional). Eine Möglichkeit wäre, das Bearbeiten der Zeitfenster des Schülers erst nach Aktivieren einer Schaltfläche (*Schüler-Zeitfenster bearbeiten*) zu ermöglichen. Damit ist klarer, welche Aktion gerade ausgeführt wird.
 
+Das Setzen der Zeitfenster mit den Checkboxen kann beibehalten werden.
+
 \ref{nfr-02}: *Irritierende Bedienelemente*
 
 - Doppelte und inaktive Schaltflächen entfernen
 - Bedienelemente klar beschriften.
 
-\ref{sc-005}, \ref{sc-006}, \ref{sc-007}, \ref{sc-015}
+### Anforderungen \ref{sc-005}, \ref{sc-006}, \ref{sc-007}, \ref{sc-015}
 
 Die bisherige Lösung sieht für die Zuweisung eines Mentors ein Feld in der Editier-Maske eines Schülers vor, ebenso kann dort vermerkt werden, ob wer als Ersatzmentor vermerkt ist und ob dieser aktiv ist. Weiterhin kann ein Wochentag und Zeitpunkt des Treffens erfasst werden gemäss Anforderung \ref{sc-015}.
 
@@ -135,7 +135,7 @@ Dies widerspiegelt sich in den folgenden Anforderungen:
 
 Es soll direkt aus der Komponente, welche das Finden eines Mentors erlaubt, heraus ein Mentor, sowie Termin ausgewählt und dem Schüler zugewiesen werden können. Dadurch muss sich ein Administrator nicht Mentor und Treffpunkt merken.
 
-\ref{sc-008}, \ref{sc-009}
+### Anforderungen \ref{sc-008}, \ref{sc-009}
 
 Diese Stories sollen einem Administrator ermöglichen, Mentoren zu finden, welche mit dem Schüler überschneidende Zeitfenster haben. Gemäss Gespräch mit dem dem Auftraggeber kann es aber auch sein, dass bei knappen Überschneidungen Rücksprache mit dem Mentor genommen werden kann. 
 
@@ -150,6 +150,7 @@ Diese Funktion ist in der aktuellen Lösung implementiert, allerdings leidet die
 - Mentorennamen kürzen und kleiner darstellen
 - Mit Farben oder Symbolen arbeiten pro Mentor
 - Mentoren oder Zeitfenster, welche nicht in Frage kommen, ausblenden oder anders darstellen.
+- Maximale Anzahl Mentoren limitieren
 
 Weiterhin stehen neben den Zeitfenstern des Kindes und des Mentors keine weiteren Informationen zur Verfügung, 
 es können lediglich Mentoren danach vorselektiert werden, ob sie bereits ein Kind betreuen oder nicht. Dazu ist aber ein Wechsel des Bildschirms nötig.
@@ -162,8 +163,10 @@ Diese Filter sollen ohne Wechsel des Bildschirms benutzbar sein und jederzeit kl
 
 Weiterhin kann es Sinn machen, Mentoren mit nicht passenden Zeitfenstern nicht gänzlich herauszufiltern, sondern auf grafische Weise zu visualisieren, ob und wie lange sich die Zeitfenster überschneiden. Es kann auch möglichsein, dass bei einem Mentoren noch keine Zeitfenster erfasst wurden. Eine Grafische Lösung macht hier daher Sinn und erfüllt weitgehend \ref{nfr-05}, dass ein Administrator jederzeit alle nötigen Informationen zur Hand hat.
 
+Die Kalenderartige Darstellung kann dabei beibehalten werden.
 
-\ref{sc-010}
+
+### Anforderungen \ref{sc-010}
 
 Das Geschlecht eines Mentors kann in der aktuellen Lösung nicht erfasst werden, das Geschlecht eines Schülers hingegen schon. D.h. die grundsätzlichen Mechanismen dazu existieren bereits.
 
@@ -176,7 +179,7 @@ Das Geschlecht eines Mentors kann in der aktuellen Lösung nicht erfasst werden,
 - Das Verhalten bei nicht zugewiesenem Geschlecht muss definiert werden.
 
 
-\ref{sc-011}
+### Anforderung \ref{sc-011}
 
 Das Feld, ob ein Mentor mit ECTS-Punkten vergütet wird oder nicht, ist bereits vorhanden
 
@@ -184,7 +187,7 @@ Das Feld, ob ein Mentor mit ECTS-Punkten vergütet wird oder nicht, ist bereits 
 
 - Bei der Mentorensuche für einen Schüler sollen Mentoren nach diesem Kriterium gesucht oder gefiltert werden können.
 
-\ref{sc-012}
+### Anforderung \ref{sc-012}
 
 Der Einsatzort (d.h. eine Schule) eines Mentors nach Betrachtung des Datenmodells nicht direkt einem Mentor zugeweisen, sondern entspricht der Schule des Kindes, dem der Mentor zugewiesen ist. 
 
@@ -195,7 +198,7 @@ Dadurch ist diese Information nur für Mentoren verfügbar, die aktuell ein Kind
 - Bei der Mentorensuche für einen Schüler sollen Mentoren nach diesem Einsatzort gesucht oder gefiltert werden können.
 
 
-\ref{sc-013}
+### Anforderung \ref{sc-013}
 
 Diese Funktion ist, wie oben erwähnt in der aktuellen Version bereits implementiert. (Siehe Abbildung \ref{screenshot_kid_timetable_mentors}). Allerdings muss dazu die Ansicht gewechselt werden.
 
@@ -203,112 +206,9 @@ Diese Funktion ist, wie oben erwähnt in der aktuellen Version bereits implement
 
 Diese Funktionalität soll gleichartig wie die Suche nach passendem Geschlecht, Einsatzort oder anderen Kriterien umgesetzt werden.
 
-\ref{sc-014}
+### Anforderung \ref{sc-014}
 
 Die Suche nach Mentoren per Name für die Auswahl kann ebenfalls als Filter implementiert werden.
-
-
-
-
-### Zeitfenster-Management von Schülern und Mentoren
-
-Die bestehende Lösung verfügt bereits über Bedienelemente zum Erfassen von Zeitfenster von Schülern und Mentoren. Diese kann weiterhin genutzt werden. Um Problem \ref{nfr-01} zu lösen, muss die Funktion bei den Schülern aber getrennt werden von der Zuweisung eines Mentores
-
-- Bedienelement mit Checkboxen beibehalten
-- Optional Zeitfenster auswählbar mit "Drag" analog Kalender-Applikationen
-- Optisch anpassen, sodass das Bedienelement bei Schüler und Mentoren gleich funktioniert
-- Bei Schülern erst durch Klick auf eine Schaltfläche bearbeitbar machen (löst Problem \ref{nfr-01})
-- Schaltfläche *Stundenplandaten speichern* entfernen, sofern nicht gebraucht. *Auswahl bestätigen* ebenfalls entfernen 
-
-### Mentoren Auswahl
-
-TODO: layout mock
-
-
-
-### Filter
-
-Die Filter reduzieren die Mentoren für die Suche nach Kriterien, die jeweils mit UND verknüpft werden,
-d.h. Geschlecht=m und ECTS=true wird alle männlichen Mentoren anzeigen, welche ECTS Punkte bekommen.
-
-#### Geschlecht
-
-Hat drei Zustände: nichts ausgewählt, m oder f.
-
-Ist nichts ausgewählt, so wird nicht nach Geschlecht gefiltert
-
-#### ECTS
-
-Hat drei Zustände: nichts ausgewählt, true oder false:
-
-- ECTS=true: alle Mentoren, die ECTS-Punkte bkeommen
-- ECTS=false: alle Mentoren, die nicht ECTS-Punkte bekommen
-- nichts ausgewählt: es wird nicht nach dem Kriterium gefiltert.
-
-#### Einsatzort
-
-Zeigt alle Schulen an. Wird eine Schule ausgewählt, werden nur Mentoren angezeigt, die an dieser Schule aktiv sind.
-
-#### Anzahl betreute Kinde
-
-Hat folgende Werte:
-
-- 0-1: Zeigt alle Mentoren, die kein oder ein Kind betreuen
-- 0: Zeigt alle Mentoren, die kein Kind betreuen.
-- 1: Zeigt Mentoren, die genau ein Kind betreuen
-- 2: Zeigt Mentoren, die bereits zwei Kinder betreuen
-- unselektiert: Das Kriterium ist nicht aktiv.
-
-
-
-
-### Namensfilter:
-
-- ähnlich wie select2 oder rect-select, optionen sind bereits gefilterte Mentoren (?)
-- Liste der verfügbaren mentoren sind irgendwo sichtbar evtl. oder anzahl wird angezeigt 
-- damit soll man erkennen können, wiviele überhaupt in frage kommen
-
-### Einsatzortfilter:
-
-- ebenfalls wie namensfilter
-
-### checkbox filter:
-
-- hat immer *Alle* option welche alle anderen optionen anwählt?
-- Alle = kein? --> macht bei geschlecht sinn
-
-### Zeitfenster überschneidungs filter
-
-Zeigt nur mentoren mit:
-
-1. genaue überschneidung (gemäss \ref{sc-008}, 2h)
-2. knappe überscneidung (gem$ss \ref{sc-009}, 1.5h)
-3. alle (egal ob überschneidung oder nicht)
-
-### Mögliche Darstellungen:
-
-Kalender-Style mit jedem Mentor als Balken in einer farbe
-
-*Problem*: funktioniert nicht gut bei vielen Mentoren
-
-*Lösung*: limitieren? zeige beste 5 mentoren?
-
-Kalender-Style mit jedem Mentor mit Namen (wie bisher)
-
-*Problem*: bläht ansicht auf bei vielen mentoren
-
-*Lösung*: ebenfalls limitieren? TODO
-
-
-### Layout
-
-Filter Links / oben / unten / rechts?
-
--> Stundenplan soll genug platz haben, evtl. floating filters oder collapsable
-
---> Optisch klar hervorheben, was zeitfenster des schülers und was zeitfenster des mentors ist
-
-
 
 
 

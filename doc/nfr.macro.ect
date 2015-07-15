@@ -10,7 +10,15 @@
 
 
 
+\textit{Akzeptanzkriterien:}
 
+<% for criteria in @accCriteria :%>
+ & $\Box$ <%- criteria %> \\
+<% end %>
+\hline
+\textit{Priorität} & <%- @priority %> \\
+\hline
 \end{tabular}
 \end{center}
+
 

@@ -26,7 +26,6 @@ files = [
 	"045_Konzept.md"
 	"060_Design.md"
 	"070_Umsetzung.md"
-	"080_Testing.md"
 	"090_Ausblick.md"
 	"100_Anhang.md"
 ]
