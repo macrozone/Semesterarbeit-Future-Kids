@@ -3,15 +3,9 @@
 
 # Design & Architektur
 
-## Erfassen der Zeitfenster eines Schülers / Mentors
-
-Die bisherige Lösung verfügt bereits über eine Möglichkeit, die Zeitfenster eines Schülers und Mentors einzugeben, welche die Anforderungen des Kunden erfüllen. Allerdings wird beim Schüler dieser Bildschirm noch für die Auswahl der Mentoren zusätzlich genutzt (siehe Problem \ref{prob-01}). Wie in Abbildung \ref{mock_timetable_select_schedule} gezeigt, werden daher die Funktionalitäten zur Mentorenauswahl von diesem Bildschirm entfernt. Ebenso werden unnütze Bedienelemente wie in \ref{prob-02} beanstandet entfernt.
-
-![Erfassen der Zeitfenster - bei der bisherigen Lösung können die markierten Bedienelemente entfernt werden \label{mock_timetable_select_schedule}](img/mock_timetable_select_schedule.png)
-
 ## Mentoren-Auswahl
 
-Für die Auswahl der Mentoren wird ein neuer Bildschirm erstellt. Er dient dazu, aus allen im System erfassten Mentoren zu filtern und die Zeitfenster der ausgewählten Mentoren mit denen des Schülers zu vergleichen. Dazu stehen diverse Filtermöglichkeiten zur Verfügung. Weiterhin soll es möglich sein, ein Treffen zwischen Mentor und Schüler zu persistieren (Wochentag und Zeitpunkt), gemäss \ref{sc-015}. Diese direkte Zuweisung reduziert die in \ref{prob-04} beanstandeten Anzahl Klicks.
+Für die Auswahl der Mentoren wird ein neuer Bildschirm erstellt. Er dient dazu, aus allen im System erfassten Mentoren zu filtern und die Zeitfenster der ausgewählten Mentoren mit denen des Schülers zu vergleichen. Dazu stehen diverse Filtermöglichkeiten zur Verfügung. Weiterhin soll es möglich sein, ein Treffen zwischen Mentor und Schüler zu persistieren (Wochentag und Zeitpunkt), gemäss \ref{sc-015}. Diese direkte Zuweisung reduziert die in \ref{nfr-04} beanstandeten Anzahl Klicks.
 
 ### Filter und Auswahl für den Vergleich \label{mentor_selection_and_filters}
 

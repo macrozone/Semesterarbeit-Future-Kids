@@ -14,9 +14,6 @@ auf *Github* gehostet wird.
 Ein neuer *Branch* *feature/schedules* protokollierte die Arbeit auf Github, dieser wurde ausgehend vom aktuellsten Entwicklungsstand erstellt. Der Fortschritt der Arbeit wurde regelmässig auf Github geladen und somit gesichert.
 
 
-
-
-
 ### IDE
 
 Als Entwicklungsumgebung kam RubyMine 7.1.2 zur Verwendung, welche es erlaubt *Ruby on Rails*-Applikationen
@@ -96,11 +93,20 @@ Da in *FutureKids* weitgehend *CoffeeScript* verwendet wird, ist deren Verwendun
 
 In einer ersten Iteration wurden die Anforderungen \ref{sc-001} - \ref{sc-015} gemäss Planung umgesetzt, dabei wurden \ref{sc-008} und \ref{sc-009} nur graphisch gelöst (wie im Abschnitt \ref{feinkonzept} beschrieben). 
 
-TODO: screenshots
+
+
+![Ein neuer Menupunkt öffnet die neue Mentorensuche \label{screenshot_new_menu}](img/screenshot_new_menu.png)
+
+![Die neue Mentorensuche weist jedem Mentor eine Farbe zu (dynamisch abhängig von der Anzahl mentoren)\label{screenshot_iteration1}](img/screenshot_iteration1.png)
+
+![Bei einem Klick auf einen Zeitfenster kann der Mentor dem Schüler direkt zugewiesen werden. Es sind nur diejenigen Zeitfenster klickbar, welche sowohl von Schüler als auch von Mentor belegt sind\label{screenshot_iteration1_assign}](img/screenshot_iteration1_assign.png)
+
 
 ### Verifizierung
 
 Die einzelnen Anforderungen wurden durch Akzeptanztests mittels *Capybara-Specs* getrieben erstellt. Abbildung \ref{img_testresults1} zeigt das Testprotokoll (aus *RubyMine*) der Akzeptanztests.  
+
+![Ausgabe der Testsuite von *RubyMine* nach der ersten Iteration \label{img_testresults1}](img/testresults1.png)
 
 Die Anforderungen, welche die Anwendung vor der Anpassung bereits erfüllten, wurden allerdings nicht erneut maschinell überprüft.
 
@@ -133,7 +139,7 @@ Angepasste Stories:
 
 <% include 'story.macro.ect',
   number: "013"
-  version: 2
+  version: "2"
   title: "Als Administrator möchte ich für einen Schüler nach Mentoren suchen können, welche als primärer Mentor oder Ersatzmentor im Einsatz sind"
   priority: "MAY"
   accCriteria: [
@@ -147,11 +153,11 @@ Angepasste Stories:
 
 <% include 'story.macro.ect',
   number: "010"
-  version: 2
+  version: "2"
   title: "Als Administrator möchte ich für einen Schüler nach Mentoren mit passendem Geschlecht suchen können."
   priority: "MAY"
   accCriteria: [
-    "Neu: Die Optionen sind mit 'männlich' und 'weiblich' beschriftet
+    "Neu: Die Optionen sind mit 'männlich' und 'weiblich' beschriftet"
   ]
 %>
 
@@ -179,19 +185,25 @@ Diese Story wurde als Massnahme für die Reduktion der nötigen Klicks implizit 
     "Der Mentor wird als Hauptmentor zugewiesen, wenn das Schüler noch keinen Mentor hat"
     "Der Mentor wird als Ersatzmentor zugeweisen, wenn der Schüler bereits einen Mentor hat"
     "Es erscheint eine Meldung, wenn sowohl primärer Mentor, als auch Ersatzmentor zugewiesen sind"
-    
   ]
 %>
 
 
-### Verifizierung
+### Umsetzung und Verifizierung
 
-Die Tests wurden angepasst und erweitert, das resultierende Testprotokol aus *RubyMine* ist in Abbildung \ref{testresults2} ersichtlich.
+![Die Auswahl für den Mentoren zur Anzahl der betreuten Kinder, wurde angepasst. Zudem wurde das zuvor nicht sichtbare Formular, welches der Seite zu Grunde liegt, sichtbar gemacht, da es nützliche Informationen offenbart. Zudem kann dadurch der Mentor manuell geändert werden. \label{screenshot_iteration2}](img/screenshot_iteration2.png)
 
-- \ref{sc-013}v2 \checkmark im Test **filter - mentors-display-filter** verifiziert
-- \ref{sc-010}v2, \ref{sc-011}v2 Die Anpassung der Beschriftungen wurden nicht maschinell überprüft
-- \ref{sc-011} in den angepassten Tests **timetable - selection of mentors** verifiziert
+![Sind schon beide Mentoren zugewiesen, erscheint nun eine Fehlermeldung\label{screenshot_iteration2_assign}](img/screenshot_iteration2_assign.png)
 
+
+Anwendung und Tests wurden angepasst und erweitert, das resultierende Testprotokol aus *RubyMine* ist in Abbildung \ref{img_testresults2} ersichtlich.
+
+- \ref{sc-013v2} \checkmark im Test **filter - mentors-display-filter** verifiziert
+- \ref{sc-010v2}, \ref{sc-011v2} Die Anpassung der Beschriftungen wurden nicht maschinell überprüft
+- \ref{sc-016} \checkmark in den angepassten Tests **timetable - selection of mentors** verifiziert
+
+
+![Ausgabe der Testsuite von *RubyMine* nach der zweiten Iteration \label{img_testresults2}](img/testresults2.png)
 
 TODO: feedback
 

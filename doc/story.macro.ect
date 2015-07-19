@@ -2,15 +2,16 @@
 \begin{tabular}{|lp{12cm}|}
 \hline
 
-\textbf{\customlabel{sc-<%- @number %>}{Sc-<%- @number %> v<%- @version or 1 %>}} & 
+\textbf{\customlabel{sc-<%- @number %><%- "v#{@version}" if @version > 1%>}{SC-<%- @number %> v<%- @version or 1 %>}} & 
 
 <%- @title %>
 
 \\\hline
 <% if @description? : %>
-\textit{Story} & <%-@description%> \\
-<% end %>
+\textit{Beschreibung} & <%-@description%> \\
 \hline
+<% end %>
+
 
 \textit{Akzeptanzkriterien:}
 

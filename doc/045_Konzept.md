@@ -91,6 +91,7 @@ eine Rolle, die die Administratoren von AOZ berücksichtigen müssen. Diese Krit
 
 Die bestehende Lösung erfüllt teilweise bereits manche Anforderungen und soll daher gemäss Variante 2 optimiert werden. Die bestehende Lösung kann zukünftig immer noch um einen (teil-)automatiersten Prozess ergänzt werden.
 
+\pagebreak
 
 ## Feinkonzept: Bestehende Lösung (manuelle Zuweisung) optimieren \label{feinkonzept}
 
@@ -113,8 +114,11 @@ Das Setzen der Zeitfenster mit den Checkboxen kann beibehalten werden.
 
 \ref{nfr-02}: *Irritierende Bedienelemente*
 
-- Doppelte und inaktive Schaltflächen entfernen
+- Doppelte und inaktive Schaltflächen entfernen, siehe Abbildung \ref{mock_timetable_select_schedule}
 - Bedienelemente klar beschriften.
+
+
+![Erfassen der Zeitfenster - bei der bisherigen Lösung können die markierten Bedienelemente entfernt werden \label{mock_timetable_select_schedule}](img/mock_timetable_select_schedule.png)
 
 ### Anforderungen \ref{sc-005}, \ref{sc-006}, \ref{sc-007}, \ref{sc-015}
 
