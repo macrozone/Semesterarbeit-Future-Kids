@@ -8,18 +8,18 @@
 
 ### Source-Code-Kontrolle
 
-Als Werkzeug für die Source-Code-Kontrolle wurde *Git* verwendet, wobei das Projekt bereits 
+Als Werkzeug für die Source-Code-Kontrolle kam *Git* zur Verwendung, da das Projekt bereits 
 auf *Github* gehostet wird. 
 
-Es wurde ein Branch *feature/schedules* erstellt, ausgehend vom aktuellsten Entwicklungsstand. 
-Die Arbeit wurde regelmässig in die Versionskontrolle übertragen und nach Github hochgeladen
+Ein neuer *Branch* *feature/schedules* protokollierte die Arbeit auf Github, dieser wurde ausgehend vom aktuellsten Entwicklungsstand erstellt. Der Fortschritt der Arbeit wurde regelmässig auf Github geladen und somit gesichert.
+
 
 
 
 
 ### IDE
 
-Als Entwicklungsumgebung wurde RubyMine 7.1.2 verwendet, welche es erlaubt *Ruby on Rails*-Applikationen
+Als Entwicklungsumgebung kam RubyMine 7.1.2 zur Verwendung, welche es erlaubt *Ruby on Rails*-Applikationen
 direkt auszuführen und zu debuggen. RubyMine vereinfacht auch das Ausführen von *Specs* oder *Tests*.
 
 Zusätzlich wurde *Sublime Text 3* verwendet, da dieser aktuell für das verwendete *cjsx*-Format eine bessere
@@ -100,24 +100,36 @@ TODO: screenshots
 
 ### Verifizierung
 
-Die einzelnen Anforderungen wurden durch Akzeptanztests mittels *Capybara-Specs* getrieben erstellt.
+Die einzelnen Anforderungen wurden durch Akzeptanztests mittels *Capybara-Specs* getrieben erstellt. Abbildung \ref{img_testresults1} zeigt das Testprotokoll (aus *RubyMine*) der Akzeptanztests.  
 
-TODO: testprotokol
-TODO: Akzeptanzkriterien Id vergeben und erfüllt / nicht erfüllt
+Die Anforderungen, welche die Anwendung vor der Anpassung bereits erfüllten, wurden allerdings nicht erneut maschinell überprüft.
 
-
-
+- \ref{sc-001} \checkmark durch die bisherige Lösung erüllt
+- \ref{sc-002} \checkmark durch die bisherige Lösung erüllt
+- \ref{sc-003} \checkmark durch die bisherige Lösung erüllt
+- \ref{sc-004} \checkmark durch die bisherige Lösung erüllt
+- \ref{sc-005} \checkmark durch die bisherige Lösung und zudem durch die neue Mentoren-Suche erfüllt, welche im Test **timetable - select one entry to store the date** getested wurde.
+- \ref{sc-007} \checkmark durch die bisherige Profilseite des Schülers erfüllt
+- \ref{sc-008} \checkmark grafisch über die neue Mentoren-Suche umgesetzt
+- \ref{sc-009} \checkmark grafisch über die neue Mentoren-Suche umgesetzt
+- \ref{sc-010} \checkmark als Filter umgesetzt, im Test **filters - sex-filter** getestet
+- \ref{sc-011} \checkmark als Filter umgesetzt, im Test **filters - ects-filter** getestet
+- \ref{sc-012} \checkmark als Filter umgesetzt, im Test **filters - school-filter** getestet
+- \ref{sc-013} \checkmark als Filter umgesetzt, im Test **filter - number-of-kids-filter** getested
+- \ref{sc-014} \checkmark in dieser Iteration noch nicht maschinell getestet
+- \ref{sc-015} \checkmark im Test **timetable - select one entry to store the date** verifiziert
 
 Die Anwendung wurde daraufhin auf die Test-Instanz (*Staging-Server*) geladen und durch den Kunden verifiziert. 
 
-
 ## Zweite Iteration
 
-Die erste Rückmeldung fiel sehr positiv aus. In einem weiteren Treffen wurden Anpassungen besprochen. Grösstes Problem war der Filter für die Anzahl der betreuten Kinden, gemäss \ref{sc-13}. In der Praxis ist es wichtiger zu unterscheiden, ob ein Mentor als Haupt- oder primärer Mentor ein Kind betreut oder nur Ersatzmentor ist.
+Die erste Rückmeldung fiel sehr positiv aus. In einem weiteren Treffen wurden Anpassungen besprochen. Grösstes Problem war der Filter für die Anzahl der betreuten Kinden, gemäss \ref{sc-13}. In der Praxis ist es wichtiger zu unterscheiden, ob ein Mentor als Haupt- oder primärer Mentor ein Kind betreut oder nur Ersatzmentor ist. Zudem soll beim Zuweisen eines Mentors zu einem Kind dieser als primärer oder als Ersatzmentor zugewiesen werden, je nach dem, ob der Schüler schon ein Mentor hat oder nicht.
 
 Zudem wurden gewisse Beschriftungen bemängelt.
 
 ### Neue Anforderungen:
+
+Angepasste Stories: 
 
 <% include 'story.macro.ect',
   number: "013"
@@ -131,6 +143,7 @@ Zudem wurden gewisse Beschriftungen bemängelt.
     "Es können Mentoren gefunden werden, sowohl als primärer Mentor als auch als Ersatzmentor aktiv sind"
   ]
 %>
+
 
 <% include 'story.macro.ect',
   number: "010"
@@ -153,9 +166,32 @@ Zudem wurden gewisse Beschriftungen bemängelt.
 %>
 
 
+Neue Story:
+
+Diese Story wurde als Massnahme für die Reduktion der nötigen Klicks implizit umgesetzt, aber noch nicht als Story erfasst. Da diese Anforderung nun etwas angepasst wurde, soll sie hier eine eigene Story erhalten:
+
+<% include 'story.macro.ect',
+  number: "016"
+  title: "Als Administrator möchte ich in der Mentoren-Suche ein Mentor direkt einem Kind zuweisen können"
+  priority: "MAY"
+  accCriteria: [
+    "Die Wahl muss bestätigt werden"
+    "Der Mentor wird als Hauptmentor zugewiesen, wenn das Schüler noch keinen Mentor hat"
+    "Der Mentor wird als Ersatzmentor zugeweisen, wenn der Schüler bereits einen Mentor hat"
+    "Es erscheint eine Meldung, wenn sowohl primärer Mentor, als auch Ersatzmentor zugewiesen sind"
+    
+  ]
+%>
+
+
 ### Verifizierung
 
-TODO
+Die Tests wurden angepasst und erweitert, das resultierende Testprotokol aus *RubyMine* ist in Abbildung \ref{testresults2} ersichtlich.
+
+- \ref{sc-013}v2 \checkmark im Test **filter - mentors-display-filter** verifiziert
+- \ref{sc-010}v2, \ref{sc-011}v2 Die Anpassung der Beschriftungen wurden nicht maschinell überprüft
+- \ref{sc-011} in den angepassten Tests **timetable - selection of mentors** verifiziert
+
 
 TODO: feedback
 
