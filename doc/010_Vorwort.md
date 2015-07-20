@@ -1,4 +1,10 @@
 
+\listoffigures
+
+\lstlistoflistings
+
+
+
 \pagebreak
 
 # Vorwort

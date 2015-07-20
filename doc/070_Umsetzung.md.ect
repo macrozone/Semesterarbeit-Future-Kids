@@ -127,11 +127,15 @@ Die Anforderungen, welche die Anwendung vor der Anpassung bereits erfüllten, wu
 
 Die Anwendung wurde daraufhin auf die Test-Instanz (*Staging-Server*) geladen und durch den Kunden verifiziert. 
 
+TODO: Verifizierung der NFR
+
 ## Zweite Iteration
 
 Die erste Rückmeldung fiel sehr positiv aus. In einem weiteren Treffen wurden Anpassungen besprochen. Grösstes Problem war der Filter für die Anzahl der betreuten Kinden, gemäss \ref{sc-13}. In der Praxis ist es wichtiger zu unterscheiden, ob ein Mentor als Haupt- oder primärer Mentor ein Kind betreut oder nur Ersatzmentor ist. Zudem soll beim Zuweisen eines Mentors zu einem Kind dieser als primärer oder als Ersatzmentor zugewiesen werden, je nach dem, ob der Schüler schon ein Mentor hat oder nicht.
 
-Zudem wurden gewisse Beschriftungen bemängelt.
+Zudem wurden gewisse Beschriftungen bemängelt, die angepasst wurden.
+
+Weiterhin wurde die Anzahl an Mentoren für den Vergleich limitiert auf 10 mentoren, sodass die Balken nicht zu klein werden.
 
 ### Neue Anforderungen:
 
@@ -143,8 +147,8 @@ Angepasste Stories:
   title: "Als Administrator möchte ich für einen Schüler nach Mentoren suchen können, welche als primärer Mentor oder Ersatzmentor im Einsatz sind"
   priority: "MAY"
   accCriteria: [
-    "Es können Mentoren gefunden werden, welche nicht als primärer Mentor aktiv sind (aber möglicherweise als Ersatzmentor)"
-    "Es können Mentoren gefunden werden, welche als primäre Mentoren aktiv sind"
+    "Es können Mentoren gefunden werden, welche noch kein Kind zugewiesen haben"
+    "Es können Mentoren gefunden werden, welche nur als primäre Mentoren aktiv sind"
     "Es können Mentoren gefunden werden, welche nur als Ersatzmentoren aktiv sind"
     "Es können Mentoren gefunden werden, sowohl als primärer Mentor als auch als Ersatzmentor aktiv sind"
   ]
@@ -171,6 +175,15 @@ Angepasste Stories:
   ]
 %>
 
+<% include 'story.macro.ect',
+  number: "008"
+  version: 2
+  title: "Als Administrator möchte ich für einen Schüler nach Mentoren mit überschneidenden Zeitfenstern suchen können"
+  priority: "MAY"
+  accCriteria: [
+    "Neu: Es werden maximal 10 Mentoren für den Vergleich angezeigt"
+  ]
+%>
 
 Neue Story:
 
@@ -200,13 +213,14 @@ Anwendung und Tests wurden angepasst und erweitert, das resultierende Testprotok
 
 - \ref{sc-013v2} \checkmark im Test **filter - mentors-display-filter** verifiziert
 - \ref{sc-010v2}, \ref{sc-011v2} Die Anpassung der Beschriftungen wurden nicht maschinell überprüft
+- \ref{sc-008v2} \checkmark in den angepassten Tests **timetable - shows maximum 10 mentors** verifiziert
 - \ref{sc-016} \checkmark in den angepassten Tests **timetable - selection of mentors** verifiziert
+
 
 
 ![Ausgabe der Testsuite von *RubyMine* nach der zweiten Iteration \label{img_testresults2}](img/testresults2.png)
 
-TODO: feedback
-
+TODO: Verifizierung der NFR
 
 
 

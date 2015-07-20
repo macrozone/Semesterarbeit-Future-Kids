@@ -26,6 +26,9 @@ references:
 	title: Stadt-Zürich - Future Kids
 	URL: https://www.stadt-zuerich.ch/aoz/de/index/integration/future_kids/unterstuetzung.html
 	date: 2015-03-06
+-	id: github_futurekids
+	title: Github FutureKids
+	URL: https://github.com/panterch/future_kids/
 -	id: ectsWiki
 	title: ECTS - Wikipedia
 	URL: http://de.wikipedia.org/wiki/European_Credit_Transfer_System
