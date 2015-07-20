@@ -7,8 +7,7 @@ date: 2015-03-06
 language: de-CH
 references:
 - 	id: essentialScrumStories
-	title: ESSENTIAL SCRUM - A practical Guide to the most popular agile process
-	author: Kenneth S. Rubin
+	title: Kenneth S. Rubin - ESSENTIAL SCRUM - A practical Guide to the most popular agile process
 	page: 83-85
 - 	id: essentialScrumNonFunctional
 	title: ESSENTIAL SCRUM - A practical Guide to the most popular agile process
@@ -34,8 +33,7 @@ references:
 	URL: http://de.wikipedia.org/wiki/European_Credit_Transfer_System
 	date: 2015-03
 - 	id: timetablegenetics
-	title: Masterthesis - Die Anwendung eines genetischen Algorithmus auf das Timetabling Problem einer Grundschule
-	author: Julia Lange
+	title: Julia Lange - Masterthesis - Die Anwendung eines genetischen Algorithmus auf das Timetabling Problem einer Grundschule
 	date: 2012-08-13
 	URL: http://www.math.uni-magdeburg.de/~lange/papers/masterthesis.pdf
 - 	id: timetablenpsidney

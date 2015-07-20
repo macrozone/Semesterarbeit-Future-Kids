@@ -9,10 +9,6 @@
 
 Quellcode der Arbeit:
 
-(TODO)
+[https://github.com/panterch/future_kids/](https://github.com/panterch/future_kids/)
 
 ## Quellenangaben
-
-**Titelbild**: 
-
-(TODO)

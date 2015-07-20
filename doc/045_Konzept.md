@@ -120,6 +120,8 @@ Das Setzen der Zeitfenster mit den Checkboxen kann beibehalten werden.
 
 ![Erfassen der Zeitfenster - bei der bisherigen Lösung können die markierten Bedienelemente entfernt werden \label{mock_timetable_select_schedule}](img/mock_timetable_select_schedule.png)
 
+\pagebreak
+
 ### Anforderungen \ref{sc-005}, \ref{sc-006}, \ref{sc-007}, \ref{sc-015}
 
 Die bisherige Lösung sieht für die Zuweisung eines Mentors ein Feld in der Editier-Maske eines Schülers vor, ebenso kann dort vermerkt werden, ob wer als Ersatzmentor vermerkt ist und ob dieser aktiv ist. Weiterhin kann ein Wochentag und Zeitpunkt des Treffens erfasst werden gemäss Anforderung \ref{sc-015}.
@@ -208,7 +210,7 @@ Diese Funktion ist, wie oben erwähnt in der aktuellen Version bereits implement
 
 **Massnahmen**:
 
-Diese Funktionalität soll gleichartig wie die Suche nach passendem Geschlecht, Einsatzort oder anderen Kriterien umgesetzt werden.
+- Diese Funktionalität soll gleichartig wie die Suche nach passendem Geschlecht, Einsatzort oder anderen Kriterien umgesetzt werden.
 
 ### Anforderung \ref{sc-014}
 

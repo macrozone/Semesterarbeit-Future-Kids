@@ -88,6 +88,7 @@ render(dropdown);
 
 Da in *FutureKids* weitgehend *CoffeeScript* verwendet wird, ist deren Verwendung auch für React-Komponenten naheliegend. Als Alternative gibt es die vereinfachte JSX-CoffeeScript-Syntax, wobei die JSX-Subsyntax mittels `-Zeichen "escaped" wird. Allerdings entsteht dadurch eine Mischsyntax aus Javascript und CoffeeScript. Der Author dieser Arbeit vertritt die Meinung dass die CJSX-Syntax expressiver ist, als die Mischform und reines JSX, da Schleifen und Kontrollstrukturen sehr einfach in den XML-Strukturen verwendet werden können (Siehe obiges Beispiel).
 
+\pagebreak
 
 ## Erste Iteration
 
@@ -127,11 +128,33 @@ Die Anforderungen, welche die Anwendung vor der Anpassung bereits erfüllten, wu
 
 Die Anwendung wurde daraufhin auf die Test-Instanz (*Staging-Server*) geladen und durch den Kunden verifiziert. 
 
-TODO: Verifizierung der NFR
+### Verifizierung der NFR
+
+Die Nicht-Funktionalen Anforderungen wurden manuell verifiziert:
+
+- \ref{nfr-01} \checkmark Erfüllt durch die Trennung von Mentorensuche und Schülerstundenplan
+- \ref{nfr-02} \checkmark Es sind keine doppelten oder inaktive Schaltflächen mehr vorhanden in den bearbeiteten Komponenten
+- \ref{nfr-03} teilweise erfüllt, bei vielen Mentoren sind allerdings die Spalten zu klein
+- \ref{nfr-04} \checkmark ein gefundener Mentor kann mit zwei Klicks zugewiesen werden (einer für die Bestätigung)
+- \ref{nfr-05} teilweise erfüllt durch die Filter, jedoch fehlt der Name des aktuellen Kindes und bereits zugewiesener Mentoren
+
+### Definition of Done:
+
+- **Funktionalität wurde implementiert** \checkmark 
+- **Funktionalität wurde getested** Teilweise, es fehlen noch wenige Tests (Anzahl-Schüler-Filter)
+- **Funktionalität wurde auf eine Testumgebung geladen und die Integration überprüft** \checkmark
+- **Funktionalität und Projekt kann unter einer Open Source Lizenz veröffentlicht werden und Umsetzung beachtet Lizenzen verwendeter Dritt-Software** \checkmark Die Verwendeten Libraries (React, React-Select, gems) wurden überprüft
+- **Funktionalität wurde auf unterstützten Browsern überprüft (Firefox aktuell, Chrome aktuell, IE ab 10)** \checkmark 
+- **Gestaltung der Funktionalität entspricht der Corporate-ID von AOZ** \checkmark, auf Staging erscheint allerdings ein anderes Logo
+- **Funktionalität und Deployment ist dokumentiert** \checkmark, Deployment benötigt keine Änderung
+
+
+\pagebreak
+
 
 ## Zweite Iteration
 
-Die erste Rückmeldung fiel sehr positiv aus. In einem weiteren Treffen wurden Anpassungen besprochen. Grösstes Problem war der Filter für die Anzahl der betreuten Kinden, gemäss \ref{sc-13}. In der Praxis ist es wichtiger zu unterscheiden, ob ein Mentor als Haupt- oder primärer Mentor ein Kind betreut oder nur Ersatzmentor ist. Zudem soll beim Zuweisen eines Mentors zu einem Kind dieser als primärer oder als Ersatzmentor zugewiesen werden, je nach dem, ob der Schüler schon ein Mentor hat oder nicht.
+Die erste Rückmeldung fiel sehr positiv aus. In einem weiteren Treffen wurden Anpassungen besprochen. Grösstes Problem war der Filter für die Anzahl der betreuten Kinden, gemäss \ref{sc-013}. In der Praxis ist es wichtiger zu unterscheiden, ob ein Mentor als Haupt- oder primärer Mentor ein Kind betreut oder nur Ersatzmentor ist. Zudem soll beim Zuweisen eines Mentors zu einem Kind dieser als primärer oder als Ersatzmentor zugewiesen werden, je nach dem, ob der Schüler schon ein Mentor hat oder nicht.
 
 Zudem wurden gewisse Beschriftungen bemängelt, die angepasst wurden.
 
@@ -220,7 +243,21 @@ Anwendung und Tests wurden angepasst und erweitert, das resultierende Testprotok
 
 ![Ausgabe der Testsuite von *RubyMine* nach der zweiten Iteration \label{img_testresults2}](img/testresults2.png)
 
-TODO: Verifizierung der NFR
+### Verifizierung der NFR (Ergänzungen)
+
+- \ref{nfr-03} \checkmark nun ebenfalls erfüllt durch das Limit von 10 maximal angezeigter Mentoren
+- \ref{nfr-05} \checkmark erfüllt durch das Formular das jetzt angezeigt, sowie durch die Anzeige des Namens des Kindes.
+
+### Definition of Done 
+
+- **Funktionalität wurde implementiert** \checkmark 
+- **Funktionalität wurde getested** \checkmark die neuen Funktionalitäten wurden getestet, es wurden fehlende Tests nachgereicht.
+- **Funktionalität wurde auf eine Testumgebung geladen und die Integration überprüft** \checkmark
+- **Funktionalität und Projekt kann unter einer Open Source Lizenz veröffentlicht werden und Umsetzung beachtet Lizenzen verwendeter Dritt-Software** \checkmark 
+- **Funktionalität wurde auf unterstützten Browsern überprüft (Firefox aktuell, Chrome aktuell, IE ab 10)** \checkmark 
+- **Gestaltung der Funktionalität entspricht der Corporate-ID von AOZ** \checkmark
+- **Funktionalität und Deployment ist dokumentiert** \checkmark
+
 
 
 

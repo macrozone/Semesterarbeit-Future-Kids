@@ -14,10 +14,9 @@ Die Auswahl der Mentoren geschieht in zwei Schritten:
 1. Filter definieren die zur Auswahl stehenden Mentoren, diese sollen initial auf sinnvolle Werte gesetzt sein.
 2. Aus den gefilterten Mentoren können bestimmte Mentoren für den Vergleich mit dem Schüler ausgewählt werden. 
 
-Durch dieses Zwei-Schritte Verfahren soll sichergestellt werden, dass die Übersicht sowohl bei vielen möglichen Mentoren, als auch im Fall, dass nur wenige passende Mentoren zur Verfügung stehen, nicht eingeschränkt ist. 
+Durch dieses Zwei-Schritte Verfahren soll sichergestellt werden, dass die Übersicht sowohl bei vielen möglichen Mentoren, als auch im Fall, dass nur wenige passende Mentoren zur Verfügung stehen, nicht eingeschränkt ist. Abbildung \ref{screenshot_mock} zeigt einen Entwurf der möglichen Lösung.
 
-(TODO: mock)
-
+![Als einfache HTML-Komponente umgesetzer Entwurf für die Mentorensuche und der Filter. Die Zeitfenster des Schülers sind grün hinterlegt. \label{screenshot_mock}](img/screenshot_mock.png)
 
 
 Die einzelnen Filter reduzieren die Mentoren für die Suche nach Kriterien, die jeweils mit UND verknüpft werden,
@@ -63,19 +62,6 @@ Die zur Auswahl stehenden Mentoren sollen dabei bereits die durch die anderen Fi
 - Die maximale Anzahl Mentoren soll dort visualisiert werden, damit man sieht, wieviele in Frage kommen.
 
 [^fn_react_select]: Siehe [@reactSelect] 
-
-
-### Layout
-
-TODO
-
-Filter Links / oben / unten / rechts?
-
--> Stundenplan soll genug platz haben, evtl. floating filters oder collapsable
-
---> Optisch klar hervorheben, was zeitfenster des schülers und was zeitfenster des mentors ist
-
-
 
 
 
@@ -127,11 +113,7 @@ Mentoren-Filter
 
 ## Daten-Schemas
 
-
-
-TODO: uml
-
-Die geplante Komponente muss folgende Daten kennen:
+Die geplante Komponente muss folgende Daten kennen (Darstellung in Anlehnung an ein CoffeeScript-Objekt):
 
 
 ~~~~~~~
@@ -151,9 +133,9 @@ School =
 Mentor = 
 	id:
 		type: String
-	firstname: 
+	prename: 
 		type: String
-	lastname: 
+	name: 
 		type: String
 	gender:
 		type: ["m", "f"]
@@ -176,9 +158,9 @@ Mentor =
 Kid =
 	id:
 		type: String
-	firstname:
+	prename:
 		type: String
-	lastname:
+	name:
 		type: String
 	timetable:
 		type: Array

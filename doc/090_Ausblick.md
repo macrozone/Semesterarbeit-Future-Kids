@@ -1,6 +1,7 @@
 
 
 \pagebreak
+
 # Rückblick
 
 Mit stetiger Sicht auf die funktionalen und nicht-funktionalen Anforderungen konnte ich die bestehende Anwendung
@@ -30,7 +31,7 @@ Die hohen Anforderungen an die Bedienbarkeit ergaben zudem einen verhältnismäs
 
 
 
-## Ausblick
+# Ausblick
 
 Der Kunde hat weitere mögliche Erweiterungen bereits erwähnt:
 
