@@ -1,7 +1,6 @@
 
+
 \pagebreak
-
-
 # Rückblick
 
 Mit stetiger Sicht auf die funktionalen und nicht-funktionalen Anforderungen konnte ich die bestehende Anwendung

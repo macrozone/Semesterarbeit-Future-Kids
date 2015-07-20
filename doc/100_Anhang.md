@@ -1,4 +1,6 @@
-\newpage
+
+\pagebreak
+
 \appendix
 
 # Anhang

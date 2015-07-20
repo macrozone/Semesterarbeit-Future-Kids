@@ -23,11 +23,17 @@ Die **funktionalen Anforderungen** werden in Anlehnung an SCRUM als User-Stories
 
 Zu jeder Story gehören:
 
-(TODO:)
-
-(TODO: add INVEST?)
-
-(TODO: show story card template)
+<% include 'story.macro.ect',
+	number: "Nummer"
+	title: "Titel, eigentliche Story"
+	description: "Beschreibung"
+	version: "Version"
+	priority: "PRIORITÄT"
+	accCriteria: [
+ 		"Akzeptanzkriterium 1"
+ 		"Akzeptanzkriterium 2"
+ 	]
+%>
 
 
 [^fnScrum]: User Stories formulieren eine (in der Regel) funktionale Anforderung an ein Projekt aus der Sicht einer bestimmten Rolle und sind in einer Sprache erfasst, die sowohl der Auftraggeber als auch das Umsetzungsteam versteht. [@essentialScrumStories]
@@ -39,11 +45,6 @@ Ein Vorteil von *Definition of Done* ist, dass es eine Möglichkeit bietet, nich
 ### Ist-Analyse
 
 Die bestehende Anwendung, deren Schnittstellen und deren Daten werden in dieser Phase analysiert um zu überprüfen, wie sich das geplante Modul in die bestehende Lösung integrieren lässt.
-
-(### Recherche)
-
-(In der Recherchephase wird nach bereits existierenden, passenden Software-Lösungen, Algorithmen oder Darstellungen gesucht, um die die Anforderungen aus der Phase \ref{secphaseanalyse} zu erfüllen.)) TODO entfernen?
-
 
 ### Konzept, Lösungsvarianten und Entscheid
 

@@ -18,7 +18,7 @@ pandoc = Pandoc.spawn ["-o", "out.pdf"]
 files = [
 	"metadata.yaml"
 	"010_Vorwort.md"
-	"020_Einleitung.md"
+	"020_Einleitung.md.ect"
 	"030_Anforderungsanalyse.ect"
 	"040_Ist_Analyse.md"
 	"042_nfr.ect"
