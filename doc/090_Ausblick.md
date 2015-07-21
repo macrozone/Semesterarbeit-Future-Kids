@@ -21,19 +21,14 @@ Dies ergab nun zwar gut differenzierbare Stories, die Akzeptanzkritierien für d
 
 Die hohen Anforderungen an die Bedienbarkeit ergaben zudem einen verhältnismässig komplexen Aufbau der Komponente, was das Testen zusätzlich erschwerte. In einem solchen Fall muss die hohe Komplexität gegen die damit verbundenen komplexeren Tests abgewogen werden. Ich entschied mich trotzdem dazu, mein erarbeitetes Konzept wie geplant umzusetzen und nahm dafür einige etwas weniger genaue Tests in Kauf, da ich der Meinung bin, im vorliegenden Fall überwiegt der Nutzen dem möglichen Risiko für eine Fehlfunktion uder der Weiterentwicklung.
 
-## Kundenfeedback
-
-> **Feedback: Einführung Kalenderfunktion auf der Onlineplattform von Future Kids**
-
-> Die Zusammenarbeit mit Marco war sehr angenehm und produktiv. Die gemeinsame Ideenentwicklung hat zur erfolgreichen Umsetzung der Kalenderfunktion geführt. Bei einem ersten Treffen konnte von Seiten Future Kids die Bedürfnisse der neuen Funktion angebracht werden. Durch gezieltes Fragen machte sich Marco ein genaues Bild der gewünschten Möglichkeiten der neuen Kalenderfunktion und bot konkrete Vorschläge zu deren Umsetzung.
-
-> Die Umsetzung entsprach ganz der besprochenen Idee. Kleine Anpassungswünsche wurden sofort umgesetzt. Die neue Kalenderfunktion ist sehr übersichtlich und benutzerfreundlich gestaltet. Sie entspricht den Nutzungsanforderungen von Future Kids. Durch die neue Funktion wird die Arbeit im Zusammenhang mit dem bilden von Mentor/in-Schüler/in Paaren stark erleichtert, wodurch viel Zeit eingespart werden kann. Mit dem Ergebnis sind wir sehr zufrieden.
 
 
 
 # Ausblick
 
-Der Kunde hat weitere mögliche Erweiterungen bereits erwähnt:
+Zum Zeitpunkt des Schreibens dieser Arbeit steht der Adminstration die aufwenige Aufgabe des "Matchings", d.h. des Findens passender Mentor- und Ersatzmentor-Paare für die Schüler des kommenden Semesters bevor. Die entwickelte Komponente ist für diese Aufgabe essentiell und die Verbesserungen sollten sich gemäss Administration in einer signifikanten Zetersparnis niederschlagen. Da alle wichtigen Anforderungen umgesetzt und verifiziert wurden, steht einer Live-Schaltung auf die Produktiv-Umgebung nichts im Wege. Diese soll Anfangs August 2015 stattfinden.
+
+Der Kunde hat zudem weitere mögliche Erweiterungen bereits erwähnt:
 
 - Falls ein Mentor bereis ein anderes Kind betreut, wird eine Meldung angezeigt, falls der Mentor gewählt wird.
 - Es soll möglich sein, nur einen einzelnen Wochentag anzuzeigen

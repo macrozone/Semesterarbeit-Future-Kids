@@ -41,7 +41,7 @@ React ist in *FutureKid* über das *gem*[^fn_gems] *'react-rails'* bereits integ
 
 *JSX* Erweitert Javascript um eine XML-artige Syntax, in welcher React-Komponenten ähnlich wie HTML erstellt werden können:
 
-~~~~~~~
+~~~~~~~{caption="Beispielcode in JSX" label=lstSampleJSX}
 var dropdown =
   <Dropdown>
     A dropdown list
@@ -67,7 +67,7 @@ CJSX ist eine Variante von *JSX*, welcher *CoffeeScript*, statt Javascript zugru
 
 *CJXS* vereint nun CoffeeScript mit der XML-Erweiterungen von JSX:
 
-~~~~~~~
+~~~~~~~{caption="Beispielcode in CJSX" label=lstSampleCJSX}
 var dropdown =
   <Dropdown>
     { <h1>A dropdown list.</h1> if @state.showTitle }
@@ -103,6 +103,7 @@ In einer ersten Iteration wurden die Anforderungen \ref{sc-001} - \ref{sc-015} g
 ![Bei einem Klick auf einen Zeitfenster kann der Mentor dem Schüler direkt zugewiesen werden. Es sind nur diejenigen Zeitfenster klickbar, welche sowohl von Schüler als auch von Mentor belegt sind\label{screenshot_iteration1_assign}](img/screenshot_iteration1_assign.png)
 
 
+
 ### Verifizierung
 
 Die einzelnen Anforderungen wurden durch Akzeptanztests mittels *Capybara-Specs* getrieben erstellt. Abbildung \ref{img_testresults1} zeigt das Testprotokoll (aus *RubyMine*) der Akzeptanztests.  
@@ -111,11 +112,12 @@ Die einzelnen Anforderungen wurden durch Akzeptanztests mittels *Capybara-Specs*
 
 Die Anforderungen, welche die Anwendung vor der Anpassung bereits erfüllten, wurden allerdings nicht erneut maschinell überprüft.
 
-- \ref{sc-001} \checkmark durch die bisherige Lösung erüllt
-- \ref{sc-002} \checkmark durch die bisherige Lösung erüllt
-- \ref{sc-003} \checkmark durch die bisherige Lösung erüllt
-- \ref{sc-004} \checkmark durch die bisherige Lösung erüllt
+- \ref{sc-001} \checkmark durch die bisherige Lösung erfüllt
+- \ref{sc-002} \checkmark durch die bisherige Lösung erfüllt
+- \ref{sc-003} \checkmark durch die bisherige Lösung erfüllt
+- \ref{sc-004} \checkmark durch die bisherige Lösung erfüllt
 - \ref{sc-005} \checkmark durch die bisherige Lösung und zudem durch die neue Mentoren-Suche erfüllt, welche im Test **timetable - select one entry to store the date** getested wurde.
+- \ref{sc-006} teilweise durch bisherige Lösung erfüllt, aus der Mentorensuche aus können aber nicht direkt Ersatzmentoren zugewiesen werden.
 - \ref{sc-007} \checkmark durch die bisherige Profilseite des Schülers erfüllt
 - \ref{sc-008} \checkmark grafisch über die neue Mentoren-Suche umgesetzt
 - \ref{sc-009} \checkmark grafisch über die neue Mentoren-Suche umgesetzt
@@ -221,6 +223,8 @@ Diese Story wurde als Massnahme für die Reduktion der nötigen Klicks implizit 
     "Der Mentor wird als Hauptmentor zugewiesen, wenn das Schüler noch keinen Mentor hat"
     "Der Mentor wird als Ersatzmentor zugeweisen, wenn der Schüler bereits einen Mentor hat"
     "Es erscheint eine Meldung, wenn sowohl primärer Mentor, als auch Ersatzmentor zugewiesen sind"
+    "Angewählter Wochentag wird persistiert"
+    "Angewählter Zeitpunkt wird persistiert"
   ]
 %>
 

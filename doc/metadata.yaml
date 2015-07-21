@@ -5,13 +5,13 @@ author: Marco Wettstein
 geometry: margin=3cm
 date: 2015-03-06
 language: de-CH
+abstract: 
 references:
 - 	id: essentialScrumStories
 	title: Kenneth S. Rubin - ESSENTIAL SCRUM - A practical Guide to the most popular agile process
 	page: 83-85
 - 	id: essentialScrumNonFunctional
-	title: ESSENTIAL SCRUM - A practical Guide to the most popular agile process
-	author: Kenneth S. Rubin
+	title: Kenneth S. Rubin - ESSENTIAL SCRUM - A practical Guide to the most popular agile process
 	page: 93
 - 	id: aozstartseite
 	title: AOZ Startseite

@@ -31,7 +31,7 @@ Listing \ref{lstMentorRb} zeigt die Beziehungen einer Mentor-Entität. Zu sehen 
 
 
 
-~~~~{caption="Mentor-Klasse in Ruby (mentor.rb)" label=lstMentorRb}
+~~~~~{caption="Mentor-Klasse in Ruby (mentor.rb)" label=lstMentorRb}
 class Mentor < User
 
   has_many :kids

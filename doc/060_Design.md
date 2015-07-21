@@ -108,7 +108,7 @@ Mentoren-Auswahl
 Mentoren-Filter
 :	Ermöglicht Filtern der Mentoren nach Kriterien (vgl. \ref{mentor_selection_and_filters}).
 
-![Komponenten-Diagram der Mentoren-Suche\label{uml_components_mentor_search}](img/uml_components_mentor_search.png)
+![Komponenten-Diagram der Mentoren-Suche. Die Mentoren-Suche ist dabei die zentrale Komponente. Sie erhält Daten vom serverseitigem Controller und leitet sie an ihre Unter-Komponente weiter. Diese wiederum kommunizieren mit ihren übergeordneten Komponenten mit Ereignissen. Die jeweils in eine Richtung gerichteten Pfeile sollen dabei diesen Datenfluss visualisieren.\label{uml_components_mentor_search}](img/uml_components_mentor_search.png)
 
 
 ## Daten-Schemas
@@ -116,7 +116,7 @@ Mentoren-Filter
 Die geplante Komponente muss folgende Daten kennen (Darstellung in Anlehnung an ein CoffeeScript-Objekt):
 
 
-~~~~~~~
+~~~~{caption="Benötigte Daten für die Komponente" label=listDatastructure}
 
 mentors =
 	type: [Mentor]
