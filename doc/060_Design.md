@@ -79,7 +79,7 @@ Abbildung \ref{mock_timetable_mentors} zeigt die geplante Darstellung des Stunde
 
 Die maximale Anzahl anzeigbarer Mentoren sollte allenfalls eingeschränkt werden, damit sich die Farben nicht wiederholen und die Balken eine vernünftige Breite beibehalten.
 
-![Bearbeitung eines Mentors (Mock)\label{mock_timetable_mentors}](img/mock_timetable_mentors.png)
+![Konzipierte Darstellung für den Vergleich der Zeitfenster von Mentoren und des Schülers. Die Darstellung lehnt sich an bekannte Kalender-Anwendungen an. Verschiedene Farben der Mentoren sollen dabei die Orientierung erleichtern\label{mock_timetable_mentors}](img/mock_timetable_mentors.png)
 
 In der Abbildung sind Zeitfenster von Mentoren, die sich nur knapp oder gar nicht mit dem des Schülers überschneiden, nicht speziell berücksichtigt (z.b. Müller Sabine am Donnerstag und Freitag). Es wäre denkbar, diese ein- und ausblendbar zu machen oder anders zu kennzeichnen (schmaler, andere Farbgebung, Transparenz).
 

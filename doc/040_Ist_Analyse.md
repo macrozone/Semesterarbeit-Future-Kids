@@ -59,7 +59,7 @@ Schüler können ähnlich wie Mentoren bearbeitet werden. Abbildungungen \ref{sc
 
 Im unterem Teil des Bildschirms können die zugewiesenen Lehrer und Mentoren angesehen werden.
 
-![Schüler Profil-Seite - Beziehungen (Bestehende Lösung)\label{screenshot_kid_bottom}](img/screenshot_mentor_time_current.png)
+![Schüler Profil-Seite - Beziehungen (Bestehende Lösung)\label{screenshot_kid_bottom}](img/screenshot_kid_bottom.png)
 
 Editiert man einen Schüler unter "Bearbeiten" können unter anderem Mentoren zugewiesen werden, sowie Wochentag und Zeitpunkt des Treffens des Mentoren mit dem Schüler. (Abbildung \ref{screenshot_kid_assign_mentor}, Story \ref{sc-005}). 
 

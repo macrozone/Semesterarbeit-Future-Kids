@@ -1,73 +1,74 @@
 # Testing
 
-Die umgesetzte Arbeit wurde automatisiert mittels *Specs* und durch den Auftraggeber verifiziert. 
-Zusammengefasst ergibt sich nach der zweiten Iteration folgendes Bild:
+Die umgesetzte Arbeit wurde automatisiert mittels *Specs* und durch den Auftraggeber verifiziert.
+Nach den beiden im vorherigen Abschnitt erläuterten Iterationen ergibt sich folgenden Zusammenfassung:
 
 ## User-Stories
 
-------------------------------------------------------------------------------------------------------------------------------
-Story			implementiert	automatisiert 	durch Kunden 		Beschreibung
-    							getestet	  	verifiziert						
----------------	---------------	--------------- ------------------- ------------------------------------------------------
-\ref{sc-001} 	\checkmark 		$\times$		\checkmark			durch die bisherige Lösung erfüllt
+--------------------------------------------------------------------------------------------------------------------------------------
+Story				Implementiert		automatisiert 		durch Kunden			Beschreibung
+  										getestet			verifiziert
+-----------------	-----------------	------------------	---------------------	----------------------------------------------------------
+\ref{sc-001} 		\checkmark 			$\times$			\checkmark				durch die bisherige Lösung erfüllt
 
-\ref{sc-002} 	\checkmark 		$\times$		\checkmark			durch die bisherige Lösung erfüllt
+\ref{sc-002} 		\checkmark 			$\times$			\checkmark				durch die bisherige Lösung erfüllt
 
-\ref{sc-003} 	\checkmark 		$\times$		\checkmark			durch die bisherige Lösung erfüllt
+\ref{sc-003} 		\checkmark 			$\times$			\checkmark				durch die bisherige Lösung erfüllt
 
-\ref{sc-004} 	\checkmark 		$\times$		\checkmark			durch die bisherige Lösung erfüllt
+\ref{sc-004} 		\checkmark 			$\times$			\checkmark				durch die bisherige Lösung erfüllt
 
-\ref{sc-005} 	\checkmark 		\checkmark		\checkmark			durch die bisherige Lösung erfüllt
-																	zudem durch die neue Mentoren-Suche erfüllt
-																	(siehe \ref{sc-016})
+\ref{sc-005} 		\checkmark 			\checkmark			\checkmark				durch die bisherige Lösung erfüllt
+																					zudem durch die neue Mentoren-Suche erfüllt
+																					(siehe \ref{sc-016})
 
-\ref{sc-006} 	\checkmark 		\checkmark		\checkmark			durch die bisherige Lösung erfüllt
-																	zudem durch die neue Mentoren-Suche erfüllt
-																	(siehe \ref{sc-016})
+\ref{sc-006} 		\checkmark 			\checkmark			\checkmark				durch die bisherige Lösung erfüllt
+																					zudem durch die neue Mentoren-Suche erfüllt
+																					(siehe \ref{sc-016})
 
-\ref{sc-007} 	\checkmark 		$\times$		\checkmark			durch die bisherige Profilseite des Schülers erfüllt
+\ref{sc-007} 		\checkmark 			$\times$			\checkmark				durch die bisherige Profilseite des Schülers erfüllt
 
-\ref{sc-008v2}	\checkmark		Teilweise       \checkmark			grafisch über die neue Mentoren-Suche umgesetzt
+\ref{sc-008v2}		\checkmark			Teilweise			\checkmark				grafisch über die neue Mentoren-Suche umgesetzt
 
-\ref{sc-009}	\checkmark		Teilweise       \checkmark			grafisch über die neue Mentoren-Suche umgesetzt
+\ref{sc-009}		\checkmark			Teilweise			\checkmark				grafisch über die neue Mentoren-Suche umgesetzt
 
-\ref{sc-010v2}	\checkmark 		\checkmark		\checkmark			als Filter umgesetzt
+\ref{sc-010v2}		\checkmark 			\checkmark			\checkmark				als Filter umgesetzt
 
-\ref{sc-011v2}	\checkmark 		\checkmark		\checkmark			als Filter umgesetzt
+\ref{sc-011v2}		\checkmark 			\checkmark			\checkmark				als Filter umgesetzt
 
-\ref{sc-012} 	\checkmark 		\checkmark		\checkmark			als Filter umgesetzt
+\ref{sc-012} 		\checkmark 			\checkmark			\checkmark				als Filter umgesetzt
 
-\ref{sc-013v2}	\checkmark 		\checkmark		\checkmark			als Filter umgesetzt
+\ref{sc-013v2}		\checkmark 			\checkmark			\checkmark				als Filter umgesetzt
 
-\ref{sc-014} 	\checkmark 		\checkmark		\checkmark			als Filter umgesetzt
+\ref{sc-014} 		\checkmark 			\checkmark			\checkmark				als Filter umgesetzt
 
-\ref{sc-015} 	\checkmark 		\checkmark		\checkmark			durch bisherige Lösung erfüllt
-																	zudem über die neue Mentoren-Suche 
-																	(siehe \ref{sc-016})
+\ref{sc-015} 		\checkmark 			\checkmark			\checkmark				durch bisherige Lösung erfüllt
+																					zudem über die neue Mentoren-Suche 
+																					(siehe \ref{sc-016})
 
-\ref{sc-016} 	\checkmark 		\checkmark		\checkmark			Direktzuweisung von Mentoren zu Schülern
-																	aus der Mentoren-Suche inkl. Wochentag und Zeitpunkt
+\ref{sc-016} 		\checkmark 			\checkmark			\checkmark				Direktzuweisung von Mentoren zu Schülern
+																					aus der Mentoren-Suche inkl. Wochentag und Zeitpunkt
 
-------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
 
+\pagebreak
 
 ## Nicht-Funktionale Anforderungen
 
 ------------------------------------------------------------------------------------------------------------------------------
-NFR				automatisiert	durch Kunden 	Beschreibung
+NFR				automatisiert	durch Kunden 		Beschreibung
 				getestet		verifiziert						
-------------	---------------	---------------	------------------------------------------------------------------------------
-\ref{nfr-01} 	$\times$		\checkmark 		Erfüllt durch die Trennung von Mentorensuche und Schülerstundenplan
+------------	---------------	-----------------	------------------------------------------------------------------------------
+\ref{nfr-01} 	$\times$		\checkmark 			Erfüllt durch die Trennung von Mentorensuche und Schülerstundenplan
 
-\ref{nfr-02} 	$\times$		\checkmark 		Es sind keine doppelten oder inaktive Schaltflächen mehr vorhanden in den
-												bearbeiteten Komponenten
+\ref{nfr-02} 	$\times$		\checkmark 			Es sind keine doppelten oder inaktive Schaltflächen mehr vorhanden in den
+													bearbeiteten Komponenten
 
-\ref{nfr-03} 	$\times$		\checkmark		Es werden maximal 10 Mentoren angezeigt
+\ref{nfr-03} 	$\times$		\checkmark			Es werden maximal 10 Mentoren angezeigt
 
-\ref{nfr-04} 	$\times$		\checkmark 		ein gefundener Mentor kann mit zwei Klicks zugewiesen werden 
-												(einer für die Bestätigung)
+\ref{nfr-04} 	$\times$		\checkmark 			ein gefundener Mentor kann mit zwei Klicks zugewiesen werden 
+													(einer für die Bestätigung)
 
-\ref{nfr-05} 	$\times$		\checkmark 		Alle nötigen Informationen werden angezeigt.
+\ref{nfr-05} 	$\times$		\checkmark 			Alle nötigen Informationen werden angezeigt.
 
 ------------------------------------------------------------------------------------------------------------------------------
 

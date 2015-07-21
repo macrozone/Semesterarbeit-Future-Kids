@@ -22,7 +22,7 @@ Dies ergab nun zwar gut differenzierbare Stories, die Akzeptanzkritierien für d
 Die hohen Anforderungen an die Bedienbarkeit ergaben zudem einen verhältnismässig komplexen Aufbau der Komponente, was das Testen zusätzlich erschwerte. In einem solchen Fall muss die hohe Komplexität gegen die damit verbundenen komplexeren Tests abgewogen werden. Ich entschied mich trotzdem dazu, mein erarbeitetes Konzept wie geplant umzusetzen und nahm dafür einige etwas weniger genaue Tests in Kauf, da ich der Meinung bin, im vorliegenden Fall überwiegt der Nutzen dem möglichen Risiko für eine Fehlfunktion uder der Weiterentwicklung.
 
 
-
+\pagebreak
 
 # Ausblick
 
