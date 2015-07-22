@@ -39,7 +39,7 @@ React ist in *FutureKid* über das *gem*[^fn_gems] *'react-rails'* bereits integ
 
 ### JSX und CJSX
 
-*JSX* Erweitert Javascript um eine XML-artige Syntax, in welcher React-Komponenten ähnlich wie HTML erstellt werden können:
+*JSX* Erweitert Javascript um eine XML-artige Syntax, in welcher React-Komponenten ähnlich wie HTML erstellt werden können[^fn_jsx_sample] :
 
 ~~~~~~~{caption="Beispielcode in JSX" label=lstSampleJSX}
 var dropdown =
@@ -55,7 +55,7 @@ var dropdown =
 render(dropdown);
 
 ~~~~~~~
-[^fn_jsx_sample]
+
 
 [^fn_jsx_sample]: Beispiel angelehnt an: https://facebook.github.io/jsx/
 
@@ -102,12 +102,12 @@ Auf der Profilseite eines Schülers wurde eine neue Seite erstellt, die Mentoren
 
 ![Ein neuer Menupunkt öffnet die neue Mentorensuche \label{screenshot_new_menu}](img/screenshot_new_menu.png)
 
-![Die neue Mentorensuche weist jedem Mentor eine Farbe zu (dynamisch abhängig von der Anzahl mentoren). Sie wurde als *React*-Komponente implementiert\label{screenshot_iteration1}](img/screenshot_iteration1.png)
+![Die neue Mentorensuche weist jedem Mentor eine Farbe zu (dynamisch abhängig von der Anzahl mentoren). Sie wurde als *React*-Komponente implementiert.\label{screenshot_iteration1}](img/screenshot_iteration1.png)
 
 Wählt ein Benutzer einen Mentor, erhält er einen Bestätigungs-Dialog (Abbildung \ref{screenshot_iteration1_assign}). Wird dieser bestätigt, werden die gewählten Werte ins Formular übertragen und das Formular abgeschickt (als POST-, eigentlich PUT-Request). Zwar wäre auch ein AJAX-Aufruf möglich gewesen, d.h. ein asynchroner Aufruf an den Webserver, welcher die Seite nicht neu lädt. Allerdings macht es Sinn, nach gesetztem Wert die Profilseite des Schülers anzuzeigen. Ein Formular entspricht genau diesem Ablauf.
 
 
-![Bei einem Klick auf einen Zeitfenster kann der Mentor dem Schüler direkt zugewiesen werden. Es sind nur diejenigen Zeitfenster klickbar, welche sowohl von Schüler als auch von Mentor belegt sind\label{screenshot_iteration1_assign}](img/screenshot_iteration1_assign.png)
+![Bei einem Klick auf einen Zeitfenster kann der Mentor dem Schüler direkt zugewiesen werden. Es sind nur diejenigen Zeitfenster klickbar, welche sowohl von Schüler als auch von Mentor belegt sind.\label{screenshot_iteration1_assign}](img/screenshot_iteration1_assign.png)
 
 
 Diagramm \ref{architecture_structure} fasst diesen Aufbau zusammen. Die Komponente *KidMentorSchedules* entspricht dabei dem konzipierten Aufbau im Komponenten-Diagram \ref{uml_components_mentor_search}, jedoch wurde die *Mentoren-Filter*-Komponente direkt der Haupt-Komponente (*Mentoren-Suche*) unterstellt, da dies die Kommunikation zwischen den Komponenten vereinfacht. Die Haupt-Komponente trägt dabei sowohl den *State* aller gewählter Filter, sowie den *State* der Mentoren-Auswahl für die Darstellung. 
@@ -155,10 +155,15 @@ def show_kid_mentors_schedules
 end
 ~~~~~~~
 
+#### Komponente *MentorsForDisplayingFilter*
 
-#### Filter
+Die Mentoren, welche im Stundenplan angezeigt werden, können über diese Komponente *MentorsForDisplayingFilter* ausgewählt werden (Siehe Abbildung \ref{screenshot_filters}). Die Komponente wurde mittels *react-select* umgesetzt. [^fn_react_select_2]  
 
-Die Hauptkomponente hält den *State* aller Filter. Sie erhält diesen Status über *Events* von den untergeordneten Filter-Komponenten. Listing \ref{lst_filter_sex} 
+[^fn_react_select_2]:  Siehe [@reactSelect]
+
+#### Komponente *Filters*
+
+Die Hauptkomponente hält den *State* aller Filter, welche in einer Komponente *Filters* zusammengefasst sind. Sie meldet Änderungen ihrer Filter über *Events* von den untergeordneten Filter-Komponenten an die Hauptkomponente. Listing \ref{lst_filter_sex} 
 zeigt ein Beispiel, wie die Komponente alle nicht passenden Filter entfernt, sofern der Filter gesetzt ist.
 
 ~~~~~~~{caption="Beispiel für das herausfiltern mit nicht-passendem Geschlecht" label=lst_filter_sex}
@@ -176,6 +181,11 @@ getFilteredMentors: ->
   return filteredMentors
 ~~~~~~~
 
+![Filter-Komponente mit Mentorenauswahl. Die Mentorenauswahl wurde mit *react-select* umgesetzt und ermöglicht eine Namenssuche\label{screenshot_filters}](img/screenshot_filters.png)
+
+
+
+#### Mentorenauswahl
 
 
 
