@@ -96,7 +96,6 @@ In einer ersten Iteration wurden die Anforderungen \ref{sc-001} - \ref{sc-015} g
 
 ### Implementierung
 
-#### Architektur
 
 Auf der Profilseite eines Schülers wurde eine neue Seite erstellt, die Mentorensuche (Abbildung \ref{screenshot_new_menu}). Diese besteht aus einem versteckten Formular, welches die zu definierenden Werte wie Hauptmentor, Ersatzmentor, Wochentag des Treffens und Zeitpunkt des Treffens enthält. Weiterhin enhtält sie die konzipierte *React*-Komponente, welche die es ermöglicht, Mentoren per Filterkriterien zu finden und mit den Zeitfenstern des Schülers zu vergleichen (Abbildung \ref{screenshot_iteration1}).
 
@@ -106,13 +105,14 @@ Auf der Profilseite eines Schülers wurde eine neue Seite erstellt, die Mentoren
 
 Wählt ein Benutzer einen Mentor, erhält er einen Bestätigungs-Dialog (Abbildung \ref{screenshot_iteration1_assign}). Wird dieser bestätigt, werden die gewählten Werte ins Formular übertragen und das Formular abgeschickt (als POST-, eigentlich PUT-Request). Zwar wäre auch ein AJAX-Aufruf möglich gewesen, d.h. ein asynchroner Aufruf an den Webserver, welcher die Seite nicht neu lädt. Allerdings macht es Sinn, nach gesetztem Wert die Profilseite des Schülers anzuzeigen. Ein Formular entspricht genau diesem Ablauf.
 
-
 ![Bei einem Klick auf einen Zeitfenster kann der Mentor dem Schüler direkt zugewiesen werden. Es sind nur diejenigen Zeitfenster klickbar, welche sowohl von Schüler als auch von Mentor belegt sind.\label{screenshot_iteration1_assign}](img/screenshot_iteration1_assign.png)
 
 
-Diagramm \ref{architecture_structure} fasst diesen Aufbau zusammen. Die Komponente *KidMentorSchedules* entspricht dabei dem konzipierten Aufbau im Komponenten-Diagram \ref{uml_components_mentor_search}, jedoch wurde die *Mentoren-Filter*-Komponente direkt der Haupt-Komponente (*Mentoren-Suche*) unterstellt, da dies die Kommunikation zwischen den Komponenten vereinfacht. Die Haupt-Komponente trägt dabei sowohl den *State* aller gewählter Filter, sowie den *State* der Mentoren-Auswahl für die Darstellung. 
+Diagramm \ref{architecture_structure} fasst diesen Aufbau zusammen. Die Komponente *KidMentorSchedules* entspricht dabei dem konzipierten Aufbau (Diagram \ref{uml_components_mentor_search}), jedoch wurde die *Mentoren-Filter*-Komponente direkt der Haupt-Komponente (*Mentoren-Suche*) unterstellt, da dies die Kommunikation zwischen den Komponenten vereinfacht (vgl. Diagramm \ref{mentorensearch-component-diagram-implemted}). Die Haupt-Komponente trägt dabei sowohl den *State* aller gewählter Filter, sowie den *State* der Mentoren-Auswahl für die Darstellung. 
 
 ![Struktur des Bildschirms für die Mentorensuche, ausgehend vom aufgerufenenen *KidsController*, dargestellt als "Querschnitt" durch die Anwendung in Paket-Struktur. Die einzelnen Pakete zeigen dabei eine Schicht oder Komponente der Anwendung\label{architecture_structure}](img/architecture_structure.png)
+
+![Innere Struktur der umgesetzten Mentoren-Suche-Komponente. Gegenüber dem Konzept wurde der Aufbau etwas vereinfacht.\label{mentorensearch-component-diagram-implemted}](img/mentorensearch-component-diagram-implemted.png)
 
 \pagebreak
 
@@ -120,7 +120,7 @@ Diagramm \ref{architecture_structure} fasst diesen Aufbau zusammen. Die Komponen
 
 Der *KidsController*, welcher der Komponenten zu Grunde liegt, wurde um eine Methode *show_kid_mentors_schedules* ergänzt (siehe Listing \ref{lst_controller_show_kid_mentors_schedules}), welcher alle benötigten Daten ausliefert. Da diese Daten in der gerenderte HTML-Seite mitgeliefert werden und somit zur Ladezeit der Seite beiträgt, wurden die *Model*-Daten des Kindes und der Mentoren stark reduziert, damit nur die nötigen Daten gesendet werden.
 
-~~~~~~~{caption="Controller-Methode\\, welche die Daten für die Komponente ausliefert" label=lst_controller_show_kid_mentors_schedules}
+~~~~~~~{caption="Hinzugefügte Methode auf dem KidsController. Sie liefert die Daten für die Komponente aus" label=lst_controller_show_kid_mentors_schedules}
 def show_kid_mentors_schedules
  @kid_mentor_schedules_data = Jbuilder.new do |json|
     json.mentors do
@@ -182,12 +182,6 @@ getFilteredMentors: ->
 ~~~~~~~
 
 ![Filter-Komponente mit Mentorenauswahl. Die Mentorenauswahl wurde mit *react-select* umgesetzt und ermöglicht eine Namenssuche\label{screenshot_filters}](img/screenshot_filters.png)
-
-
-
-#### Mentorenauswahl
-
-
 
 #### Färben der Mentoren
 

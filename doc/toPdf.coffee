@@ -13,7 +13,8 @@ precompileAndRead = (file) ->
 		when ".ect" then ect.render file
 		else fs.readFileSync file
 
-pandoc = Pandoc.spawn ["-o", "out.pdf"]
+abstract = fs.readFileSync("abstract.md")
+pandoc = Pandoc.spawn ["-o", "out.pdf", "--variable", "abstract=#{abstract}"]
 
 files = [
 	"metadata.yaml"

@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>750</x>
+      <y>240</y>
+      <w>240</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+Haupt-Komponente
+/(KidMentorSchedules)/
+--
+   props: Mentoren
+   props: Schulen
+   props: Schüler
+   
+   state: selektierte Mentoren
+	   state: 
+	      filters: 
+      - ect
+      - sex
+      - numberOfKids
+      - school</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>160</x>
+      <y>670</y>
+      <w>190</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+Sex-Filter
+--
+state: Geschlecht
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>360</x>
+      <y>670</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+School-Filter
+--
+state: gewählter Einsatzort
+props: alle Einsatzorte</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>750</x>
+      <y>670</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+NumberOfKids-Filter
+--
+state: Betreut Kind (0,1,2)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>570</x>
+      <y>670</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+ECTS-Filter
+--
+state: ECTS ja/nein</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>360</x>
+      <y>390</y>
+      <w>260</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+Mentoren-Auswahl 
+/(MentorsForDisplayingFilter)/
+--
+    props: alle Mentoren
+    state: selektierte Mentoren</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>580</y>
+      <w>590</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=[ ]-[ ]</panel_attributes>
+    <additional_attributes>570.0;10.0;570.0;60.0;10.0;60.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>580</y>
+      <w>430</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=[ ]-[ ]</panel_attributes>
+    <additional_attributes>410.0;10.0;410.0;60.0;10.0;60.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>580</y>
+      <w>400</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=[ ]-[ ]</panel_attributes>
+    <additional_attributes>380.0;90.0;380.0;60.0;10.0;60.0;370.0;60.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>580</y>
+      <w>390</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=[ ]-[ ]</panel_attributes>
+    <additional_attributes>210.0;90.0;210.0;60.0;10.0;60.0;370.0;60.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>0</x>
+      <y>270</y>
+      <w>80</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Benutzer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>280</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=()-[GUI]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>270</y>
+      <w>270</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+
+m2=&lt;&lt;wählt Zeitpunkt  
+             und Mentor&gt;&gt;   </panel_attributes>
+    <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>730</x>
+      <y>0</y>
+      <w>220</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+KidsController (Server)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>90</y>
+      <w>30</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=()-[^]</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>180</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=)-[^]</panel_attributes>
+    <additional_attributes>20.0;20.0;20.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>860</x>
+      <y>160</y>
+      <w>220</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>  POST Request
+  - mentorId
+  - meeting_start_at
+  - meeting_day
+  </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>360</x>
+      <y>240</y>
+      <w>260</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+Stundenplan 
+/(TimeTable)/
+--
+    props: Stundenplan des Schülers
+    props: selektierte Mentoren
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>140</x>
+      <y>590</y>
+      <w>850</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+--
+         Filters   </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>490</y>
+      <w>140</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=[^]-[^]
+ Events 
+ geänderter Filter</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>280</y>
+      <w>270</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+
+m2=  &lt;&lt;wählt Mentoren&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0;120.0;190.0;250.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>270</y>
+      <w>230</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+m2=&lt;&lt;wählt Filter&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0;120.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>90</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=)-[v]</panel_attributes>
+    <additional_attributes>20.0;70.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>170</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=()-[v]</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>640</x>
+      <y>150</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>- Alle Mentoren
+- Alle Schulen
+- aktueller Schüler</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>270</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=[&lt;]-[&lt;]
+Stundenplan</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>490</y>
+      <w>80</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=[v]-[v]
+Schulen</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>300</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=[&lt;]-[&lt;]
+selektierte 
+Mentoren</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>460</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]
+Selektion</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>370</x>
+      <y>540</y>
+      <w>90</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Einsatzorte</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>460</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=()-[GUI]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>550</y>
+      <w>50</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=()-[GUI]</panel_attributes>
+    <additional_attributes>20.0;10.0;20.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>120</x>
+      <y>130</y>
+      <w>910</w>
+      <h>690</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+--
+   Mentoren-Suche</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>430</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=[&lt;]-[&lt;]
+Mentoren</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>

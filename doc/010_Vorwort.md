@@ -1,6 +1,7 @@
 
 \listoffigures
 
+\lstlistoflistings
 
 
 \pagebreak
