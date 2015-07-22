@@ -151,8 +151,10 @@ $endfor$
 \begin{document}
 $if(title)$
 \maketitle
+
 \begin{center}
-  % \includegraphics[width=8cm]{../img/title.png}
+ZHAW - Züricher Hochschule für Angewandte Wissenschaften
+   \includegraphics[width=16cm]{img/title.jpg}
  \end{center}
 
 \pagebreak
